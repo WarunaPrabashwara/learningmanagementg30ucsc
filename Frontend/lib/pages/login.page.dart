@@ -65,9 +65,7 @@ class _LoginPageState extends State<LoginPage> {
 
     return Scaffold(
 
-        appBar: new AppBar(
-          title: new Text('Login'),
-        ),
+
         body: new SingleChildScrollView(
             child: new Center(
                 child: new Container(
@@ -95,6 +93,14 @@ class _LoginPageState extends State<LoginPage> {
                             SizedBox(
                               height: 15.0,
                             ),
+                            SizedBox(
+                              height: 15.0,
+                            ),
+                            new Text('Fogot password ?  contact 0713705748'),
+                            SizedBox(
+                              height: 15.0,
+                            ),
+
                           ],
                         )
                     )
