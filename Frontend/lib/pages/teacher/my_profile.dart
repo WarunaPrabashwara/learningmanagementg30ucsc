@@ -1,21 +1,24 @@
 import 'package:frontend/main.dart';
 import 'package:flutter/material.dart';
-import 'my_profile.dart';  //  or use  import 'package:frontend/pages/teacher/my_profile.dart';
 
-class HomePage extends StatefulWidget {
-  HomePage({Key key, this.title}) : super(key: key);
+
+class MyProfile extends StatefulWidget {
+  MyProfile({Key key, this.title}) : super(key: key);
   @override
   final String title;
-  State<StatefulWidget> createState() => new _HomePageState();
+  State<StatefulWidget> createState() => new _MyProfileState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _MyProfileState extends State<MyProfile> {
   TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
   String _status = '';
+  String _name = 'waruna';
+  String _index = '65464984';
   @override
   Widget build(BuildContext context){
 
-    final MyProfileButon = Material(
+
+    final ChangePasswordButon = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(30.0),
       color: Color(0xff01A0C7),
@@ -30,21 +33,20 @@ class _HomePageState extends State<HomePage> {
 
           appAuth.login().then((result) {
             if (result) {
-              Navigator.of(context).pushReplacementNamed('/teacher/my_profile');
+              Navigator.of(context).pushReplacementNamed('/changePassword');
             } else {
               setState(() => this._status = 'something went wrong ! try again');
             }
           });
         },
-        child: Text('My Profile',
+        child: Text('Change Password',
             textAlign: TextAlign.center,
             style: style.copyWith(
                 color: Colors.white, fontWeight: FontWeight.bold)),
       ),
     );
 
-
-    final MySubjectsButon = Material(
+    final LogoutButon = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(30.0),
       color: Color(0xff01A0C7),
@@ -59,74 +61,19 @@ class _HomePageState extends State<HomePage> {
 
           appAuth.login().then((result) {
             if (result) {
-              Navigator.of(context).pushReplacementNamed('/teacher/home');
+              Navigator.of(context).pushReplacementNamed('/login');
             } else {
               setState(() => this._status = 'something went wrong ! try again');
             }
           });
         },
-        child: Text('My Subjects',
+        child: Text('Logout',
             textAlign: TextAlign.center,
             style: style.copyWith(
                 color: Colors.white, fontWeight: FontWeight.bold)),
       ),
     );
 
-    final AnnouncementButon = Material(
-      elevation: 5.0,
-      borderRadius: BorderRadius.circular(30.0),
-      color: Color(0xff01A0C7),
-      child: MaterialButton(
-        minWidth: MediaQuery
-            .of(context)
-            .size
-            .width,
-        padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        onPressed: () {
-          setState(() => this._status = 'loading');
-
-          appAuth.login().then((result) {
-            if (result) {
-              Navigator.of(context).pushReplacementNamed('/teacher/home');
-            } else {
-              setState(() => this._status = 'something went wrong ! try again');
-            }
-          });
-        },
-        child: Text('Announcements',
-            textAlign: TextAlign.center,
-            style: style.copyWith(
-                color: Colors.white, fontWeight: FontWeight.bold)),
-      ),
-    );
-
-    final TimeTableButon = Material(
-      elevation: 5.0,
-      borderRadius: BorderRadius.circular(30.0),
-      color: Color(0xff01A0C7),
-      child: MaterialButton(
-        minWidth: MediaQuery
-            .of(context)
-            .size
-            .width,
-        padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        onPressed: () {
-          setState(() => this._status = 'loading');
-
-          appAuth.login().then((result) {
-            if (result) {
-              Navigator.of(context).pushReplacementNamed('/teacher/home');
-            } else {
-              setState(() => this._status = 'something went wrong ! try again');
-            }
-          });
-        },
-        child: Text('My Time Table',
-            textAlign: TextAlign.center,
-            style: style.copyWith(
-                color: Colors.white, fontWeight: FontWeight.bold)),
-      ),
-    );
 
 
     return  Scaffold(
@@ -144,16 +91,20 @@ class _HomePageState extends State<HomePage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           SizedBox(
+                            height: 155.0,
+                            child: Image.asset(
+                                "./assets/profile-pic.JPG"
+                            ),
+                          ),
+                          Text("Name : ${this._name}"),
+                          Text("Index : ${this._index}"),
+                          SizedBox(
                             height: 15.0,
                           ),
                           SizedBox(height: 45.0),
-                          MyProfileButon,
+                          ChangePasswordButon,
                           SizedBox(height: 45.0),
-                          MySubjectsButon,
-                          SizedBox(height: 45.0),
-                          AnnouncementButon,
-                          SizedBox(height: 45.0),
-                          TimeTableButon,
+                          LogoutButon,
                           SizedBox(height: 45.0),
 
                           Text('${this._status}',)

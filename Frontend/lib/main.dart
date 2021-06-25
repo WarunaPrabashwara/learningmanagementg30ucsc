@@ -1,5 +1,7 @@
+import 'package:frontend/pages/changePassword.dart';
 import 'package:frontend/pages/teacher/home.page.dart';
 import 'package:frontend/pages/login.page.dart';
+import 'package:frontend/pages/teacher/my_profile.dart';
 import 'package:frontend/services/auth.service.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +24,9 @@ void main() async {
     routes: <String, WidgetBuilder>{
       // Set routes for using the Navigator.
       '/teacher/home': (BuildContext context) => new HomePage(),
-      '/login': (BuildContext context) => new LoginPage(title: 'Flutter Login')
+      '/teacher/my_profile': (BuildContext context) => new MyProfile(),
+      '/login': (BuildContext context) => new LoginPage(title: 'Flutter Login'),
+      '/changePassword' : (BuildContext context) => new changepassword()
     },
   ));
 }

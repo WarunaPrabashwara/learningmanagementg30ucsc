@@ -1,6 +1,7 @@
 import 'package:frontend/main.dart';
 import 'package:flutter/material.dart';
 
+
 class LoginPage extends StatefulWidget {
   LoginPage({Key key, this.title}) : super(key: key);
   @override
@@ -12,8 +13,10 @@ class _LoginPageState extends State<LoginPage> {
   TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
   String _status = 'Your are logged out';
 
+
   @override
   Widget build(BuildContext context) {
+
     final emailField = TextField(
       obscureText: true,
       style: style,
@@ -55,7 +58,7 @@ class _LoginPageState extends State<LoginPage> {
             }
           });
         },
-        child: Text('Login for App (${this._status})',
+        child: Text('Login for App',
             textAlign: TextAlign.center,
             style: style.copyWith(
                 color: Colors.white, fontWeight: FontWeight.bold)),
@@ -93,13 +96,17 @@ class _LoginPageState extends State<LoginPage> {
                             SizedBox(
                               height: 15.0,
                             ),
+                            Text('${this._status}',),
+                            SizedBox(
+                              height: 25
+                            ),
+
                             SizedBox(
                               height: 15.0,
+                              child: Text('Fogot password ?  contact 0713705748' , ),
                             ),
-                            new Text('Fogot password ?  contact 0713705748'),
-                            SizedBox(
-                              height: 15.0,
-                            ),
+
+
 
                           ],
                         )
