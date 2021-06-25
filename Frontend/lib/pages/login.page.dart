@@ -49,7 +49,7 @@ class _LoginPageState extends State<LoginPage> {
 
           appAuth.login().then((result) {
             if (result) {
-              Navigator.of(context).pushReplacementNamed('/home');
+              Navigator.of(context).pushReplacementNamed('/teacher/home');
             } else {
               setState(() => this._status = 'rejected');
             }

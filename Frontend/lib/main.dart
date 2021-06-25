@@ -1,4 +1,4 @@
-import 'package:frontend/pages/home.page.dart';
+import 'package:frontend/pages/teacher/home.page.dart';
 import 'package:frontend/pages/login.page.dart';
 import 'package:frontend/services/auth.service.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +21,7 @@ void main() async {
     home: _defaultHome,
     routes: <String, WidgetBuilder>{
       // Set routes for using the Navigator.
-      '/home': (BuildContext context) => new HomePage(),
+      '/teacher/home': (BuildContext context) => new HomePage(),
       '/login': (BuildContext context) => new LoginPage(title: 'Flutter Login')
     },
   ));
