@@ -1,6 +1,6 @@
 import 'package:frontend/main.dart';
 import 'package:flutter/material.dart';
-import 'my_profile.dart';  //  or use  import 'package:frontend/pages/teacher/my_profile.dart';
+import '../my_profile.dart';  //  or use  import 'package:frontend/pages/teacher/my_profile.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.title}) : super(key: key);
@@ -30,7 +30,8 @@ class _HomePageState extends State<HomePage> {
 
           appAuth.login().then((result) {
             if (result) {
-              Navigator.of(context).pushReplacementNamed('/teacher/my_profile');
+              Navigator.of(context).pushNamed('/teacher/my_profile');
+              //Navigator.of(context).pushReplacementNamed('/teacher/my_profile');
             } else {
               setState(() => this._status = 'something went wrong ! try again');
             }

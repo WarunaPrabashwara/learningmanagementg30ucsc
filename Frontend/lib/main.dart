@@ -1,7 +1,7 @@
 import 'package:frontend/pages/changePassword.dart';
 import 'package:frontend/pages/teacher/home.page.dart';
 import 'package:frontend/pages/login.page.dart';
-import 'package:frontend/pages/teacher/my_profile.dart';
+import 'package:frontend/pages/my_profile.dart';
 import 'package:frontend/services/auth.service.dart';
 import 'package:flutter/material.dart';
 

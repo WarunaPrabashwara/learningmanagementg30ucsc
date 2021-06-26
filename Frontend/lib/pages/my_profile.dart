@@ -33,7 +33,8 @@ class _MyProfileState extends State<MyProfile> {
 
           appAuth.login().then((result) {
             if (result) {
-              Navigator.of(context).pushReplacementNamed('/changePassword');
+              // Navigator.of(context).pushReplacementNamed('/changePassword');
+              Navigator.of(context).pushNamed('/changePassword');
             } else {
               setState(() => this._status = 'something went wrong ! try again');
             }
@@ -78,7 +79,12 @@ class _MyProfileState extends State<MyProfile> {
 
     return  Scaffold(
       appBar: new AppBar(
-        title: new Text('Home'),
+        title: new Text("home"),
+        leading: new IconButton(
+            icon: new Icon(Icons.arrow_back_ios),
+            onPressed: () => //Navigator.popAndPushNamed(context, '/changePassword');
+            Navigator.of(context).pop()
+        ),
       ),
       body:  new SingleChildScrollView(
           child: new Center(

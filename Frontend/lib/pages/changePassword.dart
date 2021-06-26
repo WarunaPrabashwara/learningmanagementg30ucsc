@@ -82,7 +82,8 @@ class _changepasswordState extends State<changepassword> {
         title: new Text("data"),
         leading: new IconButton(
           icon: new Icon(Icons.arrow_back_ios),
-          onPressed: () =>  Navigator.of(context).pop()
+           onPressed: () => //Navigator.popAndPushNamed(context, '/changePassword');
+          Navigator.of(context).pop()
         ),
       ),
       body: new SingleChildScrollView(
