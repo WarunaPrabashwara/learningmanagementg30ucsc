@@ -80,11 +80,11 @@ class _changepasswordState extends State<changepassword> {
 
       appBar: new AppBar(
         title: new Text("data"),
-        leading: new IconButton(
-          icon: new Icon(Icons.arrow_back_ios),
-           onPressed: () => //Navigator.popAndPushNamed(context, '/changePassword');
-          Navigator.of(context).pop()
-        ),
+       // leading: new IconButton(
+        //  icon: new Icon(Icons.arrow_back_ios),
+       //    onPressed: () => //Navigator.popAndPushNamed(context, '/changePassword');
+       //   Navigator.of(context).pop()
+     //   ),
       ),
       body: new SingleChildScrollView(
           child: new Center(

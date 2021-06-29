@@ -1,15 +1,18 @@
 import 'package:frontend/main.dart';
 import 'package:flutter/material.dart';
-import '../my_profile.dart';  //  or use  import 'package:frontend/pages/teacher/my_profile.dart';
+import '../generate_term_test_report.dart';
+import '../my_profile.dart';
+import '../view_notice_board.dart';
+import 'add_students_to_bucket_subjects.dart';  //  or use  import 'package:frontend/pages/teacher/my_profile.dart';
 
-class HomePage extends StatefulWidget {
-  HomePage({Key key, this.title}) : super(key: key);
+class TeacherHomePage extends StatefulWidget {
+  TeacherHomePage({Key key, this.title}) : super(key: key);
   @override
   final String title;
   State<StatefulWidget> createState() => new _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<TeacherHomePage> {
   TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
   String _status = '';
   @override
@@ -30,7 +33,13 @@ class _HomePageState extends State<HomePage> {
 
           appAuth.login().then((result) {
             if (result) {
-              Navigator.of(context).pushNamed('/teacher/my_profile');
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) {
+                  return MyProfile();
+                }),
+              );
+              //Navigator.of(context).pushNamed('/teacher/my_profile');
               //Navigator.of(context).pushReplacementNamed('/teacher/my_profile');
             } else {
               setState(() => this._status = 'something went wrong ! try again');
@@ -60,7 +69,7 @@ class _HomePageState extends State<HomePage> {
 
           appAuth.login().then((result) {
             if (result) {
-              Navigator.of(context).pushReplacementNamed('/teacher/home');
+              Navigator.of(context).pushNamed('/teacher/home');
             } else {
               setState(() => this._status = 'something went wrong ! try again');
             }
@@ -88,8 +97,12 @@ class _HomePageState extends State<HomePage> {
 
           appAuth.login().then((result) {
             if (result) {
-              Navigator.of(context).pushReplacementNamed('/teacher/home');
-            } else {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) {
+                  return view_notice_board();
+                }),
+              );            } else {
               setState(() => this._status = 'something went wrong ! try again');
             }
           });
@@ -116,7 +129,13 @@ class _HomePageState extends State<HomePage> {
 
           appAuth.login().then((result) {
             if (result) {
-              Navigator.of(context).pushReplacementNamed('/teacher/home');
+             // Navigator.of(context).pushNamed('/teacher/student_to_bucket_sub');
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) {
+                  return generate_term_test_reports();
+                }),
+              );
             } else {
               setState(() => this._status = 'something went wrong ! try again');
             }
@@ -129,6 +148,39 @@ class _HomePageState extends State<HomePage> {
       ),
     );
 
+    final SeeTermTestReportButon = Material(
+      elevation: 5.0,
+      borderRadius: BorderRadius.circular(30.0),
+      color: Color(0xff01A0C7),
+      child: MaterialButton(
+        minWidth: MediaQuery
+            .of(context)
+            .size
+            .width,
+        padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+        onPressed: () {
+          setState(() => this._status = 'loading');
+
+          appAuth.login().then((result) {
+            if (result) {
+              //Navigator.of(context).pushNamed('/generateTermTestReport');
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) {
+                  return generate_term_test_reports();
+                }),
+              );
+            } else {
+              setState(() => this._status = 'something went wrong ! try again');
+            }
+          });
+        },
+        child: Text('Term Test Reports',
+            textAlign: TextAlign.center,
+            style: style.copyWith(
+                color: Colors.white, fontWeight: FontWeight.bold)),
+      ),
+    );
 
     return  Scaffold(
       appBar: new AppBar(
@@ -155,6 +207,8 @@ class _HomePageState extends State<HomePage> {
                           AnnouncementButon,
                           SizedBox(height: 45.0),
                           TimeTableButon,
+                          SizedBox(height: 45.0),
+                          SeeTermTestReportButon,
                           SizedBox(height: 45.0),
 
                           Text('${this._status}',)
