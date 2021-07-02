@@ -2,8 +2,10 @@ import 'package:frontend/main.dart';
 import 'package:flutter/material.dart';
 import '../generate_term_test_report.dart';
 import '../my_profile.dart';
+import '../view_my_timetable.dart';
 import '../view_notice_board.dart';
-import 'add_students_to_bucket_subjects.dart';  //  or use  import 'package:frontend/pages/teacher/my_profile.dart';
+import 'add_students_to_bucket_subjects.dart';
+import 'my_subjects.dart';  //  or use  import 'package:frontend/pages/teacher/my_profile.dart';
 
 class TeacherHomePage extends StatefulWidget {
   TeacherHomePage({Key key, this.title}) : super(key: key);
@@ -69,7 +71,13 @@ class _HomePageState extends State<TeacherHomePage> {
 
           appAuth.login().then((result) {
             if (result) {
-              Navigator.of(context).pushNamed('/teacher/home');
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) {
+                  return my_subjects_ofTeacher();
+                }),
+              );
+
             } else {
               setState(() => this._status = 'something went wrong ! try again');
             }
@@ -133,7 +141,7 @@ class _HomePageState extends State<TeacherHomePage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) {
-                  return generate_term_test_reports();
+                  return view_my_timetable();
                 }),
               );
             } else {
