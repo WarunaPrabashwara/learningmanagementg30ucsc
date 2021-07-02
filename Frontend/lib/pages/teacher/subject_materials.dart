@@ -14,7 +14,8 @@ class subject_Matirials_ofTeacher extends StatefulWidget {
 
 // ignore: camel_case_types
 class _subject_Matirials_ofTeacherState extends State<subject_Matirials_ofTeacher> {
-  List<String> list = ["Science 7 A", "Maths 7 A", "Maths 7 B", "Maths 7 C"];
+  List<String> list = ["matirial1ggggggggggggggggggggggggggggggg", "matirial2", "matirial3"];
+  List<String> list2 = ["kamal's", "nimal's", "amal's"];
   TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
   String _status = '';
 
@@ -95,14 +96,11 @@ class _subject_Matirials_ofTeacherState extends State<subject_Matirials_ofTeache
 
     final DeleteHWButton = Material(
       elevation: 5.0,
-      borderRadius: BorderRadius.circular(30.0),
+      borderRadius: BorderRadius.circular(10.0),
       color: Color(0xff01A0C7),
       child: MaterialButton(
-        minWidth: MediaQuery
-            .of(context)
-            .size
-            .width,
-        padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+
+
         onPressed: () {
           setState(() => this._status = 'loading');
 
@@ -164,6 +162,213 @@ class _subject_Matirials_ofTeacherState extends State<subject_Matirials_ofTeache
       ),
     );
 
+    final maerial = Material(
+      child:
+      Column(
+
+        children: list.map((String data) {
+          return Container(
+            child: GestureDetector(
+              onTap: () {
+
+              },
+              child: Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Row(
+
+                      children :[
+                        SizedBox(
+                        width: MediaQuery.of(context).size.width -180 ,
+                          child: Column(
+                            children :[
+
+                                   Align(
+                                     alignment: Alignment.centerLeft,
+                                     child: Text(
+                                      data,
+                                      style: TextStyle(
+                                        color: Color(0xFFF05A22),
+                                        fontFamily: 'Montserrat',
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w600,
+                                        letterSpacing: 1,
+                                      ),
+                                  ),
+                                   ),
+
+
+                            ]
+                          ),
+                        ),
+                        SizedBox(
+                        //  width: 90,
+                          child: Column(
+                            children : [
+
+
+                                Align(
+                                  alignment: Alignment.centerRight,
+                                  child: MaterialButton(
+                                    //padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+                                    onPressed: () {
+                                      setState(() => this._status = 'loading');
+
+                                      appAuth.login().then((result) {
+                                        if (result) {
+                                          setState(() => this._status = '');
+                                          // Navigator.of(context).pushNamed('/teacher/student_to_bucket_sub');
+
+                                        } else {
+                                          setState(() => this._status = 'something went wrong ! try again');
+                                        }
+                                      });
+                                    },
+                                    child: Text('Delete',
+                                        textAlign: TextAlign.center,
+                                        style: style.copyWith(
+                                            color: Colors.black, fontWeight: FontWeight.bold)),
+                                  ),
+                                ),
+
+                            ]
+                          ),
+                        ),
+                      ],
+                    ),
+
+
+
+                  ],
+                ),
+              ),
+            ),
+          );
+
+        }).toList(),
+      ),
+    );
+
+    final Homeworklist = Material(
+      child:
+      Column(
+
+        children: list2.map((String data) {
+          return Container(
+            child: GestureDetector(
+              onTap: () {
+
+              },
+              child: Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Row(
+
+                      children :[
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width -180 ,
+                          child: Column(
+                              children :[
+
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Text(
+                                    data,
+
+                                    style: TextStyle(
+                                      color: Color(0xFFF05A22),
+                                      fontFamily: 'Montserrat',
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600,
+                                      letterSpacing: 1,
+                                    ),
+                                  ),
+                                ),
+
+
+                              ]
+                          ),
+                        ),
+                        SizedBox(
+                          width: 90,
+                          child: Column(
+                              children : [
+
+
+                                Align(
+                                  alignment: Alignment.centerRight,
+                                  child: MaterialButton(
+                                    //padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+                                    onPressed: () {
+                                      setState(() => this._status = 'loading');
+
+                                      appAuth.login().then((result) {
+                                        if (result) {
+                                          setState(() => this._status = '');
+                                          // Navigator.of(context).pushNamed('/teacher/student_to_bucket_sub');
+
+                                        } else {
+                                          setState(() => this._status = 'something went wrong ! try again');
+                                        }
+                                      });
+                                    },
+                                    child: Text('Check',
+                                        textAlign: TextAlign.center,
+                                        style: style.copyWith(
+                                            color: Colors.black, fontWeight: FontWeight.bold)),
+                                  ),
+                                ),
+
+                              ]
+                          ),
+                        ),
+                      ],
+                    ),
+
+
+
+                  ],
+                ),
+              ),
+            ),
+          );
+
+        }).toList(),
+      ),
+    );
+
+    final AddnewMatirialButon = Material(
+      elevation: 5.0,
+      borderRadius: BorderRadius.circular(10.0),
+      color: Color(0xff01A0C7),
+      child: MaterialButton(
+
+        onPressed: () {
+          setState(() => this._status = 'loading');
+
+          appAuth.login().then((result) {
+            if (result) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) {
+                  return mark_attendance();
+                }),
+              );
+              //Navigator.of(context).pushNamed('/teacher/my_profile');
+              //Navigator.of(context).pushReplacementNamed('/teacher/my_profile');
+            } else {
+              setState(() => this._status = 'something went wrong ! try again');
+            }
+          });
+        },
+        child: Text('Add new Material',
+            textAlign: TextAlign.center,
+            style: style.copyWith(
+                color: Colors.white, fontWeight: FontWeight.bold)),
+      ),
+    );
 
 
     return MaterialApp(
@@ -181,20 +386,25 @@ class _subject_Matirials_ofTeacherState extends State<subject_Matirials_ofTeache
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                            SizedBox(
-                              height: 10,
-                            ),
-
+                            SizedBox(height: 10,),
                             Text("Materials"),
-                            SizedBox(
-                              height: 40.0,
-                              //width: 400,
-                            ),
+                            SizedBox(height: 10,),
+                            maerial,
+                            SizedBox(height: 10,),
+                            AddnewMatirialButon,
+                            SizedBox(height: 10,),
                             Text("Zoom link"),
+                            SizedBox(height: 10,),
                             MarkAttendanceButon,
+                            SizedBox(height: 10,),
                             Text("Home Works of childern"),
+                            SizedBox(height: 10,),
+                            Homeworklist,
+                            SizedBox(height: 10,),
                             DeleteHWButton,
+                            SizedBox(height: 10,),
                             AddNewHWButton,
+                            SizedBox(height: 10,),
                             UploadTermTestMarksButon,
                             SizedBox(height: 10.0),
 
