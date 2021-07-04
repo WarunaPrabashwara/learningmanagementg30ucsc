@@ -278,6 +278,21 @@ class _upload_term_test_marksState extends State<upload_term_test_marks> {
 
                                 children: [
                                   SizedBox(height: 40.0,
+                                    child :Text('Year' ,
+                                        style: style.copyWith(
+                                            color: Colors.blue, fontWeight: FontWeight.bold)),
+                                  ),
+                                  SizedBox(height: 40.0,
+                                    child :Text('Term' ,
+                                        style: style.copyWith(
+                                            color: Colors.blue, fontWeight: FontWeight.bold)),
+                                  ),
+                                  SizedBox(height: 40.0,
+                                    child :Text('Section' ,
+                                        style: style.copyWith(
+                                            color: Colors.blue, fontWeight: FontWeight.bold)),
+                                  ),
+                                  SizedBox(height: 40.0,
                                     child :Text('Class' ,
                                         style: style.copyWith(
                                             color: Colors.blue, fontWeight: FontWeight.bold)),
@@ -293,6 +308,30 @@ class _upload_term_test_marksState extends State<upload_term_test_marks> {
                               Column(
                                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                 children: [
+                                  SizedBox(
+                                    height: 40.0,
+                                    //width: 400,
+                                    child:SelectYearDropdown ,
+                                  ),
+
+
+                                  SizedBox(
+                                    height: 40.0,
+                                    //width: 400,
+                                    child:SelectTermDropdown ,
+                                  ),
+
+                                  SizedBox(
+                                    height: 40.0,
+                                    //width: 400,
+                                    child:SelectSectionDropdown ,
+                                  ),
+
+                                  SizedBox(
+                                    height: 40.0,
+                                    //width: 400,
+                                    child:SelectClassDropdown ,
+                                  ),
 
                                   SizedBox(
                                     height: 40.0,
@@ -301,11 +340,6 @@ class _upload_term_test_marksState extends State<upload_term_test_marks> {
                                   ),
 
 
-                                  SizedBox(
-                                    height: 40.0,
-                                    //width: 400,
-                                    child:SelectClassDropdown ,
-                                  ),
 
                                 ],
                               ) ,

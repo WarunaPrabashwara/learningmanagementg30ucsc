@@ -36,9 +36,19 @@ class _mark_attendanceState extends State<mark_attendance> {
 
 
   final List<Map<String, String>> listOfColumns = [
-    {"Name": "BBBBBB"},
-    {"Name": "CCCCCC"}
+    {'Name': 'BBBBBB' ,'id': '1'},
+    {'Name': 'CCCCCC' , 'id': '2' }
   ];
+
+   List<Map<String, String>> absentPresent = [
+    {'BBBBBB': ''   },
+    {'CCCCCC': ''  }
+  ];
+
+   int i = 0 ;
+
+
+
   //  List<String> _locations = ['Please choose a location', 'A', 'B', 'C', 'D']; // Option 1
 //  String _selectedLocation = 'Please choose a location'; // Option 1
 

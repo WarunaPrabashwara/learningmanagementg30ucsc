@@ -2,6 +2,7 @@ import 'package:frontend/main.dart';
 import 'package:flutter/material.dart';
 import 'package:frontend/pages/teacher/upload_test_test_mark.dart';
 
+import 'mark_homework.dart';
 import 'marking_attendance.dart';
 
 
@@ -306,7 +307,12 @@ class _subject_Matirials_ofTeacherState extends State<subject_Matirials_ofTeache
 
                                       appAuth.login().then((result) {
                                         if (result) {
-                                          setState(() => this._status = '');
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(builder: (context) {
+                                                      return mark_homework();
+                                            }),
+                                          );
                                           // Navigator.of(context).pushNamed('/teacher/student_to_bucket_sub');
 
                                         } else {
