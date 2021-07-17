@@ -1,121 +1,277 @@
-import 'package:frontend/main.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+class loginScreen extends StatefulWidget {
+  //const loginScreen({Key? key}) : super(key: key);
 
-
-class LoginPage extends StatefulWidget {
-  LoginPage({Key key, this.title}) : super(key: key);
   @override
-  final String title;
-  State<StatefulWidget> createState() => new _LoginPageState();
+  _loginScreenState createState() => _loginScreenState();
 }
+class _loginScreenState extends State<loginScreen> {
+  bool isRememberMe = false;
 
-class _LoginPageState extends State<LoginPage> {
-  TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
-  String _status = 'Your are logged out';
-
-
+  Widget buildEmail(){
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Text(
+          'User ID',
+          style: TextStyle(
+              color: Colors.white,
+              fontSize: 14,
+              fontWeight: FontWeight.bold
+          ),
+        ),
+        SizedBox(height: 10,),
+        Container(
+          alignment: Alignment.centerLeft,
+          decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(10),
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.black26,
+                    blurRadius: 6,
+                    offset: Offset(0,2)
+                )
+              ]
+          ),
+          height: 50,
+          child: TextField(
+              keyboardType: TextInputType.emailAddress,
+              style: TextStyle(
+                  color: Colors.black87
+              ),
+              decoration: InputDecoration(
+                  border: InputBorder.none,
+                  contentPadding: EdgeInsets.only(top: 14),
+                  hintText: 'Enter your user ID',
+                  hintStyle: TextStyle(
+                      color: Colors.black38,
+                      fontSize: 14.0
+                  ),
+                  prefixIcon: Icon(
+                    Icons.email,
+                    color: Colors.blue.shade500,
+                  )
+              )
+          ),
+        )
+      ],
+    );
+  }
+  Widget buildPassword(){
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Text(
+          'Password',
+          style: TextStyle(
+              color: Colors.white,
+              fontSize: 14,
+              fontWeight: FontWeight.bold
+          ),
+        ),
+        SizedBox(height: 10,),
+        Container(
+          alignment: Alignment.centerLeft,
+          decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(10),
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.black26,
+                    blurRadius: 6,
+                    offset: Offset(0,2)
+                )
+              ]
+          ),
+          height: 50,
+          child: TextField(
+              obscureText: true,
+              style: TextStyle(
+                  color: Colors.black87
+              ),
+              decoration: InputDecoration(
+                  border: InputBorder.none,
+                  contentPadding: EdgeInsets.only(top: 14),
+                  hintText: 'Enter your password',
+                  hintStyle: TextStyle(
+                      color: Colors.black38,
+                      fontSize: 14.0
+                  ),
+                  prefixIcon: Icon(
+                    Icons.lock,
+                    color: Colors.blue.shade700,
+                  )
+              )
+          ),
+        )
+      ],
+    );
+  }
+  Widget buildForgetPasswordButton(){
+    return Container(
+      alignment: Alignment.centerRight,
+      child: FlatButton(
+        onPressed: ()=>print("Forgot password pressed"),
+        padding: EdgeInsets.only(right: 0),
+        child: Text('Forgot Password?', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 14.0),),
+      ),
+    );
+  }
+  Widget buildremembercb(){
+    return Container(
+      height: 20,
+      child: Row(
+        children: <Widget>[
+          Theme(
+            data: ThemeData(unselectedWidgetColor: Colors.blue),
+            child: Checkbox(
+              value: isRememberMe,
+              checkColor: Colors.green,
+              activeColor: Colors.white,
+              onChanged: (value){
+                setState(() {
+                  isRememberMe = value;
+                });
+              },
+            ),
+          ),
+          Text(
+            'Remember me',
+            style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold
+            ),
+          )
+        ],
+      ),
+    );
+  }
+  Widget buildLoginBtn(){
+    return Container(
+      padding: EdgeInsets.fromLTRB(100.0, 15.0, 100.0, 10.0),
+      width: double.infinity,
+      child: RaisedButton(
+        elevation: 5,
+        onPressed: (){
+          Navigator.of(context).pushNamed('/dash');
+        },
+        padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15)
+        ),
+        color: Colors.white,
+        child: Text(
+          'LOGIN',
+          style: TextStyle(
+            color: Colors.blue.shade900,
+            fontSize: 16.0,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+    );
+  }
+  Widget buildSignUpButn(){
+    return GestureDetector(
+      onTap: ()=>print('Sign Up Pressed'),
+      child: RichText(
+        text: TextSpan(
+            children: [
+              TextSpan(
+                text: 'Need any help? ',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              TextSpan(
+                  text: 'Click here!',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                  )
+              )
+            ]
+        ),
+      ),
+    );
+  }
   @override
   Widget build(BuildContext context) {
 
-    final emailField = TextField(
-      obscureText: true,
-      style: style,
-      decoration: InputDecoration(
-          contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-          hintText: "Email",
-          border:
-          OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
-    );
-
-    final passwordField = TextField(
-      obscureText: true,
-      style: style,
-      decoration: InputDecoration(
-          contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-          hintText: "Password",
-          border:
-          OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
-    );
-
-    final loginButon = Material(
-      elevation: 5.0,
-      borderRadius: BorderRadius.circular(30.0),
-      color: Color(0xff01A0C7),
-      child: MaterialButton(
-        minWidth: MediaQuery
-            .of(context)
-            .size
-            .width,
-        padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        onPressed: () {
-          setState(() => this._status = 'loading');
-
-          appAuth.login().then((result) {
-            if (result) {
-              Navigator.of(context).pushReplacementNamed('/teacher/home');
-            } else {
-              setState(() => this._status = 'rejected');
-            }
-          });
-        },
-        child: Text('Login for App',
-            textAlign: TextAlign.center,
-            style: style.copyWith(
-                color: Colors.white, fontWeight: FontWeight.bold)),
-      ),
-    );
-
-
     return Scaffold(
 
+      body: SafeArea(
+        child: AnnotatedRegion<SystemUiOverlayStyle>(
+          value: SystemUiOverlayStyle.light,
+          child: GestureDetector(
+            child: Stack(
+              children: <Widget>[
+                Container(
+                  height: double.infinity,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [
+                            Colors.blue.shade300,
+                            Colors.blue.shade900,
 
-        body: new SingleChildScrollView(
-            child: new Center(
-                child: new Container(
-                    color: Colors.white,
-                    child: Padding(
-                        padding: const EdgeInsets.all(36.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            SizedBox(
-                              height: 155.0,
-                              child: Image.asset(
-                                  "./assets/logo.png"
-                              ),
-                            ),
-                            SizedBox(height: 45.0),
-                            emailField,
-                            SizedBox(height: 25.0),
-                            passwordField,
-                            SizedBox(
-                              height: 35.0,
-                            ),
-                            loginButon,
-                            SizedBox(
-                              height: 15.0,
-                            ),
-                            Text('${this._status}',),
-                            SizedBox(
-                              height: 25
-                            ),
-
-                            SizedBox(
-                              height: 15.0,
-                              child: Text('Fogot password ?  contact 0713705748' , ),
-                            ),
-
-
-
+                            // Colors.blue.shade800,
+                            // Colors.blue.shade800,
+                          ]
+                      )
+                  ),
+                  child: SingleChildScrollView(
+                    physics: AlwaysScrollableScrollPhysics(),
+                    padding: EdgeInsets.symmetric(
+                        horizontal: 25,
+                        vertical: 40
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Column(
+                          children: [
+                            SizedBox(height: 40,),
+                            Image.asset("assets/education.png", width: 58.0,),
+                            SizedBox(height: 10.0),
+                            Text("නැණ පියස", style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16.0
+                            ),textAlign: TextAlign.center,),
                           ],
-                        )
-                    )
-                )
-            )
-
-    ),
-
+                        ),
+                        SizedBox(height: 20,),
+                        Text('Log In', style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold
+                        ),
+                        ),
+                        SizedBox(height: 90,),
+                        buildEmail(),
+                        SizedBox(height: 20,),
+                        buildPassword(),
+                        buildForgetPasswordButton(),
+                        buildremembercb(),
+                        buildLoginBtn(),
+                        buildSignUpButn(),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
