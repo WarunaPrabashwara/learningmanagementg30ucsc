@@ -33,7 +33,7 @@ class _GardeSixClassListState extends State<GardeSixClassList> {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) {
-                  return ClassA();
+                 // return ClassA();
                 }),
               );
               //Navigator.of(context).pushNamed('/principal/my_profile');
@@ -68,7 +68,7 @@ class _GardeSixClassListState extends State<GardeSixClassList> {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) {
-                  return ClassB();
+                //  return ClassB();
                 }),
               );            } else {
               setState(() => this._status = 'something went wrong ! try again');
@@ -100,7 +100,7 @@ class _GardeSixClassListState extends State<GardeSixClassList> {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) {
-                  return ClassC();
+                //  return ClassC();
                 }),
               );            } else {
               setState(() => this._status = 'something went wrong ! try again');
@@ -132,7 +132,7 @@ class _GardeSixClassListState extends State<GardeSixClassList> {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) {
-                  return ClassD();
+                 // return ClassD();
                 }),
               );            } else {
               setState(() => this._status = 'something went wrong ! try again');

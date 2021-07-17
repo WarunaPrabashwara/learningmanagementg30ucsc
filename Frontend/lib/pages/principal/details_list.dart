@@ -1,7 +1,7 @@
 import 'package:frontend/main.dart';
 import 'package:flutter/material.dart';
-import '../student_list.dart';
-import '../teacher_list.dart';
+import 'student_list.dart';
+import 'teacher_list.dart';
 
 class DetailsList extends StatefulWidget {
   DetailsList({Key key, this.title}) : super(key: key);
@@ -34,7 +34,7 @@ class _DetailsListState extends State<DetailsList> {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) {
-                  return SelectStudent();
+                //  return SelectStudent();
                 }),
               );
               //Navigator.of(context).pushNamed('/principal/my_profile');
@@ -69,7 +69,7 @@ class _DetailsListState extends State<DetailsList> {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) {
-                  return SelectTeacher();
+                 // return SelectTeacher();
                 }),
               );            } else {
               setState(() => this._status = 'something went wrong ! try again');

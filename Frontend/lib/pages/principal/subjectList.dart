@@ -1,6 +1,6 @@
 import 'package:frontend/main.dart';
 import 'package:flutter/material.dart';
-import '../grade_six_subjects.dart';
+import 'grade_six_subjects.dart';
 
 class PrincipalSubjectList extends StatefulWidget {
   PrincipalSubjectList({Key key, this.title}) : super(key: key);
@@ -33,7 +33,7 @@ class _PrincipalSubjectListState extends State<PrincipalSubjectList> {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) {
-                  return GradeSixSubjects();
+                 // return GradeSixSubjects();
                 }),
               );
               //Navigator.of(context).pushNamed('/principal/my_profile');
@@ -68,7 +68,7 @@ class _PrincipalSubjectListState extends State<PrincipalSubjectList> {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) {
-                  return GradeSevenSubjects();
+                 // return GradeSevenSubjects();
                 }),
               );            } else {
               setState(() => this._status = 'something went wrong ! try again');
@@ -100,7 +100,7 @@ class _PrincipalSubjectListState extends State<PrincipalSubjectList> {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) {
-                  return GradeEightSubjects();
+                 // return GradeEightSubjects();
                 }),
               );            } else {
               setState(() => this._status = 'something went wrong ! try again');
@@ -132,7 +132,7 @@ class _PrincipalSubjectListState extends State<PrincipalSubjectList> {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) {
-                  return GradeNineSubjects();
+                 // return GradeNineSubjects();
                 }),
               );            } else {
               setState(() => this._status = 'something went wrong ! try again');
@@ -164,7 +164,7 @@ class _PrincipalSubjectListState extends State<PrincipalSubjectList> {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) {
-                  return GradeTenSubjects();
+                //  return GradeTenSubjects();
                 }),
               );            } else {
               setState(() => this._status = 'something went wrong ! try again');
@@ -196,7 +196,7 @@ class _PrincipalSubjectListState extends State<PrincipalSubjectList> {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) {
-                  return GradeElevenSubjects();
+               //   return GradeElevenSubjects();
                 }),
               );            } else {
               setState(() => this._status = 'something went wrong ! try again');
@@ -228,7 +228,7 @@ class _PrincipalSubjectListState extends State<PrincipalSubjectList> {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) {
-                  return GradeTwelveSubjects();
+                  //return GradeTwelveSubjects();
                 }),
               );            } else {
               setState(() => this._status = 'something went wrong ! try again');
@@ -260,7 +260,7 @@ class _PrincipalSubjectListState extends State<PrincipalSubjectList> {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) {
-                  return GradeThirteenSubjectsButon();
+                  //return GradeThirteenSubjectsButon();
                 }),
               );            } else {
               setState(() => this._status = 'something went wrong ! try again');

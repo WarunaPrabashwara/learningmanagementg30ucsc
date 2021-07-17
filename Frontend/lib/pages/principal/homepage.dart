@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../my_profile.dart';
 import '../view_notice_board.dart';
 import '../generate_term_test_report.dart';
-import '../subjectList.dart';
-import '../details_list.dart';
+import 'subjectList.dart';
+import 'details_list.dart';
 
 class PrincipalHomePage extends StatefulWidget {
   PrincipalHomePage({Key key, this.title}) : super(key: key);
