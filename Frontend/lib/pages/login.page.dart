@@ -1,15 +1,53 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
+import 'package:http/http.dart' ;
 import '../main.dart';
 class loginScreen extends StatefulWidget {
   //const loginScreen({Key? key}) : super(key: key);
+
+
 
   @override
   _loginScreenState createState() => _loginScreenState();
 }
 class _loginScreenState extends State<loginScreen> {
   bool isRememberMe = false;
+  static const urlPrefix = 'http://10.0.2.2:2222';
+
+  String email = "";
+  String password = "" ;
+  void _changeemail(String text) {
+    setState(() {
+      email = text;
+    });
+  }
+  void _changepswd(String text) {
+    setState(() {
+      password = text;
+    });
+  }
+
+  Future<String> loginPostRequest(  ) async {
+    final url = Uri.parse('$urlPrefix/login');
+
+    final headers = {"Content-type": "application/json"};
+    final json = '{"email": ${email}, "password": ${password} }';
+    final response = await post(url, headers: headers, body: json);
+    print('Status code: ${response.statusCode}');
+    print('Body: ${response.body}');
+    //final message = MessageGet(response);
+    return response.statusCode.toString() ;
+  }
+ /* String MessageGet(response){
+    var decodedJson = json.decode(response);
+    print(decodedJson);
+    var message = json.decode(decodedJson['message']).toString();
+    print(message);
+    return message ;
+  }*/
+
   String _status = 'Your are logged out';
   Widget buildEmail(){
     return Column(
@@ -39,6 +77,10 @@ class _loginScreenState extends State<loginScreen> {
           ),
           height: 50,
           child: TextField(
+              onChanged: (text) {
+                _changeemail(text);
+              },
+
               keyboardType: TextInputType.emailAddress,
               style: TextStyle(
                   color: Colors.black87
@@ -89,6 +131,10 @@ class _loginScreenState extends State<loginScreen> {
           ),
           height: 50,
           child: TextField(
+              onChanged: (text) {
+                _changepswd(text);
+              },
+
               obscureText: true,
               style: TextStyle(
                   color: Colors.black87
@@ -159,11 +205,12 @@ class _loginScreenState extends State<loginScreen> {
         onPressed: (){
           setState(() => this._status = 'loading');
 
-          appAuth.login().then(( result) {
-            if (result ) {
+          loginPostRequest().then(( result) {
+            print(result);
+            if (result == "200" ) {
               Navigator.of(context).pushReplacementNamed('/teacher/home');
             } else {
-              Navigator.of(context).pushReplacementNamed('/teacher/home');
+              setState(() => this._status = 'Username or password Incorrect');
               //setState(() => this._status = 'rejected');
             }
           });
@@ -259,6 +306,7 @@ class _loginScreenState extends State<loginScreen> {
                             ),textAlign: TextAlign.center,),
                           ],
                         ),
+
                         SizedBox(height: 20,),
                         Text('Log In', style: TextStyle(
                             color: Colors.white,
@@ -274,6 +322,7 @@ class _loginScreenState extends State<loginScreen> {
                         buildremembercb(),
                         buildLoginBtn(),
                         buildSignUpButn(),
+                        Text(_status)
                       ],
                     ),
                   ),
