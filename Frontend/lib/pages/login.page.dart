@@ -29,8 +29,8 @@ class _loginScreenState extends State<loginScreen> {
   bool isRememberMe = false;
   static const urlPrefix = 'http://10.0.2.2:2222';
 
-  String email = "";
-  String password = "" ;
+  String email ;
+  String password  ;
   void _changeemail(String text) {
     setState(() {
       email = text;
@@ -46,7 +46,9 @@ class _loginScreenState extends State<loginScreen> {
     final url = Uri.parse('$urlPrefix/login');
 
     final headers = {"Content-type": "application/json"};
-    final json = '{"email": ${email}, "password": ${password} }';
+
+    final json = '{"email": "${email}", "password": "${password}" }';
+    print('user: ${json}');
     final response = await post(url, headers: headers, body: json);
     resp user = resp.fromJson(jsonDecode(response.body));
     print('user: ${user.message}');
