@@ -1,6 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:frontend/pages/admin/subject_management.dart';
+import 'package:frontend/pages/admin/user_management.dart';
+import 'package:frontend/pages/my_profile.dart';
+import 'package:frontend/pages/view_notice_board.dart';
 class Dashboard extends StatelessWidget {
 
 
@@ -120,7 +124,14 @@ class Dashboard extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            onPressed: (){ Navigator.of(context).pushNamed('/submgt');},
+                            onPressed: (){
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) {
+                                  return SubMgt();
+                                }),
+                              );
+                              },
                           ),
 
                           ElevatedButton(
@@ -238,7 +249,12 @@ class Dashboard extends StatelessWidget {
                               ),
                             ),
                             onPressed: (){
-                              Navigator.of(context).pushNamed('/noticeb');
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) {
+                                  return view_notice_board();
+                                }),
+                              );
                             },
                           ),
 
@@ -279,7 +295,12 @@ class Dashboard extends StatelessWidget {
                               ),
                             ),
                             onPressed: (){
-                              Navigator.of(context).pushNamed('/mypro');
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) {
+                                  return MyProfile();
+                                }),
+                              );
                             },
                           ),
 
@@ -320,7 +341,12 @@ class Dashboard extends StatelessWidget {
                               ),
                             ),
                             onPressed: (){
-                              Navigator.of(context).pushNamed('/usermgt');
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) {
+                                  return UserMgt();
+                                }),
+                              );
                             },
                           ),
                         ],
