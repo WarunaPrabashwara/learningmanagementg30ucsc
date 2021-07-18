@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/pages/admin/add_new_subject.dart';
 
 class SubMgt extends StatefulWidget {
 
@@ -616,7 +617,12 @@ class _SubMgtState extends State<SubMgt> {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(30, 20, 30, 10),
                   child: ElevatedButton(
-                    onPressed: (){ Navigator.of(context).pushNamed('/addnewsub');},
+                    onPressed: (){ Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) {
+                        return AddNewSub();
+                      }),
+                    );},
                     child: Text("add new subject".toUpperCase(), style: TextStyle(fontSize: 14, fontWeight:FontWeight.w900),),
                     style: ButtonStyle(
                         padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0)),

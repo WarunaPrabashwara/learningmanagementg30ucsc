@@ -505,21 +505,6 @@ class RadioGroupState extends State<RadioGroup>{
                 ),
               ),
             ],
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     ),
         ),
         SizedBox(height: 25.0,),
