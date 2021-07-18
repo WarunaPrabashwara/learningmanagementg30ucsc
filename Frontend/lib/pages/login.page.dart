@@ -12,6 +12,19 @@ class loginScreen extends StatefulWidget {
   @override
   _loginScreenState createState() => _loginScreenState();
 }
+class resp {
+  String message;
+  String userLevel;
+  resp(this.message, this.userLevel);
+
+  factory resp.fromJson(dynamic json) {
+    return resp(json['message'] as String, json['userLevel'] as String);
+  }
+  @override
+  String toString() {
+    return '{ ${this.message}, ${this.userLevel} }';
+  }
+}
 class _loginScreenState extends State<loginScreen> {
   bool isRememberMe = false;
   static const urlPrefix = 'http://10.0.2.2:2222';
@@ -29,16 +42,18 @@ class _loginScreenState extends State<loginScreen> {
     });
   }
 
-  Future<String> loginPostRequest(  ) async {
+  Future<resp> loginPostRequest(  ) async {
     final url = Uri.parse('$urlPrefix/login');
 
     final headers = {"Content-type": "application/json"};
     final json = '{"email": ${email}, "password": ${password} }';
     final response = await post(url, headers: headers, body: json);
+    resp user = resp.fromJson(jsonDecode(response.body));
+    print('user: ${user.message}');
     print('Status code: ${response.statusCode}');
     print('Body: ${response.body}');
     //final message = MessageGet(response);
-    return response.statusCode.toString() ;
+    return user ;
   }
  /* String MessageGet(response){
     var decodedJson = json.decode(response);
@@ -207,8 +222,27 @@ class _loginScreenState extends State<loginScreen> {
 
           loginPostRequest().then(( result) {
             print(result);
-            if (result == "200" ) {
-              Navigator.of(context).pushReplacementNamed('/teacher/home');
+            if (result.message == "successfully authenticated" ) {
+              if(result.userLevel == "teacher"){
+                Navigator.of(context).pushReplacementNamed('/teacher/home');
+              }
+              else if (result.userLevel == "student"){
+                Navigator.of(context).pushReplacementNamed('/student/home');
+              }
+              else if (result.userLevel == "section_head"){
+                Navigator.of(context).pushReplacementNamed('/section_head/home');
+              }
+              else if (result.userLevel == "admin"){
+                Navigator.of(context).pushReplacementNamed('/admin/home');
+              }
+              else if (result.userLevel == "principal"){
+                Navigator.of(context).pushReplacementNamed('/principal/home');
+              }
+              else{
+                print('invalid');
+              }
+
+
             } else {
               setState(() => this._status = 'Username or password Incorrect');
               //setState(() => this._status = 'rejected');

@@ -50,9 +50,9 @@ app.post("/login", function(req , res){
   //decryptedString = cryptr.decrypt(results[0].pssword);
             if(password==results[0].password){
                 res.json({
-                    message: results[0].userLevel 
-                   // status:true,
-                   // message:'successfully authenticated'
+                    status:true,
+                    message:'successfully authenticated',
+                    userLevel: results[0].userLevel ,
                 })
             }else{
                 res.json({
