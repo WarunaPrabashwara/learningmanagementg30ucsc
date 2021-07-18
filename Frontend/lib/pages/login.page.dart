@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+import '../main.dart';
 class loginScreen extends StatefulWidget {
   //const loginScreen({Key? key}) : super(key: key);
 
@@ -8,7 +10,7 @@ class loginScreen extends StatefulWidget {
 }
 class _loginScreenState extends State<loginScreen> {
   bool isRememberMe = false;
-
+  String _status = 'Your are logged out';
   Widget buildEmail(){
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -155,7 +157,16 @@ class _loginScreenState extends State<loginScreen> {
       child: RaisedButton(
         elevation: 5,
         onPressed: (){
-          Navigator.of(context).pushNamed('/dash');
+          setState(() => this._status = 'loading');
+
+          appAuth.login().then(( result) {
+            if (result ) {
+              Navigator.of(context).pushReplacementNamed('/teacher/home');
+            } else {
+              Navigator.of(context).pushReplacementNamed('/teacher/home');
+              //setState(() => this._status = 'rejected');
+            }
+          });
         },
         padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
         shape: RoundedRectangleBorder(

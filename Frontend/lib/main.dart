@@ -18,7 +18,7 @@ void main() async {
   var _userLevel = 'teacher' ;
   if (_result) {
     if (_userLevel == 'teacher' ) {
-      _defaultHome = new loginScreen();
+      _defaultHome = new TeacherHomePage();
     }
     else if (_userLevel == 'student') {
       //
@@ -44,14 +44,14 @@ class MyApp extends StatelessWidget {
     ));
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'login in',
+      title: 'login',
       theme: ThemeData(
           primarySwatch: Colors.amber
       ),
       home: loginScreen(),
       routes: <String, WidgetBuilder>{
         // Set routes for using the Navigator.
-        '/teacher/home': (BuildContext context) => new loginScreen(),
+        '/teacher/home': (BuildContext context) => new TeacherHomePage(),
         '/login': (BuildContext context) => new loginScreen(),
 //meke okkoma danna bAha hariyata wAda karanne naha ethakota
       },
