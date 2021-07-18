@@ -8,6 +8,7 @@ import 'package:frontend/pages/login.page.dart';
 import 'package:frontend/pages/my_profile.dart';
 import 'package:frontend/services/auth.service.dart';
 import 'package:flutter/material.dart';
+import 'package:frontend/pages/sectionhead/homepage.dart';
 
 AuthService appAuth = new AuthService();
 
@@ -17,13 +18,16 @@ void main() async {
 
   // Get result of the login function.
   bool _result = await appAuth.login();
-  var _userLevel = 'admin' ;
+  var _userLevel = 'sectionhead' ;
   if (_result) {
     if (_userLevel == 'teacher' ) {
       _defaultHome = new TeacherHomePage();
     }
     else if (_userLevel == 'admin') {
       _defaultHome = new Dashboard();
+    }
+    else if (_userLevel == 'sectionhead') {
+      _defaultHome = new sectionheadHomePage();
     }
     else {
       //
@@ -55,7 +59,7 @@ class MyApp extends StatelessWidget {
         // Set routes for using the Navigator.
         '/teacher/home': (BuildContext context) => new TeacherHomePage(),
         '/admin/home': (BuildContext context) => new Dashboard(),
-        '/section_head/home': (BuildContext context) => new TeacherHomePage(),
+        '/sectionhead/home': (BuildContext context) => new sectionheadHomePage(),
         '/student/home': (BuildContext context) => new TeacherHomePage(),
         '/principal/home': (BuildContext context) => new PrincipalHomePage(),
         '/login': (BuildContext context) => new loginScreen(),
