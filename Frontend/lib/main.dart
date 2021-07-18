@@ -18,7 +18,7 @@ void main() async {
 
   // Get result of the login function.
   bool _result = await appAuth.login();
-  var _userLevel = 'sectionhead' ;
+  var _userLevel = 'section_head' ;
   if (_result) {
     if (_userLevel == 'teacher' ) {
       _defaultHome = new TeacherHomePage();
@@ -26,7 +26,13 @@ void main() async {
     else if (_userLevel == 'admin') {
       _defaultHome = new Dashboard();
     }
-    else if (_userLevel == 'sectionhead') {
+    else if (_userLevel == 'section_head') {
+      _defaultHome = new sectionheadHomePage();
+    }
+    else if (_userLevel == 'principal') {
+      _defaultHome = new sectionheadHomePage();
+    }
+    else if (_userLevel == 'student') {
       _defaultHome = new sectionheadHomePage();
     }
     else {
