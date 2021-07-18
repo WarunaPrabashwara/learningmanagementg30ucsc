@@ -228,6 +228,7 @@ class _HomePageState extends State<TeacherHomePage> {
     return  Scaffold(
       appBar: new AppBar(
         title: new Text('Home'),
+        backgroundColor: Colors.blue.shade800,
       ),
       body:  new SingleChildScrollView(
           child: new Center(
