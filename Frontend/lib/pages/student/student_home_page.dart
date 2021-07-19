@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'announcement.dart';
-import 'myprofile.dart';
+import 'package:frontend/pages/my_profile.dart';
 import 'subjects._menue.dart';
 import 'time_table.dart';
 import 'subject.dart';
