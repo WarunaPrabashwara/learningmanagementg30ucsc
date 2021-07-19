@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import '../view_notice_board.dart';
 import 'announcement.dart';
 import 'package:frontend/pages/my_profile.dart';
 import 'subjects._menue.dart';
@@ -67,7 +68,7 @@ class StudentHomePage extends StatelessWidget {
                    ),
                    child: Text("Announcements"),
                    onPressed: () {
-                     Navigator.push(context, MaterialPageRoute(builder: (context)=>Announcement()));
+                     Navigator.push(context, MaterialPageRoute(builder: (context)=>view_notice_board()));
                    },
 
                  )

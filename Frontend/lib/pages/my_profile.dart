@@ -103,7 +103,8 @@ class _MyProfileState extends State<MyProfile> {
                           SizedBox(
                             height: 155.0,
                             child: Image.asset(
-                                "./assets/profile-pic.JPG"
+                               // "./assets/profile-pic.JPG"
+                                    './assets/pro2.png'
                             ),
                           ),
                           Text("Name : ${this._name}"),

@@ -57,7 +57,7 @@ class _loginScreenState extends State<loginScreen> {
     //final message = MessageGet(response);
     return user ;
   }
- /* String MessageGet(response){
+  /* String MessageGet(response){
     var decodedJson = json.decode(response);
     print(decodedJson);
     var message = json.decode(decodedJson['message']).toString();
@@ -232,7 +232,7 @@ class _loginScreenState extends State<loginScreen> {
                 Navigator.of(context).pushReplacementNamed('/student/home');
               }
               else if (result.userLevel == "section_head"){
-                Navigator.of(context).pushReplacementNamed('/section_head/home');
+                Navigator.of(context).pushReplacementNamed('/admin/home');
               }
               else if (result.userLevel == "admin"){
                 Navigator.of(context).pushReplacementNamed('/admin/home');

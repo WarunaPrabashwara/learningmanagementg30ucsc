@@ -9,7 +9,7 @@ import 'package:frontend/pages/login.page.dart';
 import 'package:frontend/pages/my_profile.dart';
 import 'package:frontend/services/auth.service.dart';
 import 'package:flutter/material.dart';
-import 'package:frontend/pages/section_head/homepage.dart';
+//import 'package:frontend/pages/sectionhead/homepage.dart';
 
 AuthService appAuth = new AuthService();
 
@@ -28,13 +28,13 @@ void main() async {
       _defaultHome = new Dashboard();
     }
     else if (_userLevel == 'section_head') {
-      _defaultHome = new sectionheadHomePage();
+   //   _defaultHome = new sectionheadHomePage();
     }
     else if (_userLevel == 'principal') {
-      _defaultHome = new sectionheadHomePage();
+   //   _defaultHome = new sectionheadHomePage();
     }
     else if (_userLevel == 'student') {
-      _defaultHome = new sectionheadHomePage();
+    //  _defaultHome = new sectionheadHomePage();
     }
     else {
       //
@@ -66,7 +66,7 @@ class MyApp extends StatelessWidget {
         // Set routes for using the Navigator.
         '/teacher/home': (BuildContext context) => new TeacherHomePage(),
         '/admin/home': (BuildContext context) => new Dashboard(),
-        '/section_head/home': (BuildContext context) => new sectionheadHomePage(),
+       // '/section_head/home': (BuildContext context) => new sectionheadHomePage(),
         '/student/home': (BuildContext context) => new StudentHomePage(),
         '/principal/home': (BuildContext context) => new PrincipalHomePage(),
         '/login': (BuildContext context) => new loginScreen(),
