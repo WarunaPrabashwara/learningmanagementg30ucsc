@@ -102,7 +102,7 @@ class myProfile extends StatelessWidget {
                         child: RaisedButton(
                           elevation: 5,
                           onPressed: (){
-                            Navigator.of(context).pushNamed('/dash');
+                            Navigator.of(context).pushReplacementNamed('/login');
                           },
                           padding: EdgeInsets.symmetric(vertical: 12.0),
                           shape: RoundedRectangleBorder(

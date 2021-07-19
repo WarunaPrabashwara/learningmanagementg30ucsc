@@ -232,7 +232,7 @@ class _loginScreenState extends State<loginScreen> {
                 Navigator.of(context).pushReplacementNamed('/student/home');
               }
               else if (result.userLevel == "section_head"){
-                Navigator.of(context).pushReplacementNamed('/admin/home');
+                Navigator.of(context).pushReplacementNamed('/section_head/home');
               }
               else if (result.userLevel == "admin"){
                 Navigator.of(context).pushReplacementNamed('/admin/home');
