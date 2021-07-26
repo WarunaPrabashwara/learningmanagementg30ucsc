@@ -1,5 +1,5 @@
 import 'dart:convert';
-
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' ;
@@ -13,14 +13,16 @@ class loginScreen extends StatefulWidget {
 class resp {
   String message;
   String userLevel;
-  resp(this.message, this.userLevel);
+  String token;
+  resp(this.message, this.userLevel, this.token);
+
 
   factory resp.fromJson(dynamic json) {
-    return resp(json['message'] as String, json['userLevel'] as String);
+    return resp(json['message'] as String, json['userLevel'] as String, json['token'] as String);
   }
   @override
   String toString() {
-    return '{ ${this.message}, ${this.userLevel} }';
+    return '{ ${this.message}, ${this.userLevel}, ${this.token} }';
   }
 }
 class _loginScreenState extends State<loginScreen> {
@@ -39,6 +41,11 @@ class _loginScreenState extends State<loginScreen> {
       password = text;
     });
   }
+  addTokenToSF(String token) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString('token', token);
+    print('login/add tok fu: ${token}');
+  }
 
   Future<resp> loginPostRequest(  ) async {
     final url = Uri.parse('$urlPrefix/user/login');
@@ -48,6 +55,8 @@ class _loginScreenState extends State<loginScreen> {
     final json = '{"email": "${email}", "password": "${password}" }';
     print('user: ${json}');
     final response = await post(url, headers: headers, body: json);
+    print('usyyyyer: ${response.body}');
+
     resp user = resp.fromJson(jsonDecode(response.body));
     print('user: ${user.message}');
     print('Status code: ${response.statusCode}');
@@ -221,8 +230,11 @@ class _loginScreenState extends State<loginScreen> {
           setState(() => this._status = 'loading');
 
           loginPostRequest().then(( result) {
+
             print(result);
             if (result.message == "successfully authenticated" ) {
+              addTokenToSF(result.token);
+              print('on click buton: ${result.token}');
               if(result.userLevel == "teacher"){
                 Navigator.of(context).pushReplacementNamed('/teacher/home');
               }
