@@ -5,10 +5,16 @@ app.use(express.json())
 app.use(cors())
 const jwt = require('jsonwebtoken');
 const userRoute = require('./routes/user');
+const timetableRoute = require('./routes/timetable');
+const announcementRoute = require('./routes/announcement ');
 //  MySQL Connection
-
+app.use(express.json());
+app.use('/uploads', express.static('uploads'));
  
 app.use("/user", userRoute);
+app.use("/timetable", timetableRoute);
+app.use("/announcement", announcementRoute);
+
 //  post Method
 
 

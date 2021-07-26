@@ -41,7 +41,7 @@ class _loginScreenState extends State<loginScreen> {
   }
 
   Future<resp> loginPostRequest(  ) async {
-    final url = Uri.parse('$urlPrefix/login');
+    final url = Uri.parse('$urlPrefix/user/login');
 
     final headers = {"Content-type": "application/json"};
 

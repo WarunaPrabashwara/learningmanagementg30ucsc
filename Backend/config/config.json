@@ -1,6 +1,6 @@
 {
   "host": "localhost",
   "user": "root",
-  "database": "dbinterim",
-  "password": ""
+  "database": "thirdyearproject",
+  "password": "root"
 }
