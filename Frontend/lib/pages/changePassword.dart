@@ -1,5 +1,9 @@
+import 'dart:convert';
+
 import 'package:frontend/main.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 
 class changepassword extends StatefulWidget {
@@ -10,14 +14,69 @@ class changepassword extends StatefulWidget {
 }
 
 class _changepasswordState extends State<changepassword> {
+  static const urlPrefix = 'http://10.0.2.2:2222';
+  getTokenFromSF() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    String tokenValue = prefs.getString('token');
+    return tokenValue;
+  }
   TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
   String _status = '';
+  Future<int> pwdchangeRequest(  ) async {
+
+    final url = Uri.parse('$urlPrefix/user/changepswd');
+    var snapshot = await getTokenFromSF().then(( token) async {
+      final headers = {        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': 'Bearer $token',};
+
+      final json = '{"oldpassword": "${oldpassword}", "newpassword": "${newpassword}" }';
+      print('user: ${json}');
+      final response = await put(url, headers: headers, body: json);
+      print('usyyyyer: ${response.body}');
+      print('Sus code: ${response.statusCode}');
+   //   resp user = resp.fromJson(jsonDecode(response.body));
+      //    print('user: ${user.status}');
+      print('Status code: ${response.statusCode}');
+      print('Body: ${response.body}');
+      //final message = MessageGet(response);
+      return response.statusCode ;
 
 
+    });
+    print('snapshot: ${snapshot}');
+    //   print('snapshot: ${snapshot.body}');
+    return snapshot ;
+
+  }
+
+  String oldpassword  ;
+  String newpassword  ;
+  String newpassword2  ;
+  void _changeoldpassword(String text) {
+    setState(() {
+      oldpassword = text;
+    });
+  }
+  void _newpassword(String text) {
+    setState(() {
+      newpassword = text;
+    });
+  }
+  void _newpassword2(String text) {
+    setState(() {
+      newpassword2 = text;
+    });
+  }
   @override
   Widget build(BuildContext context) {
 
     final oldpassword = TextField(
+      onChanged: (text) {
+        _changeoldpassword(text);
+      },
+
+      keyboardType: TextInputType.visiblePassword,
       obscureText: true,
       style: style,
       decoration: InputDecoration(
@@ -28,6 +87,11 @@ class _changepasswordState extends State<changepassword> {
     );
 
     final newpassword = TextField(
+      onChanged: (text) {
+        _newpassword(text);
+      },
+
+      keyboardType: TextInputType.visiblePassword,
       obscureText: true,
       style: style,
       decoration: InputDecoration(
@@ -38,6 +102,11 @@ class _changepasswordState extends State<changepassword> {
     );
 
     final newpasswordAgain = TextField(
+      onChanged: (text) {
+        _newpassword2(text);
+      },
+
+      keyboardType: TextInputType.visiblePassword,
       obscureText: true,
       style: style,
       decoration: InputDecoration(
@@ -58,15 +127,24 @@ class _changepasswordState extends State<changepassword> {
             .width,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         onPressed: () {
-          setState(() => this._status = 'loading');
+          if(this.newpassword == this.newpassword2){
+            setState(() => this._status = 'loading');
+            pwdchangeRequest().then(( result){
 
-          appAuth.login().then((result) {
-            if (result) {
-              Navigator.of(context).pushReplacementNamed('/teacher/home');
-            } else {
-              setState(() => this._status = 'Something went wrong ,Try again');
-            }
-          });
+              if (result == 200) {
+                setState(() => this._status = 'password changed ');
+              } else {
+                setState(() => this._status = 'Something went wrong ,Try again');
+              }
+            });
+
+          }
+          else{
+            setState(() => this._status = 'new passwords are not matching');
+          }
+
+
+
         },
         child: Text('Submit',
             textAlign: TextAlign.center,

@@ -100,20 +100,12 @@ class _MyProfileState extends State<MyProfile> {
         onPressed: () {
           setState(() => this._status = 'loading');
 
-          appAuth.login().then((result) {
-            if (result) {
-              // Navigator.of(context).pushReplacementNamed('/changePassword');
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) {
-                  return changepassword();
-                }),
-              );
-              //Navigator.of(context).pushNamed('/changePassword');
-            } else {
-              setState(() => this._status = 'something went wrong ! try again');
-            }
-          });
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) {
+              return changepassword();
+            }),
+          );
         },
         child: Text('Change Password',
             textAlign: TextAlign.center,
@@ -135,13 +127,7 @@ class _MyProfileState extends State<MyProfile> {
         onPressed: () {
           setState(() => this._status = 'loading');
 
-          appAuth.login().then((result) {
-            if (result) {
-              Navigator.of(context).pushReplacementNamed('/login');
-            } else {
-              setState(() => this._status = 'something went wrong ! try again');
-            }
-          });
+          Navigator.of(context).pushReplacementNamed('/login');
         },
         child: Text('Logout',
             textAlign: TextAlign.center,
