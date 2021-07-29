@@ -12,16 +12,17 @@ function register(req , res){
         res.json({
           status:false,
           message:'there are some error with query'
-          })
+          }) 
+          res.end();
     }else{
      
       if(results.length >0){
         res.json({
           status:false,
           message:'email already exists',
-
+         
       })
-
+      res.end();
       }
       else{
         bcryptjs.genSalt(2, function(err, salt){

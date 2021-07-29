@@ -41,12 +41,18 @@ class _loginScreenState extends State<loginScreen> {
       password = text;
     });
   }
-  addTokenToSF(String token) async {
+  addTokenToSF(String token , String email) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setString('token', token);
+    prefs.setString('email', email);
     print('login/add tok fu: ${token}');
   }
+  addTokenToSF2(String email) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
 
+    prefs.setString('email', email);
+
+  }
   Future<resp> loginPostRequest(  ) async {
     final url = Uri.parse('$urlPrefix/user/login');
 
@@ -233,7 +239,8 @@ class _loginScreenState extends State<loginScreen> {
 
             print(result);
             if (result.message == "successfully authenticated" ) {
-              addTokenToSF(result.token);
+              addTokenToSF(result.token , this.email);
+              addTokenToSF2( this.email);
               print('on click buton: ${result.token}');
               if(result.userLevel == "teacher"){
                 Navigator.of(context).pushReplacementNamed('/teacher/home');

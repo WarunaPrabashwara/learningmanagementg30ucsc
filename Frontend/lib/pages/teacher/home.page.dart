@@ -33,20 +33,12 @@ class _HomePageState extends State<TeacherHomePage> {
         onPressed: () {
           setState(() => this._status = 'loading');
 
-          appAuth.login().then((result) {
-            if (result) {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) {
-                  return MyProfile();
-                }),
-              );
-              //Navigator.of(context).pushNamed('/teacher/my_profile');
-              //Navigator.of(context).pushReplacementNamed('/teacher/my_profile');
-            } else {
-              setState(() => this._status = 'something went wrong ! try again');
-            }
-          });
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) {
+              return MyProfile();
+            }),
+          );
         },
         child: Text('My Profile',
             textAlign: TextAlign.center,
@@ -69,19 +61,12 @@ class _HomePageState extends State<TeacherHomePage> {
         onPressed: () {
           setState(() => this._status = 'loading');
 
-          appAuth.login().then((result) {
-            if (result) {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) {
-                  return my_subjects_ofTeacher();
-                }),
-              );
-
-            } else {
-              setState(() => this._status = 'something went wrong ! try again');
-            }
-          });
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) {
+              return my_subjects_ofTeacher();
+            }),
+          );
         },
         child: Text('My Subjects',
             textAlign: TextAlign.center,
@@ -102,18 +87,12 @@ class _HomePageState extends State<TeacherHomePage> {
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         onPressed: () {
           setState(() => this._status = 'loading');
-
-          appAuth.login().then((result) {
-            if (result) {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) {
-                  return view_notice_board();
-                }),
-              );            } else {
-              setState(() => this._status = 'something went wrong ! try again');
-            }
-          });
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) {
+              return view_notice_board();
+            }),
+          );
         },
         child: Text('Announcements',
             textAlign: TextAlign.center,
@@ -135,19 +114,12 @@ class _HomePageState extends State<TeacherHomePage> {
         onPressed: () {
           setState(() => this._status = 'loading');
 
-          appAuth.login().then((result) {
-            if (result) {
-             // Navigator.of(context).pushNamed('/teacher/student_to_bucket_sub');
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) {
-                  return view_my_timetable();
-                }),
-              );
-            } else {
-              setState(() => this._status = 'something went wrong ! try again');
-            }
-          });
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) {
+              return view_my_timetable();
+            }),
+          );
         },
         child: Text('My Time Table',
             textAlign: TextAlign.center,

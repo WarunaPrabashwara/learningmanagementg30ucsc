@@ -7,6 +7,6 @@ const router = express.Router();
 router.post('/upload',checkAuthMiddleware.checkAuth, imageUploader.upload.single('image'), imageController.upload);
 //router.delete('/delete', userController.delete);
 //router.put('/update', checkAuthMiddleware.checkAuth, userController.update);
-//router.get('/view', checkAuthMiddleware.checkAuth, userController.view);
+//router.get('/view', checkAuthMiddleware.checkAuth, imageController.view);
 
 module.exports = router;
