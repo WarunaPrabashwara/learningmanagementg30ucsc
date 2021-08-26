@@ -1,5 +1,9 @@
 const multer = require('multer');
 const path = require('path');
+const fs = require('fs');
+const { promisify } = require('util');
+const unlinkAsync = promisify(fs.unlink);
+
 let email = "";
 const storage = multer.diskStorage({
     destination: function(req, file, cb){
@@ -32,7 +36,21 @@ const upload = multer({
     },
     fileFilter:fileFilter
 });
-
+/*
+DiskStorage.prototype._removeFile = function _removeFile (req, file, cb) {
+    var path = file.path
+  
+    delete file.destination
+    delete file.filename
+    delete file.path
+  
+    fs.unlink(path, cb)
+  }
+  MemoryStorage.prototype._removeFile = function _removeFile (req, file, cb) {
+    delete file.buffer
+    cb(null)
+  }
+*/
 module.exports = {
     upload: upload
 }
