@@ -13,7 +13,7 @@ function add(req , res){
   VALUES ("${date_time}", "${description}", "${made_by}", "${isAvailableForTeachersFlag}","${isAvailableForStudentsFlag}", "${isAvailableForSectionheadsFlag}", "${isAvailableForAdminssFlag}", "${isAvailableForPrincipalsFlag}")`;
   mydatabase.query( sql , function(error , rows, fields){
       if(error) throw error
-      res.send("Published Successfully !");
+      res.send("published successfully !");
       res.end();
 
   })
@@ -43,7 +43,7 @@ var quer ='SELECT date_time,description,made_by FROM announcements where ' + fil
     if (error) {
         res.json({
           status:false,
-          message:'There are some error with query'
+          message:'there are some error with query'
           })
     }else{
      

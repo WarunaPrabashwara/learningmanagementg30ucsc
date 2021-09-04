@@ -11,7 +11,7 @@ function register(req , res){
     if (error) {
         res.json({
           status:false,
-          message:'There are some error with query'
+          message:'there are some error with query'
           }) 
           res.end();
     }else{
@@ -19,7 +19,7 @@ function register(req , res){
       if(results.length >0){
         res.json({
           status:false,
-          message:'Email already exists',
+          message:'email already exists',
          
       })
       res.end();
@@ -57,7 +57,7 @@ function login(req , res){
       if (error) {
           res.json({
             status:false,
-            message:'There are some error with query'
+            message:'there are some error with query'
             })
       }else{
        
@@ -73,14 +73,14 @@ function login(req , res){
                 }, '3000',{expiresIn:'20h'}, function(err, token){
                     res.status(200).json({
                       status:true,
-                      message:'Successfully Authenticated',
+                      message:'successfully authenticated',
                       userLevel: results[0].userLevel ,
                         token: token
                     });
                 });
             }else{
                 res.status(401).json({
-                    message: "Invalid Credentials!",
+                    message: "Invalid credentials!",
                 });
             }
         });
@@ -108,7 +108,7 @@ function changepswd(req , res){
       if (error) {
           res.json({
             status:false,
-            message:'There are some error with query'
+            message:'there are some error with query'
             })
       }else{
         if(results.length >0){
@@ -124,12 +124,12 @@ function changepswd(req , res){
                     if (error) {
                         res.json({
                           status:false,
-                          message:'There are some error with query'
+                          message:'there are some error with query'
                           })
                     }else{
                       res.status(200).json({
                         status:true,
-                        message:'Successfully changed password',
+                        message:'successfully changed password',
 
                       });
                     }
@@ -167,7 +167,7 @@ function myProfileData(req , res){
       if (error) {
           res.json({
             status:false,
-            message:'There are some error with query'
+            message:'there are some error with query'
             })
       }else{
         res.status(200).json({
