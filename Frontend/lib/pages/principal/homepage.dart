@@ -32,20 +32,12 @@ class _HomePageState extends State<PrincipalHomePage> {
         onPressed: () {
           setState(() => this._status = 'loading');
 
-          appAuth.login().then((result) {
-            if (result) {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) {
                   return MyProfile();
                 }),
               );
-              //Navigator.of(context).pushNamed('/principal/my_profile');
-              //Navigator.of(context).pushReplacementNamed('/principal/my_profile');
-            } else {
-              setState(() => this._status = 'something went wrong ! try again');
-            }
-          });
         },
         child: Text('My Profile',
             textAlign: TextAlign.center,
@@ -67,17 +59,12 @@ class _HomePageState extends State<PrincipalHomePage> {
         onPressed: () {
           setState(() => this._status = 'loading');
 
-          appAuth.login().then((result) {
-            if (result) {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) {
                   return view_notice_board();
                 }),
-              );            } else {
-              setState(() => this._status = 'something went wrong ! try again');
-            }
-          });
+              );
         },
         child: Text('Announcements',
             textAlign: TextAlign.center,
@@ -99,17 +86,12 @@ class _HomePageState extends State<PrincipalHomePage> {
         onPressed: () {
           setState(() => this._status = 'loading');
 
-          appAuth.login().then((result) {
-            if (result) {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) {
                   return view_notice_board();
                 }),
-              );            } else {
-              setState(() => this._status = 'something went wrong ! try again');
-            }
-          });
+              );
         },
         child: Text('Subject List',
             textAlign: TextAlign.center,
@@ -131,17 +113,12 @@ class _HomePageState extends State<PrincipalHomePage> {
         onPressed: () {
           setState(() => this._status = 'loading');
 
-          appAuth.login().then((result) {
-            if (result) {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) {
                   return view_notice_board();
                 }),
-              );            } else {
-              setState(() => this._status = 'something went wrong ! try again');
-            }
-          });
+              );
         },
         child: Text('Students and Teachers List',
             textAlign: TextAlign.center,
@@ -163,18 +140,13 @@ class _HomePageState extends State<PrincipalHomePage> {
         onPressed: () {
           setState(() => this._status = 'loading');
 
-          appAuth.login().then((result) {
-            if (result) {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) {
                   return view_notice_board();
                 }),
-              );            } else {
-              setState(() => this._status = 'something went wrong ! try again');
-            }
-          });
-        },
+              );
+          },
         child: Text('Attendance of Students and Teachers',
             textAlign: TextAlign.center,
             style: style.copyWith(
@@ -195,17 +167,12 @@ class _HomePageState extends State<PrincipalHomePage> {
         onPressed: () {
           setState(() => this._status = 'loading');
 
-          appAuth.login().then((result) {
-            if (result) {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) {
                   return view_notice_board();
                 }),
-              );            } else {
-              setState(() => this._status = 'something went wrong ! try again');
-            }
-          });
+              );           
         },
         child: Text('Term Test Reports of Students',
             textAlign: TextAlign.center,
