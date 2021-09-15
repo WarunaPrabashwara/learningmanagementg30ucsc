@@ -4,19 +4,27 @@ const fs = require('fs');
 const { promisify } = require('util');
 const unlinkAsync = promisify(fs.unlink);
 
-let email = "";
+var email = "";
 const storage = multer.diskStorage({
     destination: function(req, file, cb){
         cb(null, './uploads/timetables');
+        console.log(req.body.emailofStudentorTeacher);
     },
     filename: function(req, file, cb){
-        email =req.body.email ;
-        console.log(req.body.email);
-        console.log(req.body);
+        email = req.body.emailofStudentorTeacher ;
+        console.log(req.body.emailofStudentorTeacher);
+        console.log(req.headers.emailofStudentorTeacher);
+        console.log(req.params.emailofStudentorTeacher);
+        console.log(email);
       //     cb(null, new Date().getTime() + path.extname(file.originalname));
       // file.originalname.split('.')[0] 
-        console.log(req.headers.emailofStudentorTeacher);
-      cb(null,  req.headers.emailofStudentorTeacher + '.png');
+        console.log(file.fieldname);
+      //  console.log(uuid.v4());
+        console.log(path.extname(file.originalname));
+        console.log(file.originalname);
+      //  console.log(fileObj[file.emailofStudentorTeacher]);
+      //  console.log(fileObj[file.mimetype]);
+      cb(null,  file.originalname.split(".")[0] + '.png');
         //teacherge name ekt hdpn file ek
     }
 });

@@ -7,10 +7,14 @@ function register(req , res){
   var email = req.body.email;
   var userLevel = req.body.userLevel;
   var name = req.body.name;
+  var indexNo  = req.body.indexNo ;
+  var telephone  = req.body.telephone ;
+  var address  = req.body.address ;
+  var dob  = req.body.dob ;
   mydatabase.query('SELECT * FROM users WHERE email = ?',[email], function (error, results, fields) {
     if (error) {
         res.json({
-          status:false,
+      
           message:'there are some error with query'
           }) 
           res.end();
@@ -18,7 +22,7 @@ function register(req , res){
      
       if(results.length >0){
         res.json({
-          status:false,
+      
           message:'email already exists',
          
       })
@@ -30,7 +34,7 @@ function register(req , res){
       
             var password = hash;
       
-            var sql = `insert into users(name, password, email ,userLevel) VALUES ("${name}", "${password}", "${email}", "${userLevel}")`;
+            var sql = `insert into users(name, password, email ,userLevel , indexNo , telephone , address , dob ) VALUES ("${name}", "${password}", "${email}", "${userLevel}" , "${indexNo}", "${telephone}", "${address}", "${dob}")`;
             mydatabase.query( sql , function(error , rows, fields){
                 if(error) throw error
                 res.send("Registration Successfull !");

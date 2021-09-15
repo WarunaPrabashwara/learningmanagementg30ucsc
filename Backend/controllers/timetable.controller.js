@@ -1,4 +1,5 @@
 function upload(req, res){
+  console.log(req.body.emailofStudentorTeacher);
     if(req.file.filename){
         res.status(201).json({
             mesaage: "Time-Table upload successfully",

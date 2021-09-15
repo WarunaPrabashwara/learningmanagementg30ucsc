@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/pages/admin/adduser.dart';
 
 class UserMgt extends StatefulWidget {
 
@@ -16,7 +17,12 @@ class _UserMgtState extends State<UserMgt> {
       child: RaisedButton(
         elevation: 5,
         onPressed: (){
-          Navigator.of(context).pushNamed('/dash');
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) {
+                return adduser();
+              }),
+            );
         },
         padding: EdgeInsets.all(7),
         shape: RoundedRectangleBorder(
