@@ -15,7 +15,7 @@ const storage = multer.diskStorage({
         console.log(req.body);
       //     cb(null, new Date().getTime() + path.extname(file.originalname));
       // file.originalname.split('.')[0] 
-
+        console.log(req.headers.emailofStudentorTeacher);
       cb(null,  req.headers.emailofStudentorTeacher + '.png');
         //teacherge name ekt hdpn file ek
     }

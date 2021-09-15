@@ -41,10 +41,11 @@ class _loginScreenState extends State<loginScreen> {
       password = text;
     });
   }
-  addTokenToSF(String token , String email) async {
+  addTokenToSF(String token , String email , String  userLevel) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setString('token', token);
     prefs.setString('email', email);
+    prefs.setString('userLevel', userLevel);
     print('login/add tok fu: ${token}');
   }
   addTokenToSF2(String email) async {
@@ -239,7 +240,7 @@ class _loginScreenState extends State<loginScreen> {
 
             print(result);
             if (result.message == "successfully authenticated" ) {
-              addTokenToSF(result.token , this.email);
+              addTokenToSF(result.token , this.email , result.userLevel);
               addTokenToSF2( this.email);
               print('on click buton: ${result.token}');
               if(result.userLevel == "teacher"){

@@ -1,5 +1,6 @@
 import 'package:frontend/main.dart';
 import 'package:flutter/material.dart';
+import 'package:frontend/pages/uploadAnnouncement.dart';
 import '../my_profile.dart';
 import '../view_notice_board.dart';
 import '../generate_term_test_report.dart';
@@ -53,6 +54,27 @@ class _HomePageState extends State<PrincipalHomePage> {
                 color: Colors.white, fontWeight: FontWeight.bold)),
       ),
     );
+
+    final anouncementmanagement = Material(
+      elevation: 5.0,
+      borderRadius: BorderRadius.circular(30.0),
+      color: Color(0xff01A0C7),
+      child: MaterialButton(
+        minWidth: MediaQuery
+            .of(context)
+            .size
+            .width,
+        padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+        onPressed: () {
+             Navigator.push(context, MaterialPageRoute(builder: (context)=>manageAnnouncements()));
+        },
+        child: Text('Announcement management',
+            textAlign: TextAlign.center,
+            style: style.copyWith(
+                color: Colors.white, fontWeight: FontWeight.bold)),
+      ),
+    );
+
 
     final AnnouncementButon = Material(
       elevation: 5.0,
@@ -233,6 +255,8 @@ class _HomePageState extends State<PrincipalHomePage> {
                           ),
                           SizedBox(height: 45.0),
                           MyProfileButon,
+                          SizedBox(height: 45.0),
+                          anouncementmanagement ,
                           SizedBox(height: 45.0),
                           AnnouncementButon,
                           SizedBox(height: 45.0),

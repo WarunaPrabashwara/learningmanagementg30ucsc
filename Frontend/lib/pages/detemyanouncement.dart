@@ -8,7 +8,7 @@ import 'changePassword.dart';
 import 'package:http/http.dart' ;
 
 
-class view_notice_board extends StatefulWidget {
+class deleteMyAnouncements extends StatefulWidget {
   State<StatefulWidget> createState() => new _view_notice_boardState();
 }
 class respAnnouncement {
@@ -31,7 +31,7 @@ class respAnnouncement {
     };
   }
 }
-class _view_notice_boardState extends State<view_notice_board> {
+class _view_notice_boardState extends State<deleteMyAnouncements> {
   static const urlPrefix = 'http://10.0.2.2:2222';
   List<respAnnouncement> setofAnnouncements = [];
   getTokenFromSF() async {
@@ -40,7 +40,7 @@ class _view_notice_boardState extends State<view_notice_board> {
     return tokenValue;
   }
   Future<List<respAnnouncement>> AnouncementviewRequest(  ) async {
-    final url = Uri.parse('$urlPrefix/announcement/view');
+    final url = Uri.parse('$urlPrefix/announcement/viewMyAnnouncement');
     List<respAnnouncement> snapshot = await getTokenFromSF().then(( token) async {
       print('anment: ${token}');
       print('userse: ${token}');
@@ -58,7 +58,7 @@ class _view_notice_boardState extends State<view_notice_board> {
       final List<respAnnouncement> anouncement =
       t.map((item) => respAnnouncement.fromJson(item)).toList();
      // respAnnouncement anouncement = respAnnouncement.fromJson(jsonDecode(response.body));
-      print('user: ${anouncement[0].date_time}');
+     // print('user: ${anouncement[0].date_time}');
       print('Status code: ${response.statusCode}');
       print('Body: ${response.body}');
       //final message = MessageGet(response);
@@ -68,18 +68,51 @@ class _view_notice_boardState extends State<view_notice_board> {
     return snapshot ;
   }
 
+    Future<void> deleteAnouncement( String description ) async {
+
+      final url = Uri.parse('$urlPrefix/announcement/deleteAnounce');
+     // final furi = url.replace(queryParameters: qparam);
+        await getTokenFromSF().then(( token) async {
+        print('anment: ${token}');
+        print('userse: ${token}');
+        //  final headers = {"Content-type": "application/json "};
+        final headers = {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'Authorization': 'Bearer $token',};
+             final json = '{"id": "${description}" }';
+
+
+        // final json = '{"email": "${email}", "password": "${password}" }';
+        //  print('user: ${json}');
+        final response = await delete(url , headers: headers , body: json  );
+        print('usujhvjygsr: ${response.body}');
+
+      // respAnnouncement anouncement = respAnnouncement.fromJson(jsonDecode(response.body));
+      // print('user: ${anouncement[0].date_time}');
+        print('Stam tus code: ${response.statusCode}');
+        print('Boolokdy: ${response.body}');
+        //final message = MessageGet(response);
+  
+      });
+      //print('Stde: ${snapshot.}');
+      
+    }
+
+
+
   @override
   Widget build(BuildContext context) {
     AnouncementviewRequest().then(( result){
       print('anouncement: ${result[0].made_by}');
       setofAnnouncements =result;
     });
+    
     return Scaffold(
         appBar: AppBar(
           title: Text('Announcements'),
         ),
         body: ListView.builder(
-          
             padding: const EdgeInsets.all(8),
             itemCount: setofAnnouncements.length,
             itemBuilder: (BuildContext context, int index) {
@@ -121,7 +154,38 @@ class _view_notice_boardState extends State<view_notice_board> {
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
-                                  child: AutoSizeText("-"+'${setofAnnouncements[index].made_by} ',style: TextStyle(fontSize: 16.0, fontStyle: FontStyle.italic)),
+                                  child:    Container(
+                                      padding: EdgeInsets.fromLTRB(100.0, 15.0, 100.0, 10.0),
+                                      width: double.infinity,
+                                      child: RaisedButton(
+                                        elevation: 5,
+                                        onPressed: (){
+                                           deleteAnouncement(setofAnnouncements[index].description);
+                                           print("fsdfdfdf" +setofAnnouncements[index].description);
+                                          Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(builder: (context) {
+                                                    return super.widget;
+                                                  }),
+                                                );  
+                                        },
+                                        padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(15)
+                                        ),
+                                        color: Colors.white,
+                                        child: Text(
+                                          'Delete',
+                                          style: TextStyle(
+                                            color: Colors.blue.shade900,
+                                            fontSize: 16.0,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ),
+                                    )
+  
+ 
                                 ),
                               ],
                             ),

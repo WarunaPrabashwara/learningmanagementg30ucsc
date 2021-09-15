@@ -8,5 +8,6 @@ router.post('/upload',checkAuthMiddleware.checkAuth, announcementController.regi
 //router.delete('/delete', userController.delete);
 //router.put('/update', checkAuthMiddleware.checkAuth, userController.update);
 router.get('/view', checkAuthMiddleware.checkAuth, announcementController.view);
-
+router.get('/viewMyAnnouncement', checkAuthMiddleware.checkAuth, announcementController.viewMyAnnouncement);
+router.delete('/deleteAnounce' , checkAuthMiddleware.checkAuth, announcementController.deleteann );
 module.exports = router;

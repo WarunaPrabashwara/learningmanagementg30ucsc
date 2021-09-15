@@ -19,7 +19,6 @@ function add(req , res){
   })
 }
 
-
 function view(req , res){
       var userLevel = req.userData.userLevel;
       var filter = "";
@@ -89,9 +88,53 @@ var quer ='SELECT date_time,description,made_by FROM announcements where ' + fil
 
 }
 
+function viewMyAnnouncement(req , res){
+  var userLevel = req.userData.userLevel;
+
+ console.log(userLevel ) ;
+
+var quer ='SELECT date_time,description FROM announcements where made_by = ? '   ;
+mydatabase.query( quer , [userLevel] , function (error, results, fields) {
+if (error) {
+    res.json({
+      status:false,
+      message:'there are some error with query'
+      })
+}else{
+ 
+res.end(JSON.stringify(results));
+
+}
+});
+
+}
   
+
+function deleteann(req , res){
+  var announcementid = req.body.id;
+
+console.log(announcementid);
+
+var quer ='DELETE FROM announcements where description = ? '   ;
+mydatabase.query( quer , [announcementid] , function (error, results, fields) {
+if (error) {
+    res.json({
+      status:false,
+      message:'there are some error with query'
+      })
+}else{
+ 
+res.end(JSON.stringify(results));
+
+}
+});
+
+}
+
 module.exports = {
     
     register: add,
-    view:view
+    view:view ,
+    viewMyAnnouncement:viewMyAnnouncement ,
+    deleteann : deleteann 
 } 

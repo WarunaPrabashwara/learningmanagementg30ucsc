@@ -1,5 +1,7 @@
 import 'package:frontend/main.dart';
 import 'package:flutter/material.dart';
+import 'package:frontend/pages/section_head/timetablemanagement.dart';
+import 'package:frontend/pages/uploadAnnouncement.dart';
 import '../generate_term_test_report.dart';
 import '../my_profile.dart';
 import '../view_my_timetable.dart';
@@ -58,7 +60,7 @@ class _HomePageState extends State<sectionheadHomePage> {
     );
 
 
-    final MySubjectsButon = Material(
+    final anouncementmanagement = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(30.0),
       color: Color(0xff01A0C7),
@@ -69,21 +71,7 @@ class _HomePageState extends State<sectionheadHomePage> {
             .width,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         onPressed: () {
-          setState(() => this._status = 'loading');
-
-          appAuth.login().then((result) {
-            if (result) {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) {
-                  return view_notice_board();
-                }),
-              );
-
-            } else {
-              setState(() => this._status = 'something went wrong ! try again');
-            }
-          });
+             Navigator.push(context, MaterialPageRoute(builder: (context)=>manageAnnouncements()));
         },
         child: Text('Announcement management',
             textAlign: TextAlign.center,
@@ -117,7 +105,7 @@ class _HomePageState extends State<sectionheadHomePage> {
             }
           });
         },
-        child: Text(' students Attendance',
+        child: Text(' view notice board',
             textAlign: TextAlign.center,
             style: style.copyWith(
                 color: Colors.white, fontWeight: FontWeight.bold)),
@@ -135,21 +123,13 @@ class _HomePageState extends State<sectionheadHomePage> {
             .width,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         onPressed: () {
-          setState(() => this._status = 'loading');
 
-          appAuth.login().then((result) {
-            if (result) {
-              // Navigator.of(context).pushNamed('/teacher/student_to_bucket_sub');
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) {
-                  return view_my_timetable();
-                }),
-              );
-            } else {
-              setState(() => this._status = 'something went wrong ! try again');
-            }
-          });
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) {
+              return ttmanagement();
+            }),
+          );
         },
         child: Text('Time Table Management',
             textAlign: TextAlign.center,
@@ -248,7 +228,7 @@ class _HomePageState extends State<sectionheadHomePage> {
                           SizedBox(height: 45.0),
                           MyProfileButon,
                           SizedBox(height: 45.0),
-                          MySubjectsButon,
+                          anouncementmanagement,
                           SizedBox(height: 45.0),
                           AnnouncementButon,
                           SizedBox(height: 45.0),
@@ -258,7 +238,7 @@ class _HomePageState extends State<sectionheadHomePage> {
 
 
 
-                          Text('${this._status}',)
+                        //  Text('${this._status}',)
 
                         ],
                       )

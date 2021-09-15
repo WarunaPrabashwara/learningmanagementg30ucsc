@@ -5,6 +5,7 @@ import 'package:frontend/pages/admin/myProfile.dart';
 import 'package:frontend/pages/admin/subject_management.dart';
 import 'package:frontend/pages/admin/user_management.dart';
 import 'package:frontend/pages/my_profile.dart';
+import 'package:frontend/pages/uploadAnnouncement.dart';
 import 'package:frontend/pages/view_notice_board.dart';
 class Dashboard extends StatelessWidget {
 
@@ -210,7 +211,15 @@ class Dashboard extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            onPressed: (){},
+                            onPressed: (){                     
+                                Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) {
+                                  return manageAnnouncements();
+                                }),
+                              );
+                              
+                            },
                           ),
 
                           ElevatedButton(
