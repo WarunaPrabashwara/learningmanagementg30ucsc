@@ -32,6 +32,7 @@ class respAnnouncement {
   }
 }
 class _view_notice_boardState extends State<deleteMyAnouncements> {
+     int i =0;
   static const urlPrefix = 'http://10.0.2.2:2222';
   List<respAnnouncement> setofAnnouncements = [];
   getTokenFromSF() async {
@@ -103,10 +104,16 @@ class _view_notice_boardState extends State<deleteMyAnouncements> {
 
   @override
   Widget build(BuildContext context) {
+      if(i==0){
     AnouncementviewRequest().then(( result){
       print('anouncement: ${result[0].made_by}');
-      setofAnnouncements =result;
+          setState(() {
+            setofAnnouncements =result;
+           });
+         i=1;
     });
+}
+
     
     return Scaffold(
         appBar: AppBar(

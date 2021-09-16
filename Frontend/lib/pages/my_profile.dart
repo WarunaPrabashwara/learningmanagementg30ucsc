@@ -189,7 +189,8 @@ class _MyProfileState extends State<MyProfile> {
                           LogoutButon,
                           SizedBox(height: 45.0),
 
-                          Text('${this._status}',)
+                          Text('${this._status}',),
+                          SizedBox( height: 100,)
 
                         ],
                       )

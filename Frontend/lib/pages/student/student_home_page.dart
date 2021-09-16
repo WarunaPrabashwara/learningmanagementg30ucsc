@@ -102,7 +102,7 @@ class StudentHomePage extends StatelessWidget {
                      shape: RoundedRectangleBorder(
                          borderRadius: BorderRadius.all(Radius.circular(30))
                      ),
-                     child: Text("My Progress"),
+                     child: Text("Term Test Reports"),
                      onPressed: () {},
 
                    )

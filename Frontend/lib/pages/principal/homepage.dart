@@ -126,7 +126,7 @@ class _HomePageState extends State<PrincipalHomePage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) {
-                  return view_notice_board();
+                  return PrincipalSubjectList();
                 }),
               );            } else {
               setState(() => this._status = 'something went wrong ! try again');
@@ -237,9 +237,9 @@ class _HomePageState extends State<PrincipalHomePage> {
     );
 
     return  Scaffold(
-      appBar: new AppBar(
-        title: new Text('Home'),
-      ),
+      // appBar: new AppBar(
+      //   title: new Text('Home'),
+      // ),
       body:  new SingleChildScrollView(
           child: new Center(
               child: new Container(

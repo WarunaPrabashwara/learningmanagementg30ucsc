@@ -209,9 +209,9 @@ class _HomePageState extends State<sectionheadHomePage> {
 
 
     return  Scaffold(
-      appBar: new AppBar(
-        title: new Text('Home'),
-      ),
+      // appBar: new AppBar(
+      //   title: new Text('Home'),
+      // ),
       body:  new SingleChildScrollView(
           child: new Center(
               child: new Container(
