@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:frontend/pages/admin/class_management.dart';
 import 'package:frontend/pages/admin/myProfile.dart';
 import 'package:frontend/pages/admin/subject_management.dart';
 import 'package:frontend/pages/admin/user_management.dart';
@@ -360,7 +361,14 @@ class Dashboard extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            onPressed: (){},
+                            onPressed: (){
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) {
+                                  return ClzMgt();
+                                }),
+                              );
+                            },
                           ),
 
                         ],
