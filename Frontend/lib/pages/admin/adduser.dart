@@ -493,14 +493,24 @@ class _loginScreenState extends State<adduser> {
 
           Timer(Duration(seconds :3), (){
                   setState(() {
-                      _value = "" ;
-                       fulname = "";
-                       index  = "";
-                       tpno = "";
-                       aaddress = "" ;
-                       dob = "" ;
-                       usrnme = "" ;
-                       firstloginpswd = "";
+                      this._value = "" ;
+                       this.fulname = "";
+                       this.index  = "";
+                       this.tpno = "";
+                       this.aaddress = "" ;
+                       this.dob = "" ;
+                       this.usrnme = "" ;
+                       this.firstloginpswd = "";
+                       print("gggf");
+                       print(dob);
+                         Navigator.pop(context);
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) {
+                            return adduser();
+                          }),
+                        );
+
                        });
           });
    
@@ -614,7 +624,7 @@ class _loginScreenState extends State<adduser> {
                         Text(
                           _status,
                           style: TextStyle(
-                            color: Colors.blue.shade900,
+                            color: Colors.white,
                             fontSize: 17.0,
                             fontWeight: FontWeight.bold,
                           ),

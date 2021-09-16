@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'package:frontend/pages/detemyanouncement.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -207,12 +208,22 @@ await getTokenFromSF().then(( token) async {
                      setState(() => this._status = 'Successfully submitted');
             print(result);
           
-                Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) {
-                  return super.widget;
-                }),
-              );  
+              Timer(Duration(seconds :3), (){
+                  setState(() {
+
+                       print("gggf");
+                   
+                         Navigator.pop(context);
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) {
+                            return manageAnnouncements();
+                          }),
+                        );
+
+                       });
+          });
+    
            
           });
         },

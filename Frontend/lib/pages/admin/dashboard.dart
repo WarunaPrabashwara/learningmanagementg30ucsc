@@ -90,10 +90,12 @@ class Dashboard extends StatelessWidget {
                         spacing: 25.0,
                         runSpacing: 30.0,
                         children: [
+      
+      
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
                                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-                                primary: Colors.blue.shade800,
+                                primary: Colors.blue.shade700,
                                 padding: EdgeInsets.all(0)
                             ),
                             child: Container(
@@ -111,13 +113,59 @@ class Dashboard extends StatelessWidget {
                                       padding: const EdgeInsets.all(8.0),
                                       child: Column(
                                         children: [
-                                          SizedBox(height: 6.0),
-                                          Image.asset("assets/book.png", width: 58.0,),
-                                          SizedBox(height: 10.0),
-                                          Text("Subject Management", style: TextStyle(
+                                          SizedBox(height: 15.0),
+                                          Image.asset("assets/userX.png", width: 58.0,),
+                                          SizedBox(height: 15.0),
+                                          Text("My Profile", style: TextStyle(
                                               color: Colors.white,
                                               fontWeight: FontWeight.bold,
                                               fontSize: 15.0
+                                          ),),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            onPressed: (){
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) {
+                                  return MyProfile();
+                                }),
+                              );
+                            },
+                          ),
+
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+                                primary: Colors.blue.shade700,
+                                padding: EdgeInsets.all(0)
+                            ),
+                            child: Container(
+                              child: SizedBox(
+                                width: 140.0,
+                                height: 140.0,
+                                child: Card(
+                                  color: Color.fromARGB(200, 20, 21, 21),
+                                  elevation: 2.0,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10.0),
+                                  ),
+                                  child: Center(
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          Image.asset("assets/team.png", width: 60.0,),
+                                          SizedBox(height: 10.0),
+                                          Text("User Management", style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 15.0,
                                           ),textAlign: TextAlign.center,),
                                         ],
                                       ),
@@ -130,50 +178,12 @@ class Dashboard extends StatelessWidget {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(builder: (context) {
-                                  return SubMgt();
+                                  return UserMgt();
                                 }),
                               );
-                              },
+                            },
                           ),
 
-                          ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-                                primary: Colors.blue.shade800,
-                                padding: EdgeInsets.all(0)
-                            ),
-                            child: Container(
-                              child: SizedBox(
-                                width: 140.0,
-                                height: 140.0,
-                                child: Card(
-                                  color: Color.fromARGB(200, 20, 21, 21),
-                                  elevation: 2.0,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10.0),
-                                  ),
-                                  child: Center(
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Column(
-                                        children: [
-                                          SizedBox(height: 2.0),
-                                          Image.asset("assets/presentation.png", width: 64.0,),
-                                          SizedBox(height: 10.0),
-                                          Text("Class Management", style: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 15.0
-                                          ),textAlign: TextAlign.center,),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            onPressed: (){},
-                          ),
 
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
@@ -271,7 +281,7 @@ class Dashboard extends StatelessWidget {
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
                                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-                                primary: Colors.blue.shade700,
+                                primary: Colors.blue.shade800,
                                 padding: EdgeInsets.all(0)
                             ),
                             child: Container(
@@ -289,59 +299,13 @@ class Dashboard extends StatelessWidget {
                                       padding: const EdgeInsets.all(8.0),
                                       child: Column(
                                         children: [
-                                          SizedBox(height: 15.0),
-                                          Image.asset("assets/userX.png", width: 58.0,),
-                                          SizedBox(height: 15.0),
-                                          Text("My Profile", style: TextStyle(
+                                          SizedBox(height: 6.0),
+                                          Image.asset("assets/book.png", width: 58.0,),
+                                          SizedBox(height: 10.0),
+                                          Text("Subject Management", style: TextStyle(
                                               color: Colors.white,
                                               fontWeight: FontWeight.bold,
                                               fontSize: 15.0
-                                          ),),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            onPressed: (){
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) {
-                                  return MyProfile();
-                                }),
-                              );
-                            },
-                          ),
-
-                          ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-                                primary: Colors.blue.shade700,
-                                padding: EdgeInsets.all(0)
-                            ),
-                            child: Container(
-                              child: SizedBox(
-                                width: 140.0,
-                                height: 140.0,
-                                child: Card(
-                                  color: Color.fromARGB(200, 20, 21, 21),
-                                  elevation: 2.0,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10.0),
-                                  ),
-                                  child: Center(
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Column(
-                                        mainAxisAlignment: MainAxisAlignment.center,
-                                        children: [
-                                          Image.asset("assets/team.png", width: 60.0,),
-                                          SizedBox(height: 10.0),
-                                          Text("User Management", style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 15.0,
                                           ),textAlign: TextAlign.center,),
                                         ],
                                       ),
@@ -354,11 +318,51 @@ class Dashboard extends StatelessWidget {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(builder: (context) {
-                                  return UserMgt();
+                                  return SubMgt();
                                 }),
                               );
-                            },
+                              },
                           ),
+
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+                                primary: Colors.blue.shade800,
+                                padding: EdgeInsets.all(0)
+                            ),
+                            child: Container(
+                              child: SizedBox(
+                                width: 140.0,
+                                height: 140.0,
+                                child: Card(
+                                  color: Color.fromARGB(200, 20, 21, 21),
+                                  elevation: 2.0,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10.0),
+                                  ),
+                                  child: Center(
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Column(
+                                        children: [
+                                          SizedBox(height: 2.0),
+                                          Image.asset("assets/presentation.png", width: 64.0,),
+                                          SizedBox(height: 10.0),
+                                          Text("Class Management", style: TextStyle(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 15.0
+                                          ),textAlign: TextAlign.center,),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            onPressed: (){},
+                          ),
+
                         ],
                       ),
                     ),

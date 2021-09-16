@@ -162,12 +162,15 @@ class _view_notice_boardState extends State<deleteMyAnouncements> {
                                         onPressed: (){
                                            deleteAnouncement(setofAnnouncements[index].description);
                                            print("fsdfdfdf" +setofAnnouncements[index].description);
-                                          Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(builder: (context) {
-                                                    return super.widget;
-                                                  }),
-                                                );  
+                                            Navigator.pop(context);
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(builder: (context) {
+                                                return deleteMyAnouncements();
+                                              }),
+                                            );
+                                            
+        
                                         },
                                         padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
                                         shape: RoundedRectangleBorder(
