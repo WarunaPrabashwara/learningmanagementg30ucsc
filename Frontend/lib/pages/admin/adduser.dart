@@ -492,12 +492,16 @@ class _loginScreenState extends State<adduser> {
           loginPostRequest();
 
           Timer(Duration(seconds :3), (){
-            Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) {
-                      return super.widget;
-                    }),
-                  );    
+                  setState(() {
+                      _value = "" ;
+                       fulname = "";
+                       index  = "";
+                       tpno = "";
+                       aaddress = "" ;
+                       dob = "" ;
+                       usrnme = "" ;
+                       firstloginpswd = "";
+                       });
           });
    
         },
@@ -606,7 +610,15 @@ class _loginScreenState extends State<adduser> {
                        
                         firstloginpswdd(),
                         buildLoginBtn(),
-                        Text(_status)
+                  
+                        Text(
+                          _status,
+                          style: TextStyle(
+                            color: Colors.blue.shade900,
+                            fontSize: 17.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
                       ],
                    
                    
