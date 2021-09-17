@@ -1,11 +1,14 @@
 import 'package:frontend/main.dart';
 import 'package:flutter/material.dart';
+import 'package:frontend/pages/principal/teacher_list.dart';
 import 'package:frontend/pages/uploadAnnouncement.dart';
+import '../generate_term_test_report.dart';
 import '../my_profile.dart';
 import '../view_notice_board.dart';
-import '../generate_term_test_report.dart';
+//import '../generate_term_test_report.dart';
+import '../view_students_attendance.dart';
 import 'subjectList.dart';
-import 'details_list.dart';
+//import 'details_list.dart';
 
 class PrincipalHomePage extends StatefulWidget {
   PrincipalHomePage({Key key, this.title}) : super(key: key);
@@ -33,20 +36,14 @@ class _HomePageState extends State<PrincipalHomePage> {
         onPressed: () {
           setState(() => this._status = 'loading');
 
-          appAuth.login().then((result) {
-            if (result) {
+
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) {
                   return MyProfile();
                 }),
-              );
-              //Navigator.of(context).pushNamed('/principal/my_profile');
-              //Navigator.of(context).pushReplacementNamed('/principal/my_profile');
-            } else {
-              setState(() => this._status = 'something went wrong ! try again');
-            }
-          });
+
+          );
         },
         child: Text('My Profile',
             textAlign: TextAlign.center,
@@ -66,9 +63,11 @@ class _HomePageState extends State<PrincipalHomePage> {
             .width,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         onPressed: () {
-             Navigator.push(context, MaterialPageRoute(builder: (context)=>manageAnnouncements()));
+             Navigator.push(
+                 context,
+                 MaterialPageRoute(builder: (context)=>manageAnnouncements()));
         },
-        child: Text('Announcement management',
+        child: Text('Announcement Management',
             textAlign: TextAlign.center,
             style: style.copyWith(
                 color: Colors.white, fontWeight: FontWeight.bold)),
@@ -89,17 +88,12 @@ class _HomePageState extends State<PrincipalHomePage> {
         onPressed: () {
           setState(() => this._status = 'loading');
 
-          appAuth.login().then((result) {
-            if (result) {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) {
                   return view_notice_board();
                 }),
-              );            } else {
-              setState(() => this._status = 'something went wrong ! try again');
-            }
-          });
+          );
         },
         child: Text('Announcements',
             textAlign: TextAlign.center,
@@ -121,17 +115,12 @@ class _HomePageState extends State<PrincipalHomePage> {
         onPressed: () {
           setState(() => this._status = 'loading');
 
-          appAuth.login().then((result) {
-            if (result) {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) {
                   return PrincipalSubjectList();
                 }),
-              );            } else {
-              setState(() => this._status = 'something went wrong ! try again');
-            }
-          });
+              );
         },
         child: Text('Subject List',
             textAlign: TextAlign.center,
@@ -153,17 +142,12 @@ class _HomePageState extends State<PrincipalHomePage> {
         onPressed: () {
           setState(() => this._status = 'loading');
 
-          appAuth.login().then((result) {
-            if (result) {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) {
-                  return view_notice_board();
+                  return TeacherList();
                 }),
-              );            } else {
-              setState(() => this._status = 'something went wrong ! try again');
-            }
-          });
+            );
         },
         child: Text('Students and Teachers List',
             textAlign: TextAlign.center,
@@ -185,17 +169,12 @@ class _HomePageState extends State<PrincipalHomePage> {
         onPressed: () {
           setState(() => this._status = 'loading');
 
-          appAuth.login().then((result) {
-            if (result) {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) {
-                  return view_notice_board();
+                  return view_attendance();
                 }),
-              );            } else {
-              setState(() => this._status = 'something went wrong ! try again');
-            }
-          });
+              );
         },
         child: Text('Attendance of Students and Teachers',
             textAlign: TextAlign.center,
@@ -217,17 +196,12 @@ class _HomePageState extends State<PrincipalHomePage> {
         onPressed: () {
           setState(() => this._status = 'loading');
 
-          appAuth.login().then((result) {
-            if (result) {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) {
-                  return view_notice_board();
+                  return generate_term_test_reports();
                 }),
-              );            } else {
-              setState(() => this._status = 'something went wrong ! try again');
-            }
-          });
+              );
         },
         child: Text('Term Test Reports of Students',
             textAlign: TextAlign.center,
@@ -245,7 +219,7 @@ class _HomePageState extends State<PrincipalHomePage> {
               child: new Container(
                   color: Colors.white,
                   child: Padding(
-                      padding: const EdgeInsets.all(36.0),
+                      padding: const EdgeInsets.all(30.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
