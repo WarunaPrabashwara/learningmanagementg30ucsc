@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types
+
 import 'package:frontend/main.dart';
 import 'package:flutter/material.dart';
 import 'package:frontend/pages/section_head/timetablemanagement.dart';
@@ -6,248 +8,345 @@ import '../generate_term_test_report.dart';
 import '../my_profile.dart';
 import '../view_my_timetable.dart';
 import '../view_notice_board.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:frontend/pages/admin/class_management.dart';
+import 'package:frontend/pages/admin/myProfile.dart';
+import 'package:frontend/pages/admin/subject_management.dart';
+import 'package:frontend/pages/admin/user_management.dart';
+import 'package:frontend/pages/my_profile.dart';
+import 'package:frontend/pages/uploadAnnouncement.dart';
+import 'package:frontend/pages/view_notice_board.dart';
 
-/*
-import 'add_students_to_bucket_subjects.dart';
-import 'my_subjects.dart';  //  or use  import 'package:frontend/pages/teacher/my_profile.dart';
-*/
-class sectionheadHomePage extends StatefulWidget {
-  sectionheadHomePage({Key key, this.title}) : super(key: key);
+
+class sectionheadHomePage extends StatelessWidget {
+
+
   @override
-  final String title;
-  State<StatefulWidget> createState() => new _HomePageState();
-}
-
-class _HomePageState extends State<sectionheadHomePage> {
-  TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
-  String _status = '';
-  @override
-  Widget build(BuildContext context){
-
-    final MyProfileButon = Material(
-      elevation: 5.0,
-      borderRadius: BorderRadius.circular(30.0),
-      color: Color(0xff01A0C7),
-      child: MaterialButton(
-        minWidth: MediaQuery
-            .of(context)
-            .size
-            .width,
-        padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        onPressed: () {
-          setState(() => this._status = 'loading');
-
-          appAuth.login().then((result) {
-            if (result) {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) {
-                  return MyProfile();
-                }),
-              );
-              //Navigator.of(context).pushNamed('/teacher/my_profile');
-              //Navigator.of(context).pushReplacementNamed('/teacher/my_profile');
-            } else {
-              setState(() => this._status = 'something went wrong ! try again');
-            }
-          });
-        },
-        child: Text('My Profile',
-            textAlign: TextAlign.center,
-            style: style.copyWith(
-                color: Colors.white, fontWeight: FontWeight.bold)),
-      ),
-    );
-
-
-    final anouncementmanagement = Material(
-      elevation: 5.0,
-      borderRadius: BorderRadius.circular(30.0),
-      color: Color(0xff01A0C7),
-      child: MaterialButton(
-        minWidth: MediaQuery
-            .of(context)
-            .size
-            .width,
-        padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        onPressed: () {
-             Navigator.push(context, MaterialPageRoute(builder: (context)=>manageAnnouncements()));
-        },
-        child: Text('Announcement management',
-            textAlign: TextAlign.center,
-            style: style.copyWith(
-                color: Colors.white, fontWeight: FontWeight.bold)),
-      ),
-    );
-
-    final AnnouncementButon = Material(
-      elevation: 5.0,
-      borderRadius: BorderRadius.circular(30.0),
-      color: Color(0xff01A0C7),
-      child: MaterialButton(
-        minWidth: MediaQuery
-            .of(context)
-            .size
-            .width,
-        padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        onPressed: () {
-          setState(() => this._status = 'loading');
-
-          appAuth.login().then((result) {
-            if (result) {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) {
-                  return view_notice_board();
-                }),
-              );            } else {
-              setState(() => this._status = 'something went wrong ! try again');
-            }
-          });
-        },
-        child: Text(' view notice board',
-            textAlign: TextAlign.center,
-            style: style.copyWith(
-                color: Colors.white, fontWeight: FontWeight.bold)),
-      ),
-    );
-
-    final TimeTableButon = Material(
-      elevation: 5.0,
-      borderRadius: BorderRadius.circular(30.0),
-      color: Color(0xff01A0C7),
-      child: MaterialButton(
-        minWidth: MediaQuery
-            .of(context)
-            .size
-            .width,
-        padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        onPressed: () {
-
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) {
-              return ttmanagement();
-            }),
-          );
-        },
-        child: Text('Time Table Management',
-            textAlign: TextAlign.center,
-            style: style.copyWith(
-                color: Colors.white, fontWeight: FontWeight.bold)),
-      ),
-    );
-
-    final SeeTermTestReportButon = Material(
-      elevation: 5.0,
-      borderRadius: BorderRadius.circular(30.0),
-      color: Color(0xff01A0C7),
-      child: MaterialButton(
-        minWidth: MediaQuery
-            .of(context)
-            .size
-            .width,
-        padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        onPressed: () {
-          setState(() => this._status = 'loading');
-
-          appAuth.login().then((result) {
-            if (result) {
-              //Navigator.of(context).pushNamed('/generateTermTestReport');
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) {
-                  return generate_term_test_reports();
-                }),
-              );
-            } else {
-              setState(() => this._status = 'something went wrong ! try again');
-            }
-          });
-        },
-        child: Text('Term Test Reports',
-            textAlign: TextAlign.center,
-            style: style.copyWith(
-                color: Colors.white, fontWeight: FontWeight.bold)),
-      ),
-    );
-    /*
-    final BucketSubButon = Material(
-      elevation: 5.0,
-      borderRadius: BorderRadius.circular(30.0),
-      color: Color(0xff01A0C7),
-      child: MaterialButton(
-        minWidth: MediaQuery
-            .of(context)
-            .size
-            .width,
-        padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        onPressed: () {
-          setState(() => this._status = 'loading');
-
-          appAuth.login().then((result) {
-            if (result) {
-              //Navigator.of(context).pushNamed('/generateTermTestReport');
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) {
-                  return students_to_bucket_subjects();
-                }),
-              );
-            } else {
-              setState(() => this._status = 'something went wrong ! try again');
-            }
-          });
-        },
-
-        child: Text('Add students to bucket Subjects',
-            textAlign: TextAlign.center,
-            style: style.copyWith(
-                color: Colors.white, fontWeight: FontWeight.bold)),
-      ),
-    );*/
-
-
-    return  Scaffold(
-      // appBar: new AppBar(
-      //   title: new Text('Home'),
+  Widget build(BuildContext context) {
+    return Scaffold(
+      // appBar: AppBar(
+      //   elevation: 0.0,
+      //   //backgroundColor: Colors.blue.shade700,
+      //   backwardsCompatibility: false,
+      //   systemOverlayStyle: SystemUiOverlayStyle(statusBarColor: Colors.orange),
       // ),
-      body:  new SingleChildScrollView(
-          child: new Center(
-              child: new Container(
-                  color: Colors.white,
-                  child: Padding(
-                      padding: const EdgeInsets.all(36.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          SizedBox(
-                            height: 15.0,
+      //backgroundColor: Colors.black,
+      body:
+      SafeArea(
+        child: Container(
+          height: double.infinity,
+          width: double.infinity,
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Colors.blue.shade300,
+                    Colors.blue.shade900,
+
+                  ]
+              )
+          ),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      CircleAvatar(
+                        backgroundColor: Colors.grey[200],
+                        child: IconButton(
+                          icon: Icon(
+                            Icons.menu,
+                            color: Colors.black,
                           ),
-                          SizedBox(height: 45.0),
-                          MyProfileButon,
-                          SizedBox(height: 45.0),
-                          anouncementmanagement,
-                          SizedBox(height: 45.0),
-                          AnnouncementButon,
-                          SizedBox(height: 45.0),
-                          TimeTableButon,
-                          SizedBox(height: 45.0),
-                          SeeTermTestReportButon,
+                          onPressed: () {},
+                        ),
+                      ),
 
-
-
-                        //  Text('${this._status}',)
-
+                      Row(
+                        children: [
+                          IconButton(
+                            icon: Icon(Icons.notifications_active),
+                            onPressed: (){},
+                            iconSize: 30.0,
+                            color: Colors.black54,
+                          ),
+                          SizedBox(width: 10.0,),
+                          Image.asset("assets/pro2.png", width: 50.0,),
                         ],
                       )
-                  )
-              )
-          )
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(0.0),
+                  child: Center(
+                    child: Text(
+                      "Hello Admin!",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 18.0,),
+                Center(
+                  child: Wrap(
+                    spacing: 25.0,
+                    runSpacing: 30.0,
+                    children: [
 
+
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+                            primary: Colors.blue.shade700,
+                            padding: EdgeInsets.all(0)
+                        ),
+                        child: Container(
+                          child: SizedBox(
+                            width: 140.0,
+                            height: 140.0,
+                            child: Card(
+                              color: Color.fromARGB(200, 20, 21, 21),
+                              elevation: 2.0,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              child: Center(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    children: [
+                                      SizedBox(height: 15.0),
+                                      Image.asset("assets/userX.png", width: 58.0,),
+                                      SizedBox(height: 15.0),
+                                      Text("My Profile", style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 15.0
+                                      ),),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        onPressed: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) {
+                              return MyProfile();
+                            }),
+                          );
+                        },
+                      ),
+
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+                            primary: Colors.blue.shade700,
+                            padding: EdgeInsets.all(0)
+                        ),
+                        child: Container(
+                          child: SizedBox(
+                            width: 140.0,
+                            height: 140.0,
+                            child: Card(
+                              color: Color.fromARGB(200, 20, 21, 21),
+                              elevation: 2.0,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              child: Center(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Image.asset("assets/team.png", width: 60.0,),
+                                      SizedBox(height: 10.0),
+                                      Text("Announcement Management", style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15.0,
+                                      ),textAlign: TextAlign.center,),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        onPressed: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) {
+                              return manageAnnouncements();
+                            }),
+                          );
+                        },
+                      ),
+
+
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+                            primary: Colors.blue.shade900,
+                            padding: EdgeInsets.all(0)
+                        ),
+                        child: Container(
+                          child: SizedBox(
+                            width: 140.0,
+                            height: 140.0,
+                            child: Card(
+                              color: Color.fromARGB(200, 20, 21, 21),
+                              elevation: 2.0,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              child: Center(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    children: [
+                                      SizedBox(height: 6.0),
+                                      Image.asset("assets/loudspeaker.png", width: 48.0,),
+                                      SizedBox(height: 10.0),
+                                      Text("Notice Board", style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 15.0
+                                      ),textAlign: TextAlign.center,),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        onPressed: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) {
+                              return view_notice_board();
+                            }),
+                          );
+
+                        },
+                      ),
+
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+                            primary: Colors.blue.shade900,
+                            padding: EdgeInsets.all(0)
+                        ),
+                        child: Container(
+                          child: SizedBox(
+                            width: 140.0,
+                            height: 140.0,
+                            child: Card(
+                              color: Color.fromARGB(200, 20, 21, 21),
+                              elevation: 2.0,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              child: Center(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    children: [
+                                      SizedBox(height: 15.0),
+                                      Image.asset("assets/clock.png", width: 50.0,),
+                                      SizedBox(height: 10.0),
+                                      Text("Time Table Management", style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 15.0
+                                      ),textAlign: TextAlign.center,),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        onPressed: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) {
+                              return ttmanagement();
+                            }),
+                          );
+                        },
+                      ),
+
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+                            primary: Colors.blue.shade800,
+                            padding: EdgeInsets.all(0)
+                        ),
+                        child: Container(
+                          child: SizedBox(
+                            width: 140.0,
+                            height: 140.0,
+                            child: Card(
+                              color: Color.fromARGB(200, 20, 21, 21),
+                              elevation: 2.0,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              child: Center(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    children: [
+                                      SizedBox(height: 6.0),
+                                      Image.asset("assets/book.png", width: 58.0,),
+                                      SizedBox(height: 10.0),
+                                      Text("Term Test reports", style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 15.0
+                                      ),textAlign: TextAlign.center,),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        onPressed: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) {
+                              return generate_term_test_reports();
+                            }),
+                          );
+                        },
+                      ),
+
+
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
-
 }
+
