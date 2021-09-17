@@ -2,6 +2,7 @@ import 'package:frontend/main.dart';
 import 'package:flutter/material.dart';
 import 'package:frontend/pages/principal/teacher_list.dart';
 import 'package:frontend/pages/uploadAnnouncement.dart';
+import 'package:frontend/pages/viewsubjects.dart';
 import '../generate_term_test_report.dart';
 import '../my_profile.dart';
 import '../view_notice_board.dart';
@@ -118,7 +119,7 @@ class _HomePageState extends State<PrincipalHomePage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) {
-                  return PrincipalSubjectList();
+                  return viewsubjects();
                 }),
               );
         },

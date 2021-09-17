@@ -6,7 +6,7 @@ import 'package:frontend/pages/admin/adduser.dart';
 import 'package:http/http.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class viewuserspage extends StatefulWidget {
+class viewclasses extends StatefulWidget {
 
 
   @override
@@ -15,44 +15,31 @@ class viewuserspage extends StatefulWidget {
 
 class respAnnouncement {
   int id;
-  String name;
-  String email;
-  String userLevel;
-  String indexNo;
-  String telephone;
-  String address;
-  String dob ; 
-  respAnnouncement(this.id, this.name, this.email ,this.userLevel, this.indexNo, this.telephone,this.address, this.dob );
+  String section;
+  String grade;
+ 
+  respAnnouncement(this.id, this.section, this.grade );
 
   respAnnouncement.fromJson(Map<String, dynamic> json) {
     id = json['id'];
-    name = json['name'];
-    email = json['email'];
-    userLevel = json['userLevel'];
-    indexNo = json['indexNo'];
-    telephone = json['telephone'];
-    address = json['address'];
-    dob = json['dob'];
+    section = json['section'];
+    grade = json['grade'];
+
     
   }
 
   Map<String, dynamic> toJson() {
     return {
       'id': id,
-      'name': name,
-      'email': email ,
-      'userLevel': userLevel,
-      'indexNo': indexNo,
-      'telephone': telephone ,
-      'address': address,
-      'dob': dob
+      'section': section,
+      'grade': grade 
 
     };
   }
 }
 
 
-class _UserMgtState extends State<viewuserspage> {
+class _UserMgtState extends State<viewclasses> {
   int i =0;
   static const urlPrefix = 'http://10.0.2.2:2222';
   List<respAnnouncement> setofAnnouncements = [];
@@ -63,7 +50,7 @@ class _UserMgtState extends State<viewuserspage> {
   }
   
   Future<List<respAnnouncement>> AnouncementviewRequest(  ) async {
-    final url = Uri.parse('$urlPrefix/user/viewusers');
+    final url = Uri.parse('$urlPrefix/classmanagement/view');
     List<respAnnouncement> snapshot = await getTokenFromSF().then(( token) async {
       print('anment: ${token}');
       print('userse: ${token}');
@@ -137,21 +124,21 @@ class _UserMgtState extends State<viewuserspage> {
 }
     return Scaffold(
       //backgroundColor: decor,
-      appBar: AppBar(
-        backgroundColor: Colors.blue.shade800,
-        title:
-        Padding(
-          padding: const EdgeInsets.all(18.0),
-          child: Text(
-            "User Management".toUpperCase(),
-            style: TextStyle(
-                color: Colors.white,
-                fontSize: 18.0,
-                fontWeight: FontWeight.bold
-            ),
-          ),
-        ),
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: Colors.blue.shade800,
+      //   title:
+      //   Padding(
+      //     padding: const EdgeInsets.all(18.0),
+      //     child: Text(
+      //       "User Management".toUpperCase(),
+      //       style: TextStyle(
+      //           color: Colors.white,
+      //           fontSize: 18.0,
+      //           fontWeight: FontWeight.bold
+      //       ),
+      //     ),
+      //   ),
+      // ),
       body:   ListView.builder(
           //  padding: const EdgeInsets.all(8),
             itemCount: setofAnnouncements.length,
@@ -163,12 +150,11 @@ class _UserMgtState extends State<viewuserspage> {
                                                 Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        
                         Padding(
                           padding: const EdgeInsets.fromLTRB(10.0, 15.0, 5.0, 15.0),
                           child: Center(
                             child: Text(
-                              '${setofAnnouncements[index].email}' ,
+                              '${setofAnnouncements[index].section}' + '-' + '${setofAnnouncements[index].grade}',
                               style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 17.0,
@@ -182,22 +168,7 @@ class _UserMgtState extends State<viewuserspage> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              TextButton(
-                                onPressed: (){},
-                                child: Text("View".toUpperCase(), style: TextStyle(fontSize: 10, color: Colors.black,),),
-                                style: ButtonStyle(
-                                    padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0)),
-                                    foregroundColor: MaterialStateProperty.all<Color>(Colors.red),
-                                    backgroundColor: MaterialStateProperty.all<Color>(Colors.grey.shade300),
-                                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                        RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(18.0),
-                                          side: BorderSide(color: Colors.white),
-                                        )
-                                    )
-                                ),
-                              ),
-                              SizedBox(width: 5,),
+                             SizedBox(width: 5,),
                               TextButton(
                                 onPressed: (){},
                                 child: Text("Edit".toUpperCase(), style: TextStyle(fontSize: 10, color: Colors.black,),),

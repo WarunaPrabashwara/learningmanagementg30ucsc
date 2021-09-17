@@ -8,6 +8,7 @@ const userRoute = require('./routes/user');
 const timetableRoute = require('./routes/timetable');
 const announcementRoute = require('./routes/announcement ');
 const SubManageRoute = require('./routes/subject');
+const classes = require('./routes/classes');
 const checkAuthMiddleware = require('./middleware/check-auth');
 //  MySQL Connection
 app.use(express.json());
@@ -17,6 +18,7 @@ app.use("/user", userRoute);
 app.use("/timetable", timetableRoute);
 app.use("/announcement", announcementRoute);
 app.use("/subjectmanagement", SubManageRoute);
+app.use("/classmanagement", classes);
 //  post Method
 
 

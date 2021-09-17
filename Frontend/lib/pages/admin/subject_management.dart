@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/pages/admin/add_new_subject.dart';
+import 'package:frontend/pages/admin/addsubcatogery.dart';
+import 'package:frontend/pages/admin/addsubjects.dart';
+import 'package:frontend/pages/admin/mainassignsubjctwithteacherandlass.dart';
+import 'package:frontend/pages/admin/viewSubjectcatogory.dart';
+import 'package:frontend/pages/viewsubjects.dart';
 
 class SubMgt extends StatefulWidget {
 
@@ -67,182 +72,43 @@ class _SubMgtState extends State<SubMgt> {
                 ),
 
 
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(35.0, 15.0, 5.0, 15.0),
-                      child: Center(
-                        child: Text(
-                          "Compulsory",
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 16.0,
-                              fontWeight: FontWeight.bold
-                          ),
-                        ),
-                      ),
+                Padding(
+                  padding: const EdgeInsets.all(18.0),
+                  child: ElevatedButton(
+                    onPressed: (){
+                                              Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) {
+                            return viewsubjectcatogories();
+                          }),
+                        );
+                    },
+                    child: Text("view".toUpperCase(), style: TextStyle(fontSize: 14, fontWeight:FontWeight.w900),),
+                    style: ButtonStyle(
+                        padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0)),
+                        foregroundColor: MaterialStateProperty.all<Color>(Colors.blue.shade900),
+                        backgroundColor: MaterialStateProperty.all<Color>(Colors.blue.shade100),
+                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                            RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                                //side: BorderSide(color: Colors.black)
+                            )
+                        )
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 20.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          TextButton(
-                            onPressed: (){},
-                            child: Text("UPDATE".toUpperCase(), style: TextStyle(fontSize: 12, color: Colors.black,),),
-                            style: ButtonStyle(
-                                padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 20.0, vertical: 8.0)),
-                                foregroundColor: MaterialStateProperty.all<Color>(Colors.red),
-                                backgroundColor: MaterialStateProperty.all<Color>(Colors.grey.shade300),
-                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                    RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(18.0),
-                                      side: BorderSide(color: Colors.white),
-                                    )
-                                )
-                            ),
-                          ),
-                          SizedBox(width: 5,),
-                          ElevatedButton(
-                            onPressed: (){},
-                            child: Text("DELETE".toUpperCase(), style: TextStyle(fontSize: 12),),
-                            style: ButtonStyle(
-                                padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 20.0, vertical: 8.0)),
-                                foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
-                                backgroundColor: MaterialStateProperty.all<Color>(Colors.grey.shade300),
-                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                    RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(18.0),
-                                        side: BorderSide(color: Colors.white)
-                                    )
-                                )
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(35.0, 15.0, 5.0, 15.0),
-                      child: Center(
-                        child: Text(
-                          "Bin 1",
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 16.0,
-                              fontWeight: FontWeight.bold
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 20.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          TextButton(
-                            onPressed: (){},
-                            child: Text("UPDATE".toUpperCase(), style: TextStyle(fontSize: 12, color: Colors.black, ),),
-                            style: ButtonStyle(
-                                padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 20.0, vertical: 8.0)),
-                                foregroundColor: MaterialStateProperty.all<Color>(Colors.red),
-                                backgroundColor: MaterialStateProperty.all<Color>(Colors.grey.shade300),
-                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                    RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(18.0),
-                                      side: BorderSide(color: Colors.white),
-                                    )
-                                )
-                            ),
-                          ),
-                          SizedBox(width: 5,),
-                          ElevatedButton(
-                            onPressed: (){},
-                            child: Text("DELETE".toUpperCase(), style: TextStyle(fontSize: 12),),
-                            style: ButtonStyle(
-                                padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 20.0, vertical: 8.0)),
-                                foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
-                                backgroundColor: MaterialStateProperty.all<Color>(Colors.grey.shade300),
-                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                    RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(18.0),
-                                        side: BorderSide(color: Colors.white)
-                                    )
-                                )
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(35.0, 15.0, 5.0, 15.0),
-                      child: Center(
-                        child: Text(
-                          "Bin 2",
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 16.0,
-                              fontWeight: FontWeight.bold
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 20.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          TextButton(
-                            onPressed: (){},
-                            child: Text("UPDATE".toUpperCase(), style: TextStyle(fontSize: 12, color: Colors.black,),),
-                            style: ButtonStyle(
-                                padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 20.0, vertical: 8.0)),
-                                foregroundColor: MaterialStateProperty.all<Color>(Colors.red),
-                                backgroundColor: MaterialStateProperty.all<Color>(Colors.grey.shade300),
-                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                    RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(18.0),
-                                      side: BorderSide(color: Colors.white),
-                                    )
-                                )
-                            ),
-                          ),
-                          SizedBox(width: 5,),
-                          ElevatedButton(
-                            onPressed: (){},
-                            child: Text("DELETE".toUpperCase(), style: TextStyle(fontSize: 12),),
-                            style: ButtonStyle(
-                                padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 20.0, vertical: 8.0)),
-                                foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
-                                backgroundColor: MaterialStateProperty.all<Color>(Colors.grey.shade300),
-                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                    RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(18.0),
-                                        side: BorderSide(color: Colors.white)
-                                    )
-                                )
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
 
                 Padding(
                   padding: const EdgeInsets.all(18.0),
                   child: ElevatedButton(
-                    onPressed: (){},
+                    onPressed: ( ){
+                       Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) {
+                            return addsubcatogory();
+                          }),
+                        );
+                    },
                     child: Text("add new".toUpperCase(), style: TextStyle(fontSize: 14, fontWeight:FontWeight.w900),),
                     style: ButtonStyle(
                         padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0)),
@@ -272,358 +138,19 @@ class _SubMgtState extends State<SubMgt> {
                   ),
                 ),
 
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    SizedBox(width: 0.0,),
-                    Container(
-                      child: SizedBox(
-                        width: 180.0,
-                        height: 100.0,
-                        child: Card(
-                          color: Color.fromARGB(200, 20, 21, 21),
-                          elevation: 2.0,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 17.0, horizontal: 14.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Row(
-                                    children: [
-                                      Text("Subject : ", style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 14.0
-                                      ),
-                                      ),
-                                      Text("$sub1", style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 14.0
-                                      ),
-                                      ),
-                                    ],
-                                  ),
-                                  SizedBox(height: 5.0),
-                                  Row(
-                                    children: [
-                                      Text("Grade : ", style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 14.0
-                                      ),
-                                      ),
-                                      Text("6,7,8,9,10,11", style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 14.0
-                                      ),
-                                      ),
-                                    ],
-                                  ),
-                                  SizedBox(height: 5.0),
-                                  Row(
-                                    children: [
-                                      Text("Category : ", style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 14.0
-                                      ),
-                                      ),
-                                      Text("Compulsory", style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 14.0
-                                      ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 5.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          TextButton(
-                            onPressed: (){},
-                            child: Text("UPDATE".toUpperCase(), style: TextStyle(fontSize: 12, color: Colors.black,),),
-                            style: ButtonStyle(
-                                padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0)),
-                                foregroundColor: MaterialStateProperty.all<Color>(Colors.red),
-                                backgroundColor: MaterialStateProperty.all<Color>(Colors.grey.shade300),
-                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                    RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(18.0),
-                                      side: BorderSide(color: Colors.white),
-                                    )
-                                )
-                            ),
-                          ),
-                          SizedBox(width: 5,),
-                          ElevatedButton(
-                            onPressed: (){},
-                            child: Text("DELETE".toUpperCase(), style: TextStyle(fontSize: 12),),
-                            style: ButtonStyle(
-                                padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0)),
-                                foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
-                                backgroundColor: MaterialStateProperty.all<Color>(Colors.grey.shade300),
-                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                    RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(18.0),
-                                        side: BorderSide(color: Colors.white)
-                                    )
-                                )
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    SizedBox(width: 0.0,),
-                    Container(
-                      child: SizedBox(
-                        width: 180.0,
-                        height: 100.0,
-                        child: Card(
-                          color: Color.fromARGB(200, 20, 21, 21),
-                          elevation: 2.0,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 17.0, horizontal: 14.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  children: [
-                                    Text("Subject : ", style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 14.0
-                                    ),
-                                    ),
-                                    Text("$sub2", style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 14.0
-                                    ),
-                                    ),
-                                  ],
-                                ),
-                                SizedBox(height: 5.0),
-                                Row(
-                                  children: [
-                                    Text("Grade : ", style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 14.0
-                                    ),
-                                    ),
-                                    Text("6,7,8,9,10,11", style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 14.0
-                                    ),
-                                    ),
-                                  ],
-                                ),
-                                SizedBox(height: 5.0),
-                                Row(
-                                  children: [
-                                    Text("Category : ", style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 14.0
-                                    ),
-                                    ),
-                                    Text("Compulsory", style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 14.0
-                                    ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 5.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          TextButton(
-                            onPressed: (){},
-                            child: Text("UPDATE".toUpperCase(), style: TextStyle(fontSize: 12, color: Colors.black, ),),
-                            style: ButtonStyle(
-                                padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0)),
-                                foregroundColor: MaterialStateProperty.all<Color>(Colors.red),
-                                backgroundColor: MaterialStateProperty.all<Color>(Colors.grey.shade300),
-                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                    RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(18.0),
-                                      side: BorderSide(color: Colors.white),
-                                    )
-                                )
-                            ),
-                          ),
-                          SizedBox(width: 10,),
-                          ElevatedButton(
-                            onPressed: (){},
-                            child: Text("DELETE".toUpperCase(), style: TextStyle(fontSize: 12),),
-                            style: ButtonStyle(
-                                padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0)),
-                                foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
-                                backgroundColor: MaterialStateProperty.all<Color>(Colors.grey.shade300),
-                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                    RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(18.0),
-                                        side: BorderSide(color: Colors.white)
-                                    )
-                                )
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    SizedBox(width: 0.0,),
-                    Container(
-                      child: SizedBox(
-                        width: 180.0,
-                        height: 100.0,
-                        child: Card(
-                          color: Color.fromARGB(200, 20, 21, 21),
-                          elevation: 2.0,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 17.0, horizontal: 14.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  children: [
-                                    Text("Subject : ", style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 14.0
-                                    ),
-                                    ),
-                                    Text("$sub3", style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 14.0
-                                    ),
-                                    ),
-                                  ],
-                                ),
-                                SizedBox(height: 5.0),
-                                Row(
-                                  children: [
-                                    Text("Grade : ", style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 14.0
-                                    ),
-                                    ),
-                                    Text("12, 13", style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 14.0
-                                    ),
-                                    ),
-                                  ],
-                                ),
-                                SizedBox(height: 5.0),
-                                Row(
-                                  children: [
-                                    Text("Category : ", style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 14.0
-                                    ),
-                                    ),
-                                    Text("Physical", style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 14.0
-                                    ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 5.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          TextButton(
-                            onPressed: (){},
-                            child: Text("UPDATE".toUpperCase(), style: TextStyle(fontSize: 12, color: Colors.black, ),),
-                            style: ButtonStyle(
-                                padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0)),
-                                foregroundColor: MaterialStateProperty.all<Color>(Colors.red),
-                                backgroundColor: MaterialStateProperty.all<Color>(Colors.grey.shade300),
-                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                    RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(18.0),
-                                      side: BorderSide(color: Colors.white),
-                                    )
-                                )
-                            ),
-                          ),
-                          SizedBox(width: 10,),
-                          ElevatedButton(
-                            onPressed: (){},
-                            child: Text("DELETE".toUpperCase(), style: TextStyle(fontSize: 12),),
-                            style: ButtonStyle(
-                                padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0)),
-                                foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
-                                backgroundColor: MaterialStateProperty.all<Color>(Colors.grey.shade300),
-                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                    RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(18.0),
-                                        side: BorderSide(color: Colors.white)
-                                    )
-                                )
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
 
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(30, 20, 30, 10),
+                  padding: const EdgeInsets.all(18.0),
                   child: ElevatedButton(
-                    onPressed: (){ Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) {
-                        return AddNewSub();
-                      }),
-                    );},
-                    child: Text("add new subject".toUpperCase(), style: TextStyle(fontSize: 14, fontWeight:FontWeight.w900),),
+                    onPressed: (){
+                                              Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) {
+                            return viewsubjects();
+                          }),
+                        );
+                    },
+                    child: Text("view".toUpperCase(), style: TextStyle(fontSize: 14, fontWeight:FontWeight.w900),),
                     style: ButtonStyle(
                         padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0)),
                         foregroundColor: MaterialStateProperty.all<Color>(Colors.blue.shade900),
@@ -639,9 +166,58 @@ class _SubMgtState extends State<SubMgt> {
                 ),
 
                 Padding(
+                  padding: const EdgeInsets.all(18.0),
+                  child: ElevatedButton(
+                    onPressed: ( ){
+                       Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) {
+                            return addsubject();
+                          }),
+                        );
+                    },
+                    child: Text("add new".toUpperCase(), style: TextStyle(fontSize: 14, fontWeight:FontWeight.w900),),
+                    style: ButtonStyle(
+                        padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0)),
+                        foregroundColor: MaterialStateProperty.all<Color>(Colors.blue.shade900),
+                        backgroundColor: MaterialStateProperty.all<Color>(Colors.blue.shade100),
+                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                            RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                                //side: BorderSide(color: Colors.black)
+                            )
+                        )
+                    ),
+                  ),
+                ),
+
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(22.0, 15.0, 22.0, 22.0),
+                  child: Center(
+                    child: Text(
+                      "-------------------------",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+
+
+
+                Padding(
                   padding: const EdgeInsets.only(bottom: 30.0),
                   child: ElevatedButton(
-                    onPressed: (){},
+                    onPressed: (){
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) {
+                            return SubjectTeacherClass();
+                          }),
+                        );          
+                    },
                     child: Text("Assign subjects with\n\t\t teacher and class".toUpperCase(), style: TextStyle(fontSize: 14, fontWeight:FontWeight.w900),),
                     style: ButtonStyle(
                         padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0)),

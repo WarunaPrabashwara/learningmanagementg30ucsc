@@ -324,8 +324,8 @@ await getTokenFromSF().then(( token) async {
                             SizedBox(
                              height: 25,
                              child: Checkbox(
-                                                     value: this.AvailAdmin,
-                                                     onChanged: (bool value) {
+                                value: this.AvailAdmin,
+                               onChanged: (bool value) {
                               setState(() {
                                 this.AvailAdmin = value;
                               });

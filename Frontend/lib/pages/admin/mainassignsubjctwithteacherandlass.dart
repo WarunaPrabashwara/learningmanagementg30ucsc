@@ -1,37 +1,41 @@
 import 'package:flutter/material.dart';
-import 'package:frontend/pages/admin/addnewclass.dart';
-import 'package:frontend/pages/admin/viewclasses.dart';
+import 'package:frontend/pages/admin/add_new_subject.dart';
+import 'package:frontend/pages/admin/addsubcatogery.dart';
+import 'package:frontend/pages/admin/addsubjects.dart';
+import 'package:frontend/pages/admin/viewSubjectcatogory.dart';
+import 'package:frontend/pages/viewsubjects.dart';
 
-class ClzMgt extends StatefulWidget {
+class SubjectTeacherClass extends StatefulWidget {
 
 
   @override
-  _ClzMgtState createState() => _ClzMgtState();
+  _SubMgtState createState() => _SubMgtState();
 }
 
-class _ClzMgtState extends State<ClzMgt> {
-
-  int _value = 1;
-
+class _SubMgtState extends State<SubjectTeacherClass> {
+  var sub1 = "Science";
+  var sub2 = "Mathematics";
+  var sub3 = "Physics";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.blue.shade800,
-        title:
-        Padding(
-          padding: const EdgeInsets.all(18.0),
-          child: Text(
-            "Class Management".toUpperCase(),
-            style: TextStyle(
-                color: Colors.white,
-                fontSize: 18.0,
-                fontWeight: FontWeight.bold
-            ),
-          ),
-        ),
-      ),
+      //backgroundColor: decor,
+      // appBar: AppBar(
+      //   backgroundColor: Colors.blue.shade800,
+      //   title:
+      //         Center(
+      //           child: Text(
+      //           "Subject Management".toUpperCase(),
+      //           style: TextStyle(
+      //               color: Colors.white,
+      //               fontSize: 18.0,
+      //               fontWeight: FontWeight.bold
+      //           ),
+      //   ),
+      //         ),
+      // ),
       body: SafeArea(
+
         child: Container(
           height: double.infinity,
           width: double.infinity,
@@ -47,25 +51,10 @@ class _ClzMgtState extends State<ClzMgt> {
               )
           ),
           //padding: const EdgeInsets.all(20),
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-
-              Padding(
-                padding: const EdgeInsets.fromLTRB(22.0, 15.0, 22.0, 22.0),
-                child: Center(
-                  child: Text(
-                    "Classes",
-                    style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ),
-
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
 
 
 
@@ -76,11 +65,11 @@ class _ClzMgtState extends State<ClzMgt> {
                                               Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) {
-                            return viewclasses();
+                            return viewsubjectcatogories();
                           }),
                         );
                     },
-                    child: Text("view".toUpperCase(), style: TextStyle(fontSize: 14, fontWeight:FontWeight.w900),),
+                    child: Text("See assigned subjects".toUpperCase(), style: TextStyle(fontSize: 14, fontWeight:FontWeight.w900),),
                     style: ButtonStyle(
                         padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0)),
                         foregroundColor: MaterialStateProperty.all<Color>(Colors.blue.shade900),
@@ -102,7 +91,7 @@ class _ClzMgtState extends State<ClzMgt> {
                        Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) {
-                            return addnewclass();
+                            return addsubcatogory();
                           }),
                         );
                     },
@@ -122,11 +111,12 @@ class _ClzMgtState extends State<ClzMgt> {
                 ),
 
 
-            ]
+              ],
+            ),
+          ),
         ),
-      )
-    ),
-    ),
+      ),
     );
   }
 }
+
