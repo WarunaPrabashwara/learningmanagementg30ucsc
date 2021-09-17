@@ -78,7 +78,7 @@ class sectionheadHomePage extends StatelessWidget {
                             color: Colors.black54,
                           ),
                           SizedBox(width: 10.0,),
-                          Image.asset("assets/pro2.png", width: 50.0,),
+                          Image.asset("assets/man-user", width: 50.0,),
                         ],
                       )
                     ],
@@ -88,7 +88,7 @@ class sectionheadHomePage extends StatelessWidget {
                   padding: const EdgeInsets.all(0.0),
                   child: Center(
                     child: Text(
-                      "Hello Admin!",
+                      "Hello Section Head!",
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 20.0,
@@ -175,7 +175,7 @@ class sectionheadHomePage extends StatelessWidget {
                                     children: [
                                       Image.asset("assets/team.png", width: 60.0,),
                                       SizedBox(height: 10.0),
-                                      Text("Announcement Management", style: TextStyle(
+                                      Text("Announcement Managementzz", style: TextStyle(
                                         color: Colors.white,
                                         fontWeight: FontWeight.bold,
                                         fontSize: 15.0,
