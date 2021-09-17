@@ -152,8 +152,8 @@ await getTokenFromSF().then(( token) async {
           'Enter Announcement',
           style: TextStyle(
               color: Colors.black,
-              fontSize: 14,
-              fontWeight: FontWeight.bold
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
           ),
         ),
         SizedBox(height: 10,),
@@ -247,7 +247,7 @@ await getTokenFromSF().then(( token) async {
 
   Widget deleteOldAnouncementBtn(){
     return Container(
-      padding: EdgeInsets.fromLTRB(100.0, 15.0, 100.0, 10.0),
+      padding: EdgeInsets.fromLTRB(50.0, 15.0, 100.0, 10.0),
       width: double.infinity,
       child: RaisedButton(
         elevation: 5,
