@@ -3,7 +3,6 @@ import 'package:frontend/pages/admin/dashboard.dart';
 import 'package:frontend/pages/changePassword.dart';
 import 'package:frontend/pages/principal/homepage.dart';
 import 'package:frontend/pages/section_head/dashboard.dart';
-import 'package:frontend/pages/section_head/homepage.dart';
 import 'package:frontend/pages/student/student_home_page.dart';
 import 'package:frontend/pages/teacher/add_students_to_bucket_subjects.dart';
 import 'package:frontend/pages/teacher/home.page.dart';
@@ -11,7 +10,7 @@ import 'package:frontend/pages/login.page.dart';
 import 'package:frontend/pages/my_profile.dart';
 import 'package:frontend/services/auth.service.dart';
 import 'package:flutter/material.dart';
-//import 'package:frontend/pages/sectionhead/homepage.dart';
+
 
 AuthService appAuth = new AuthService();
 
