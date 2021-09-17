@@ -87,7 +87,7 @@ class _DashboardPrincipal extends State<DashboardPrincipal> {
                                           color: Colors.black54,
                                         ),
                                         SizedBox(width: 10.0,),
-                                        Image.asset("assets/pro2.png", width: 50.0,),
+                                        Image.asset("assets/man-user.png", width: 50.0,),
                                       ],
                                     )
                                   ]
@@ -321,7 +321,7 @@ class _DashboardPrincipal extends State<DashboardPrincipal> {
                                                 child: Column(
                                                   mainAxisAlignment: MainAxisAlignment.center,
                                                   children: [
-                                                    Image.asset("assets/user-list.png", width: 60.0,),
+                                                    Image.asset("assets/team.png", width: 60.0,),
                                                     SizedBox(height: 10.0),
                                                     Text("Students and Teachers List", style: TextStyle(
                                                       color: Colors.white,
@@ -367,7 +367,7 @@ class _DashboardPrincipal extends State<DashboardPrincipal> {
                                                     child: Column(
                                                       mainAxisAlignment: MainAxisAlignment.center,
                                                       children: [
-                                                      Image.asset("assets/report-card.png", width: 60.0,),
+                                                      Image.asset("assets/report-card.png", width: 50.0,),
                                                       SizedBox(height: 10.0),
                                                     Text("Term Test Reports of Students", style: TextStyle(
                                                 color: Colors.white,

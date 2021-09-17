@@ -1,22 +1,12 @@
-// ignore_for_file: camel_case_types
 
-import 'package:frontend/main.dart';
 import 'package:flutter/material.dart';
 import 'package:frontend/pages/section_head/timetablemanagement.dart';
 import 'package:frontend/pages/uploadAnnouncement.dart';
 import '../generate_term_test_report.dart';
 import '../my_profile.dart';
-import '../view_my_timetable.dart';
 import '../view_notice_board.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:frontend/pages/admin/class_management.dart';
-import 'package:frontend/pages/admin/myProfile.dart';
-import 'package:frontend/pages/admin/subject_management.dart';
-import 'package:frontend/pages/admin/user_management.dart';
 import 'package:frontend/pages/my_profile.dart';
-import 'package:frontend/pages/uploadAnnouncement.dart';
 import 'package:frontend/pages/view_notice_board.dart';
 
 
@@ -175,7 +165,7 @@ class sectionheadHomePage extends StatelessWidget {
                                     children: [
                                       Image.asset("assets/team.png", width: 60.0,),
                                       SizedBox(height: 10.0),
-                                      Text("Announcement Managementzz", style: TextStyle(
+                                      Text("Announcement Management", style: TextStyle(
                                         color: Colors.white,
                                         fontWeight: FontWeight.bold,
                                         fontSize: 15.0,
