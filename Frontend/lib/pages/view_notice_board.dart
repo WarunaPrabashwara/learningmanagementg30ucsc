@@ -31,6 +31,7 @@ class respAnnouncement {
     };
   }
 }
+
 class _view_notice_boardState extends State<view_notice_board> {
        int i =0;
   static const urlPrefix = 'http://10.0.2.2:2222';
@@ -69,6 +70,7 @@ class _view_notice_boardState extends State<view_notice_board> {
     return snapshot ;
   }
 
+  
   @override
   Widget build(BuildContext context) {
           if(i==0){
@@ -144,6 +146,8 @@ class _view_notice_boardState extends State<view_notice_board> {
               );
             }
         )
+   
+   
     );
   }
 }

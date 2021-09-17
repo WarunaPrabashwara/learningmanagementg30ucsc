@@ -141,7 +141,7 @@ class _MyProfileState extends State<MyProfile> {
     return  Scaffold(
       appBar: new AppBar(
         title: new Text("home"),
-
+        backgroundColor: Colors.blue ,
       ),
       body:  new SingleChildScrollView(
           child: new Center(
@@ -170,14 +170,15 @@ class _MyProfileState extends State<MyProfile> {
                                     './assets/pro2.png'
                             ),
                           ),
-                          Text('user name', style: TextStyle(color: Colors.white, letterSpacing: 2.0, fontWeight: FontWeight.bold, ),),
-                          SizedBox(height: 10.0,),
-                          Text('${this._name}', style: TextStyle(color: Colors.black54, letterSpacing: 1.0, fontSize:18.0,fontWeight: FontWeight.bold ),),
-                          SizedBox(height: 2,),
-
-                          Text('index', style: TextStyle(color: Colors.white, letterSpacing: 2.0, fontWeight: FontWeight.bold, ),),
+                          SizedBox(height: 10,),
+                          Text('user name', style: TextStyle(color: Colors.white, letterSpacing: 2.0,  fontSize:20.0,fontWeight: FontWeight.bold, ),),
                           SizedBox(height: 2.0,),
-                          Text('${this._index}', style: TextStyle(color: Colors.black54, letterSpacing: 1.0, fontSize:18.0,fontWeight: FontWeight.bold ),),
+                          Text('${this._name}', style: TextStyle(color: Colors.white, letterSpacing: 1.0, fontSize:20.0,fontWeight: FontWeight.bold ),),
+                          SizedBox(height: 10,),
+
+                          Text('index', style: TextStyle(color: Colors.white, letterSpacing: 2.0, fontSize:20.0, fontWeight: FontWeight.bold, ),),
+                          SizedBox(height: 2.0,),
+                          Text('${this._index}', style: TextStyle(color: Colors.white, letterSpacing: 1.0, fontSize:20.0,fontWeight: FontWeight.bold ),),
                           SizedBox(height: 10,),
 
                           SizedBox(

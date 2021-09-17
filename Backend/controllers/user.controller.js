@@ -51,6 +51,29 @@ function register(req , res){
 
 }
 
+function viewusers(req , res){
+  console.log("fdfsaaagfvvx") ;
+
+ 
+
+var quer ='SELECT id,name,email,userLevel,indexNo,telephone,address,dob FROM users' ;
+mydatabase.query( quer , function (error, results, fields) {
+if (error) {
+    res.json({
+      status:false,
+      message:'there are some error with query'
+      })
+}else{
+ 
+res.end(JSON.stringify(results));
+
+}
+});
+
+}
+
+
+
 function login(req , res){
  
     var email=req.body.email;
@@ -188,6 +211,7 @@ function myProfileData(req , res){
 module.exports = {
     myProfileData :myProfileData,
     register: register,
+    viewusers:viewusers ,
     login: login,
     changepswd :changepswd ,
 } 

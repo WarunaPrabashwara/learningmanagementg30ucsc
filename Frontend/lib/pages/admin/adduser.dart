@@ -204,7 +204,7 @@ class _loginScreenState extends State<adduser> {
                 _index(text);
               },
 
-              obscureText: true,
+            //  obscureText: true,
               style: TextStyle(
                   color: Colors.black87
               ),
@@ -306,7 +306,7 @@ class _loginScreenState extends State<adduser> {
                 _address(text);
               },
 
-              obscureText: true,
+              // obscureText: true,
               style: TextStyle(
                   color: Colors.black87
               ),
@@ -408,7 +408,7 @@ class _loginScreenState extends State<adduser> {
                 _username(text);
               },
 
-              obscureText: true,
+         //     obscureText: true,
               style: TextStyle(
                   color: Colors.black87
               ),
@@ -459,7 +459,7 @@ class _loginScreenState extends State<adduser> {
                 _firstloginpswd(text);
               },
 
-              obscureText: true,
+             // obscureText: true,
               style: TextStyle(
                   color: Colors.black87
               ),

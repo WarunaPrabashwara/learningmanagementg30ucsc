@@ -5,6 +5,7 @@ const router = express.Router();
 
 router.post('/register', userController.register);
 router.post('/login', userController.login);
+router.get('/viewusers', userController.viewusers);
 router.put('/changepswd', checkAuthMiddleware.checkAuth, userController.changepswd);
 router.get('/myprofile', checkAuthMiddleware.checkAuth, userController.myProfileData);
 
