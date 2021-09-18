@@ -6,6 +6,8 @@ const router = express.Router();
 
 router.post('/upload',checkAuthMiddleware.checkAuth, announcementController.register);
 router.post('/addsubcatogory',checkAuthMiddleware.checkAuth, announcementController.addsubcatogory);
+router.post('/addnewAasignedSubject',checkAuthMiddleware.checkAuth, announcementController.addnewAasignedSubject);
+
 //router.delete('/delete', userController.delete);
 //router.put('/update', checkAuthMiddleware.checkAuth, userController.update);
 router.get('/viewSubCategory', checkAuthMiddleware.checkAuth, announcementController.viewsubcategory);

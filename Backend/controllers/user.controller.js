@@ -54,26 +54,65 @@ function register(req , res){
 function viewusers(req , res){
   console.log("fdfsaaagfvvx") ;
 
- 
+  var quer ='SELECT id,name,email,userLevel,indexNo,telephone,address,dob FROM users' ;
+  mydatabase.query( quer , function (error, results, fields) {
+  if (error) {
+      res.json({
+        status:false,
+        message:'there are some error with query'
+        })
+  }else{
+  
+  res.end(JSON.stringify(results));
 
-var quer ='SELECT id,name,email,userLevel,indexNo,telephone,address,dob FROM users' ;
-mydatabase.query( quer , function (error, results, fields) {
-if (error) {
-    res.json({
-      status:false,
-      message:'there are some error with query'
-      })
-}else{
- 
-res.end(JSON.stringify(results));
+  }
+  });
 
-}
-});
-
-}
+  }
 
 
-
+function viewTeachers(req , res){
+    console.log("fdfsaaagfvvx") ;
+  
+    var quer ='SELECT id,name,email,userLevel,indexNo,telephone,address,dob FROM users WHERE userLevel = ?' ;
+    mydatabase.query( quer ,['teacher'], function (error, results, fields) {
+    if (error) {
+        res.json({
+          status:false,
+          message:'there are some error with query'
+          })
+    }else{
+    
+    res.end(JSON.stringify(results));
+  
+    }
+    });
+  
+   
+  }
+  
+function viewStudents(req , res){
+      console.log("fdfsaaagfvvx") ;
+    
+      var quer ='SELECT id,name,email,userLevel,indexNo,telephone,address,dob FROM users WHERE userLevel = ?' ;
+      mydatabase.query( quer ,['students'], function (error, results, fields) {
+      if (error) {
+          res.json({
+            status:false,
+            message:'there are some error with query'
+            })
+      }else{
+      
+      res.end(JSON.stringify(results));
+    
+      }
+      });
+    
+    
+      }
+    
+    
+  
 function login(req , res){
  
     var email=req.body.email;
@@ -214,4 +253,7 @@ module.exports = {
     viewusers:viewusers ,
     login: login,
     changepswd :changepswd ,
+    viewTeachers : viewTeachers ,
+    viewStudents : viewStudents 
+
 } 

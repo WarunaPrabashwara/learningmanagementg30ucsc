@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/pages/admin/AddNEwaassignsubjctwithteacherandlass.dart';
 import 'package:frontend/pages/admin/add_new_subject.dart';
 import 'package:frontend/pages/admin/addsubcatogery.dart';
 import 'package:frontend/pages/admin/addsubjects.dart';
@@ -91,7 +92,7 @@ class _SubMgtState extends State<SubjectTeacherClass> {
                        Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) {
-                            return addsubcatogory();
+                            return addnewassignedsubjectss();
                           }),
                         );
                     },

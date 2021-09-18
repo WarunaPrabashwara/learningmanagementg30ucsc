@@ -15,6 +15,24 @@ function add(req , res){
   })
 }
 
+
+function addnewAasignedSubject(req , res){
+  // var date_time = dateformat(new Date() , "yyyy-mm-dd h:MM:ss") ;
+   var teacher_name = req.body.teacher_name;
+   var class_name = req.body.class_name;
+   var subject_name = req.body.subject_name;
+   var isHomeworkAvailFlag = req.body.isHomeworkAvailFlag;
+   var zoom_link = req.body.zoom_link;
+   var sql = `insert into student_teacher_class(teacher_name, class_name ,subject_name, isHomeworkAvailFlag, zoom_link) 
+   VALUES ("${teacher_name}", "${class_name}","${subject_name}", "${isHomeworkAvailFlag}", "${zoom_link}")`;
+   mydatabase.query( sql , function(error , rows, fields){
+       if(error) throw error
+       res.send("Added successfully !");
+       res.end();
+ 
+   })
+ }
+
 function addsubcatogory(req , res){
     var date_time = dateformat(new Date() , "yyyy-mm-dd h:MM:ss") ;
     var name = req.body.name;
@@ -53,7 +71,7 @@ function viewsubs(req , res){
     var userLevel = req.userData.userLevel;
     var filter = "";
 console.log("hi")
-var quer ='SELECT id,name,category ,allowed_classes FROM subjects'   ;
+var quer ='SELECT name,category ,allowed_classes FROM subjects'   ;
 mydatabase.query( quer , function (error, results, fields) {
   if (error) {
       res.json({
@@ -119,5 +137,6 @@ module.exports = {
     viewsubcategory:viewsubcategory ,
     viewsubs:viewsubs ,
     viewsubectAllsubjects:viewsubectAllsubjects ,
-    deleteann : deleteann 
+    deleteann : deleteann ,
+    addnewAasignedSubject:addnewAasignedSubject
 } 

@@ -8,5 +8,6 @@ router.post('/login', userController.login);
 router.get('/viewusers', userController.viewusers);
 router.put('/changepswd', checkAuthMiddleware.checkAuth, userController.changepswd);
 router.get('/myprofile', checkAuthMiddleware.checkAuth, userController.myProfileData);
-
+router.get('/viewTeachers', checkAuthMiddleware.checkAuth, userController.viewTeachers);
+router.get('/viewStudents', checkAuthMiddleware.checkAuth, userController.viewStudents);
 module.exports = router;
