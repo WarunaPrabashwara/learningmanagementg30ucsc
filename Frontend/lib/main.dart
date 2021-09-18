@@ -4,7 +4,7 @@ import 'package:frontend/pages/changePassword.dart';
 import 'package:frontend/pages/principal/dashboard.dart';
 //import 'package:frontend/pages/principal/homepage.dart';
 import 'package:frontend/pages/section_head/dashboard.dart';
-import 'package:frontend/pages/student/student_home_page.dart';
+import 'package:frontend/pages/student/dashboard.dart';
 import 'package:frontend/pages/teacher/add_students_to_bucket_subjects.dart';
 import 'package:frontend/pages/teacher/dashboard.dart';
 import 'package:frontend/pages/login.page.dart';
@@ -24,7 +24,7 @@ void main() async {
   var _userLevel = 'section_head' ;
   if (_result) {
     if (_userLevel == 'teacher' ) {
-      _defaultHome = new TeacherHomePage();
+      _defaultHome = new DashboardTeacher();
     }
     else if (_userLevel == 'admin') {
       _defaultHome = new Dashboard();
@@ -69,7 +69,7 @@ class MyApp extends StatelessWidget {
         '/teacher/home': (BuildContext context) => new DashboardTeacher(),
         '/admin/home': (BuildContext context) => new Dashboard(),
         '/section_head/home': (BuildContext context) => new DashboardSectionHead(),
-        '/student/home': (BuildContext context) => new StudentHomePage(),
+        '/student/home': (BuildContext context) => new DashboardStudent(),
         '/principal/home': (BuildContext context) => new DashboardPrincipal(),
         '/login': (BuildContext context) => new loginScreen(),
 //meke okkoma danna bAha hariyata wAda karanne naha ethakota
