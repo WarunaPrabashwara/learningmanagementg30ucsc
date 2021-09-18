@@ -6,7 +6,7 @@ import 'package:frontend/pages/principal/dashboard.dart';
 import 'package:frontend/pages/section_head/dashboard.dart';
 import 'package:frontend/pages/student/student_home_page.dart';
 import 'package:frontend/pages/teacher/add_students_to_bucket_subjects.dart';
-import 'package:frontend/pages/teacher/home.page.dart';
+import 'package:frontend/pages/teacher/dashboard.dart';
 import 'package:frontend/pages/login.page.dart';
 import 'package:frontend/pages/my_profile.dart';
 import 'package:frontend/services/auth.service.dart';
@@ -66,7 +66,7 @@ class MyApp extends StatelessWidget {
       home: loginScreen(),
       routes: <String, WidgetBuilder>{
         // Set routes for using the Navigator.
-        '/teacher/home': (BuildContext context) => new TeacherHomePage(),
+        '/teacher/home': (BuildContext context) => new DashboardTeacher(),
         '/admin/home': (BuildContext context) => new Dashboard(),
         '/section_head/home': (BuildContext context) => new DashboardSectionHead(),
         '/student/home': (BuildContext context) => new StudentHomePage(),
