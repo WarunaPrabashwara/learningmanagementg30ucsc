@@ -235,9 +235,9 @@ class _loginScreenState extends State<loginScreen> {
         elevation: 5,
         onPressed: (){
           setState(() => this._status = 'loading');
-
+            print("hhhhhh");
           loginPostRequest().then(( result) {
-
+                 print("vvvv");
             print(result);
             if (result.message == "successfully authenticated" ) {
               addTokenToSF(result.token , this.email , result.userLevel);

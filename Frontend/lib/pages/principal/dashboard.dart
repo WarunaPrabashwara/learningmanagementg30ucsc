@@ -1,5 +1,6 @@
 import 'package:frontend/main.dart';
 import 'package:flutter/material.dart';
+import 'package:frontend/pages/principal/studentandteacherlist.dart';
 import 'package:frontend/pages/principal/teacher_list.dart';
 import 'package:frontend/pages/uploadAnnouncement.dart';
 import 'package:frontend/pages/viewsubjects.dart';
@@ -339,7 +340,7 @@ class _DashboardPrincipal extends State<DashboardPrincipal> {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(builder: (context) {
-                                            return TeacherList();
+                                            return studentandteeacherview();
                                           }),
                                         );
                                       },

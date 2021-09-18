@@ -95,7 +95,7 @@ function viewStudents(req , res){
       console.log("fdfsaaagfvvx") ;
     
       var quer ='SELECT id,name,email,userLevel,indexNo,telephone,address,dob FROM users WHERE userLevel = ?' ;
-      mydatabase.query( quer ,['students'], function (error, results, fields) {
+      mydatabase.query( quer ,['student'], function (error, results, fields) {
       if (error) {
           res.json({
             status:false,

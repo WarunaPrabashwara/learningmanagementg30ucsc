@@ -14,23 +14,25 @@ class TeacherList extends StatefulWidget {
   _UserMgtState createState() => _UserMgtState();
 }
 
-class respAnnouncement {
+class usersmodel {
+
   int id;
   String name;
   String email;
-  String userLevel;
+  String userLevel ;
   String indexNo;
   String telephone;
   String address;
-  String dob ; 
-  respAnnouncement(this.id, this.name, this.email ,this.userLevel, this.indexNo, this.telephone,this.address, this.dob );
+  String dob ;
 
-  respAnnouncement.fromJson(Map<String, dynamic> json) {
+  usersmodel(this.id, this.name, this.email  ,this.userLevel ,this.indexNo, this.telephone, this.address  ,this.dob );
+
+  usersmodel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
     email = json['email'];
     userLevel = json['userLevel'];
-    indexNo = json['indexNo'];
+        indexNo = json['indexNo'];
     telephone = json['telephone'];
     address = json['address'];
     dob = json['dob'];
@@ -42,32 +44,27 @@ class respAnnouncement {
       'id': id,
       'name': name,
       'email': email ,
-      'userLevel': userLevel,
-      'indexNo': indexNo,
-      'telephone': telephone ,
-      'address': address,
-      'dob': dob
-
+        'userLevel': userLevel,
+              'indexNo': indexNo,
+      'telephone': telephone,
+      'address': address ,
+        'dob': dob,
     };
   }
 }
 
 
+
+
 class _UserMgtState extends State<TeacherList> {
-  int i =0;
-  static const urlPrefix = 'http://10.0.2.2:2222';
-  List<respAnnouncement> setofAnnouncements = [];
-   getTokenFromSF() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    String tokenValue = prefs.getString('token');
-    return tokenValue;
-  }
-  
-  Future<List<respAnnouncement>> AnouncementviewRequest(  ) async {
+      int i =0;
+    List<usersmodel> setofAnnouncements5 = [];
+
+    Future<List<usersmodel>> AnouncementviewRequest5(  ) async {
     final url = Uri.parse('$urlPrefix/user/viewTeachers');
-    List<respAnnouncement> snapshot = await getTokenFromSF().then(( token) async {
-      print('anment: ${token}');
-      print('userse: ${token}');
+    List<usersmodel> snapshot = await getTokenFromSF().then(( token) async {
+    //  print('anment: ${token}');
+   //   print('userse: ${token}');
       //  final headers = {"Content-type": "application/json "};
       final headers = {
         'Content-Type': 'application/json',
@@ -77,20 +74,29 @@ class _UserMgtState extends State<TeacherList> {
       // final json = '{"email": "${email}", "password": "${password}" }';
       //  print('user: ${json}');
       final response = await get(url, headers: headers );
-      print('ususeusr: ${response.body}');
+    //  print('ususeusr: ${response.body}');
       final List t = json.decode(response.body);
-      final List<respAnnouncement> anouncement =
-      t.map((item) => respAnnouncement.fromJson(item)).toList();
+      final List<usersmodel> anouncement =
+      t.map((item) => usersmodel.fromJson(item)).toList();
      // respAnnouncement anouncement = respAnnouncement.fromJson(jsonDecode(response.body));
     //  print('user: ${anouncement[0].date_time}');
-      print('Status code: ${response.statusCode}');
-      print('Body: ${response.body}');
+    //  print('Status code: ${response.statusCode}');
+   //   print('Body: ${response.body}');
       //final message = MessageGet(response);
       return anouncement ;
     });
-    print('Stde: ${snapshot}');
+   // print('Stde: ${snapshot}');
     return snapshot ;
   }
+
+  static const urlPrefix = 'http://10.0.2.2:2222';
+
+   getTokenFromSF() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    String tokenValue = prefs.getString('token');
+    return tokenValue;
+  }
+  
 
   
   Widget buildLoginBtn(){
@@ -127,35 +133,36 @@ class _UserMgtState extends State<TeacherList> {
 
   @override
   Widget build(BuildContext context) {
-              if(i==0){
-    AnouncementviewRequest().then(( result){
+                  if(i==0){
+    AnouncementviewRequest5().then(( result){
+       print("hghfnb") ;
    //   print('anouncement: ${result[0].made_by}');
           setState(() {
-            setofAnnouncements =result;
+            setofAnnouncements5 =result;
            });
          i=1;
     });
 }
     return Scaffold(
       //backgroundColor: decor,
-      appBar: AppBar(
-        backgroundColor: Colors.blue.shade800,
-        title:
-        Padding(
-          padding: const EdgeInsets.all(18.0),
-          child: Text(
-            "User Management".toUpperCase(),
-            style: TextStyle(
-                color: Colors.white,
-                fontSize: 18.0,
-                fontWeight: FontWeight.bold
-            ),
-          ),
-        ),
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: Colors.blue.shade800,
+      //   title:
+      //   Padding(
+      //     padding: const EdgeInsets.all(18.0),
+      //     child: Text(
+      //       "User Management".toUpperCase(),
+      //       style: TextStyle(
+      //           color: Colors.white,
+      //           fontSize: 18.0,
+      //           fontWeight: FontWeight.bold
+      //       ),
+      //     ),
+      //   ),
+      // ),
       body:   ListView.builder(
           //  padding: const EdgeInsets.all(8),
-            itemCount: setofAnnouncements.length,
+            itemCount: setofAnnouncements5.length,
             itemBuilder: (BuildContext context, int index) {
               return Container(
                 //height: 50,
@@ -164,75 +171,85 @@ class _UserMgtState extends State<TeacherList> {
                                                 Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(10.0, 15.0, 5.0, 15.0),
-                          child: Center(
-                            child: Text(
-                              '${setofAnnouncements[index].email}' ,
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 17.0,
-                                //fontWeight: FontWeight.bold
+                                            Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SizedBox(width: 0.0,),
+                    Container(
+                      child: SizedBox(
+                        width: 380.0,
+                        height: 100.0,
+                        child: Card(
+                          color: Color.fromARGB(200, 20, 21, 21),
+                          elevation: 2.0,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 17.0, horizontal: 14.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text("Name : ", style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 14.0
+                                      ),
+                                      ),
+                                      Text('${setofAnnouncements5[index].name}', style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 14.0
+                                      ),
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(width : 25.0),
+
+               
+                                  Row(
+                                    children: [
+                                      Text("Telephone : ", style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 14.0
+                                      ),
+                                      ),
+                                      Text( '${setofAnnouncements5[index].telephone}' , style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 14.0
+                                      ),
+                                      ),
+                                    ],
+                                  ),
+ 
+                                                                   Row(
+                                    children: [
+                                      Text("Address : ", style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 14.0
+                                      ),
+                                      ),
+                                      Text( '${setofAnnouncements5[index].address}' , style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 14.0
+                                      ),
+                                      ),
+                                    ],
+                                  ),
+  
+                                ],
                               ),
                             ),
-                          ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 5.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              TextButton(
-                                onPressed: (){},
-                                child: Text("View".toUpperCase(), style: TextStyle(fontSize: 10, color: Colors.black,),),
-                                style: ButtonStyle(
-                                    padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0)),
-                                    foregroundColor: MaterialStateProperty.all<Color>(Colors.red),
-                                    backgroundColor: MaterialStateProperty.all<Color>(Colors.grey.shade300),
-                                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                        RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(18.0),
-                                          side: BorderSide(color: Colors.white),
-                                        )
-                                    )
-                                ),
-                              ),
-                              SizedBox(width: 5,),
-                              TextButton(
-                                onPressed: (){},
-                                child: Text("Edit".toUpperCase(), style: TextStyle(fontSize: 10, color: Colors.black,),),
-                                style: ButtonStyle(
-                                    padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0)),
-                                    foregroundColor: MaterialStateProperty.all<Color>(Colors.red),
-                                    backgroundColor: MaterialStateProperty.all<Color>(Colors.grey.shade300),
-                                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                        RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(18.0),
-                                          side: BorderSide(color: Colors.white),
-                                        )
-                                    )
-                                ),
-                              ),
-                              SizedBox(width: 5,),
-                              ElevatedButton(
-                                onPressed: (){},
-                                child: Text("DELETE".toUpperCase(), style: TextStyle(fontSize: 10),),
-                                style: ButtonStyle(
-                                    padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0)),
-                                    foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
-                                    backgroundColor: MaterialStateProperty.all<Color>(Colors.grey.shade300),
-                                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                        RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(18.0),
-                                            side: BorderSide(color: Colors.white)
-                                        )
-                                    )
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+                      ),
+                    ),
+                 ],
+                ),
+                 
+                                               
                       ],
                     ),
 

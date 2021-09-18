@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:frontend/pages/generate_term_test_report.dart';
 import '../view_notice_board.dart';
 import 'announcement.dart';
 import 'package:frontend/pages/my_profile.dart';
@@ -336,7 +337,7 @@ class _DashboardStudent extends State<DashboardStudent> {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(builder: (context) {
-                                            //return reports();
+                                            return generate_term_test_reports();
                                           }),
                                         );
                                       },
