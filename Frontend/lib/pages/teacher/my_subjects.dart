@@ -1,6 +1,10 @@
+import 'dart:convert';
+
 import 'package:frontend/main.dart';
 import 'package:flutter/material.dart';
 import 'package:frontend/pages/teacher/subject_materials.dart';
+import 'package:http/http.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 
 // ignore: camel_case_types
@@ -10,19 +14,167 @@ class my_subjects_ofTeacher extends StatefulWidget {
   State<StatefulWidget> createState() => new _my_subjects_ofTeacherState();
 }
 
+class mysubjects {
+ 
+  String teacher_name;
+  String class_name;
+  String subject_name;
+  int isHomeworkAvailFlag; 
+    String zoom_link; 
+  mysubjects(this.teacher_name, this.class_name, this.subject_name ,this.isHomeworkAvailFlag, this.zoom_link );
+
+  mysubjects.fromJson(Map<String, dynamic> json) {
+    teacher_name = json['teacher_name'];
+    class_name = json['class_name'];
+    subject_name = json['subject_name'];
+    isHomeworkAvailFlag = json['isHomeworkAvailFlag'];
+    zoom_link = json['zoom_link'];
+    
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'teacher_name': teacher_name,
+      'class_name': class_name,
+      'subject_name': subject_name,
+      'isHomeworkAvailFlag': isHomeworkAvailFlag,      
+      'zoom_link': zoom_link 
+
+    };
+  }
+}
+
+
 // ignore: camel_case_types
 class _my_subjects_ofTeacherState extends State<my_subjects_ofTeacher> {
-  List<String> list = ["Science 7 A", "Maths 7 A", "Maths 7 B", "Maths 7 C"];
+    int i =0;
+  static const urlPrefix = 'http://10.0.2.2:2222';
+  List<mysubjects> setofAnnouncements = [];
+     getTokenFromSF() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    String tokenValue = prefs.getString('token');
+    return tokenValue;
+  }
+  
+  Future<List<mysubjects>> AnouncementviewRequest(  ) async {
+    final url = Uri.parse('$urlPrefix/subjectmanagement/teacherseeshersubjects');
+    List<mysubjects> snapshot = await getTokenFromSF().then(( token) async {
+      print('anment: ${token}');
+      print('userse: ${token}');
+      //  final headers = {"Content-type": "application/json "};
+      final headers = {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': 'Bearer $token',};
+
+      // final json = '{"email": "${email}", "password": "${password}" }';
+      //  print('user: ${json}');
+      final response = await get(url, headers: headers );
+      print('ususeusr: ${response.body}');
+      final List t = json.decode(response.body);
+      final List<mysubjects> anouncement =
+      t.map((item) => mysubjects.fromJson(item)).toList();
+     // respAnnouncement anouncement = respAnnouncement.fromJson(jsonDecode(response.body));
+    //  print('user: ${anouncement[0].date_time}');
+      print('Status code: ${response.statusCode}');
+      print('Body: ${response.body}');
+      //final message = MessageGet(response);
+      return anouncement ;
+    });
+    print('Stde: ${snapshot}');
+    return snapshot ;
+  }
+
+  
+  //List<String> list = ["Science 7 A", "Maths 7 A", "Maths 7 B", "Maths 7 C"];
   TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
   String _status = '';
   @override
   Widget build(BuildContext context) {
+              if(i==0){
+    AnouncementviewRequest().then(( result){
+   //   print('anouncement: ${result[0].made_by}');
+          setState(() {
+            setofAnnouncements =result;
+           });
+         i=1;
+    });
+}
 
-    final SubMaterialButon = Material(
+    final subjectsss =  ListView.builder(
+          //  padding: const EdgeInsets.all(8),
+            itemCount: setofAnnouncements.length,
+            itemBuilder: (BuildContext context, int index) {
+              return Container(
+                //height: 50,
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(10.0, 15.0, 5.0, 15.0),
+                          child: Center(
+                            child: Text(
+                              '${setofAnnouncements[index].class_name}' + '-' + '${setofAnnouncements[index].subject_name}',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 17.0,
+                                //fontWeight: FontWeight.bold
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(right: 5.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                             SizedBox(width: 5,),
+                              TextButton(
+                                onPressed: (){},
+                                child: Text("Edit".toUpperCase(), style: TextStyle(fontSize: 10, color: Colors.black,),),
+                                style: ButtonStyle(
+                                    padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0)),
+                                    foregroundColor: MaterialStateProperty.all<Color>(Colors.red),
+                                    backgroundColor: MaterialStateProperty.all<Color>(Colors.grey.shade300),
+                                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                        RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(18.0),
+                                          side: BorderSide(color: Colors.white),
+                                        )
+                                    )
+                                ),
+                              ),
+                              SizedBox(width: 5,),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+
+                    
+
+                  ]
+                ),
+              );
+            
+            }
+        ) ;
+   
+
+
+
+    return MaterialApp(
+      home: Scaffold(
+        // appBar: AppBar(
+        //   title: Text("Stack Overflow"),
+        // ),
+        body:  Material(
       child:
       Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: list.map((String data) {
+        children: setofAnnouncements.map((mysubjects data) {
           return Container(
             height: 50.0,
             child: GestureDetector(
@@ -31,7 +183,7 @@ class _my_subjects_ofTeacherState extends State<my_subjects_ofTeacher> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) {
-                    return subject_Matirials_ofTeacher(data);
+                    return subject_Matirials_ofTeacher(data.teacher_name + "*" +data.subject_name + "*" + data.class_name);
                   }),
                 );
               },
@@ -50,11 +202,11 @@ class _my_subjects_ofTeacherState extends State<my_subjects_ofTeacher> {
                   children: <Widget>[
                     Center(
                       child: Text(
-                        data,
+                        data.class_name + " " +   data.subject_name,
                         style: TextStyle(
                           color: Color(0xFFF05A22),
                           fontFamily: 'Montserrat',
-                          fontSize: 16,
+                          fontSize: 24,
                           fontWeight: FontWeight.w600,
                           letterSpacing: 1,
                         ),
@@ -70,18 +222,7 @@ class _my_subjects_ofTeacherState extends State<my_subjects_ofTeacher> {
       ),
 
 
-    );
-
-
-
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Stack Overflow"),
-        ),
-        body: Center(
-          child: SubMaterialButon,
-        ),
+    )
       ),
     );
   }

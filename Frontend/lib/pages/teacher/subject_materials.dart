@@ -379,9 +379,9 @@ class _subject_Matirials_ofTeacherState extends State<subject_Matirials_ofTeache
 
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: Text(""),
-        ),
+        // appBar: AppBar(
+        //   title: Text(""),
+        // ),
         body:  new SingleChildScrollView(
             child: new Center(
                 child: new Container(

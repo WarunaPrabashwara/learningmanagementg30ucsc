@@ -10,7 +10,10 @@ router.post('/addnewAasignedSubject',checkAuthMiddleware.checkAuth, announcement
 
 //router.delete('/delete', userController.delete);
 //router.put('/update', checkAuthMiddleware.checkAuth, userController.update);
+
+router.get('/sudentseeshersubjects', checkAuthMiddleware.checkAuth, announcementController.sudentseeshersubjects);
 router.get('/viewSubCategory', checkAuthMiddleware.checkAuth, announcementController.viewsubcategory);
+router.get('/teacherseeshersubjects', checkAuthMiddleware.checkAuth, announcementController.teacherseeshersubjects);
 router.get('/viewSubs', checkAuthMiddleware.checkAuth, announcementController.viewsubs);
 router.get('/viewallsubjects', checkAuthMiddleware.checkAuth, announcementController.viewsubectAllsubjects);
 router.delete('/deleteAnounce' , checkAuthMiddleware.checkAuth, announcementController.deleteann );

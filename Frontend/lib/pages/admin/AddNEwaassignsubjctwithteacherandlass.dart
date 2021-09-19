@@ -155,6 +155,7 @@ class _logiState extends State<addnewassignedsubjectss> {
     String tokenValue = prefs.getString('token');
     return tokenValue;
   }
+  
   Future<void> loginPostRequest(  ) async {
     final url = Uri.parse('$urlPrefix/subjectmanagement/addnewAasignedSubject');
 
@@ -430,10 +431,10 @@ class _logiState extends State<addnewassignedsubjectss> {
         },
         items: setofAnnouncements7.map((location) {
           return DropdownMenuItem(
-            child: new Text(location.section ,
+            child: new Text(location.section + "-" + location.grade ,
                 style: style.copyWith(
                     color: Colors.blue, fontWeight: FontWeight.bold)),
-            value: location.section,
+            value: location.section + "-" + location.grade,
           );
         }).toList(),
       ),

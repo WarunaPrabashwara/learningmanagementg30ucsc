@@ -5,7 +5,7 @@ function add(req , res){
   var section = req.body.section;
   var grade = req.body.grade;
  
-  var sql = `insert into classes(section, grade) 
+  var sql = `insert into groupsofstudents(class, groupname) 
   VALUES ("${section}", "${grade}")`;
   mydatabase.query( sql , function(error , rows, fields){
       if(error) throw error
@@ -15,39 +15,13 @@ function add(req , res){
   })
 }
 
-function addtoclassStudentsGroup(req , res){
-  console.log(req.body);
-        //  JSON.parse(req.body , (key , value ) =>{
-        //    console.log(key);
-        //  });
-  var className = req.body.className;
-  var studentEmail = req.body.studentEmail;
- var stringg = studentEmail.split(" ");
- console.log(stringg ) ;
- for(  i in stringg ){
-   console.log(stringg[i]) ;
-   if(stringg[i] != ''){
-    var sql = `insert into clasAtdent(className, studentEmail) 
-    VALUES ("${className}", "${stringg[i]}")`;
-    mydatabase.query( sql , function(error , rows, fields){
-        if(error) throw error
-    })
-   }
-
-
- }
- res.send("Added Student successfully !");
-   
- res.end();
-
-}
 
 
 function view(req , res){
       var userLevel = req.userData.userLevel;
       var filter = "";
  
-var quer ='SELECT id,section,grade FROM classes' ;
+var quer ='SELECT class,groupname FROM groupsofstudents' ;
   mydatabase.query( quer , function (error, results, fields) {
     if (error) {
         res.json({
@@ -108,7 +82,7 @@ res.end(JSON.stringify(results));
 }
 
 module.exports = {
-  addtoclassStudentsGroup:addtoclassStudentsGroup,
+    
     register: add,
     view:view ,
     viewMyAnnouncement:viewMyAnnouncement ,

@@ -134,13 +134,15 @@ function login(req , res){
                 const token = jwt.sign({
                     email: results[0].email,
                     userLevel:  results[0].userLevel,
-                    id :results[0].id
+                    id :results[0].id,
+                    name : results[0].name ,
                     //name :results[0].name,
                 }, '3000',{expiresIn:'20h'}, function(err, token){
                     res.status(200).json({
                       status:true,
                       message:'successfully authenticated',
                       userLevel: results[0].userLevel ,
+                      
                         token: token
                     });
                 });

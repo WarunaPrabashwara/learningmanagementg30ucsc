@@ -89,9 +89,6 @@ mydatabase.query( quer , function (error, results, fields) {
 
 
 function viewsubectAllsubjects(req , res){
-
-
-
 var quer ='SELECT name,category,allowed_classes FROM subjects '   ;
 mydatabase.query( quer  , function (error, results, fields) {
 if (error) {
@@ -109,6 +106,66 @@ res.end(JSON.stringify(results));
 }
   
 
+
+function teacherseeshersubjects(req , res){
+  var username = req.userData.name;
+
+   
+  var quer ='SELECT teacher_name,class_name,subject_name,isHomeworkAvailFlag,zoom_link FROM student_teacher_class WHERE teacher_name = ?'   ;
+  mydatabase.query( quer  ,[username] , function (error, results, fields) {
+  if (error) {
+      res.json({
+        status:false,
+        message:'there are some error with query'
+        })
+  }else{
+   
+  res.end(JSON.stringify(results));
+  
+  }
+  });
+  
+  }
+  
+
+  function sudentseeshersubjects(req , res){
+    var username = req.userData.email;
+  
+     
+    var quer ='SELECT className,studentEmail FROM clasAtdent WHERE studentEmail = ?'   ;
+    mydatabase.query( quer  ,[username] , function (error, results, fields) {
+    if (error) {
+        res.json({
+          status:false,
+          message:'there are some error with query'
+          })
+    }else{
+                console.log(results[0]);
+         
+                console.log(results[0].className);
+                var class_name = results[0].className.split("-") ;
+                console.log(class_name) ; 
+                console.log(class_name[0]) ; 
+                var quer ='SELECT teacher_name,class_name,subject_name,isHomeworkAvailFlag,zoom_link FROM student_teacher_class WHERE class_name = ?'   ;
+                mydatabase.query( quer  ,[results[0].className] , function (error, results, fields) {
+                if (error) {
+                    res.json({
+                      status:false,
+                      message:'there are some error with query'
+                      })
+                }else{
+                console.log("hii");
+                res.end(JSON.stringify(results));
+                
+                }
+                });
+              
+    }
+    });
+    
+    }
+    
+  
 function deleteann(req , res){
   var announcementid = req.body.id;
 
@@ -131,12 +188,13 @@ res.end(JSON.stringify(results));
 }
 
 module.exports = {
-    
+  sudentseeshersubjects:sudentseeshersubjects ,
     register: add,
     addsubcatogory:addsubcatogory ,
     viewsubcategory:viewsubcategory ,
     viewsubs:viewsubs ,
     viewsubectAllsubjects:viewsubectAllsubjects ,
     deleteann : deleteann ,
-    addnewAasignedSubject:addnewAasignedSubject
+    addnewAasignedSubject:addnewAasignedSubject,
+    teacherseeshersubjects :teacherseeshersubjects
 } 

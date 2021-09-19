@@ -2,7 +2,9 @@ import 'dart:convert';
 
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:frontend/pages/admin/addstudentstogroups.dart';
 import 'package:frontend/pages/admin/adduser.dart';
+import 'package:frontend/pages/admin/creategroups.dart';
 import 'package:frontend/pages/admin/viewusers.dart';
 import 'package:http/http.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -154,6 +156,68 @@ class _UserMgtState extends State<UserMgt> {
     );
   }
 
+  Widget createStudentGroups(){
+    return Container(
+      padding: EdgeInsets.fromLTRB(120.0, 10.0, 120.0, 0.0),
+      width: double.infinity,
+      child: RaisedButton(
+        elevation: 5,
+        onPressed: (){
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) {
+                return creategroups();
+              }),
+            );
+        },
+        padding: EdgeInsets.all(7),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15)
+        ),
+        color: Colors.white,
+        child: Text(
+          'View Students and their classes',
+          style: TextStyle(
+            color: Colors.blue.shade900,
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget addstudentstogroups(){
+    return Container(
+      padding: EdgeInsets.fromLTRB(120.0, 10.0, 120.0, 0.0),
+      width: double.infinity,
+      child: RaisedButton(
+        elevation: 5,
+        onPressed: (){
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) {
+                return addstudentstoGroups();
+              }),
+            );
+        },
+        padding: EdgeInsets.all(7),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15)
+        ),
+        color: Colors.white,
+        child: Text(
+          'Add students to Classes',
+          style: TextStyle(
+            color: Colors.blue.shade900,
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+    );
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -245,6 +309,25 @@ class _UserMgtState extends State<UserMgt> {
                 buildLoginBtn(),
                  SizedBox(height: 10.0,),
                  viewusers(),
+                 SizedBox(height: 10.0,),
+                 Padding(
+                  padding: const EdgeInsets.fromLTRB(22.0, 15.0, 22.0, 22.0),
+                  child: Center(
+                    child: Text(
+                      "-------------------------",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+
+
+                 createStudentGroups(),
+                 SizedBox(height: 10.0,),
+                 addstudentstogroups(),
 
 
                 // Column(
