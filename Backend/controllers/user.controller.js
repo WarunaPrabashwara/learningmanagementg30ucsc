@@ -1,3 +1,5 @@
+//myProfileData,register,viewusers ,login,changepswd ,viewTeachers ,viewStudents 
+
 const mydatabase = require('../util/database ');
 const bcryptjs = require('bcryptjs');
 const jwt = require('jsonwebtoken');
@@ -142,8 +144,7 @@ function login(req , res){
                       status:true,
                       message:'successfully authenticated',
                       userLevel: results[0].userLevel ,
-                      
-                        token: token
+                      token: token
                     });
                 });
             }else{

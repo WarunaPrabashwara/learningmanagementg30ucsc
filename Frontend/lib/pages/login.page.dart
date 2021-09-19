@@ -26,7 +26,7 @@ class resp {
   }
 }
 class _loginScreenState extends State<loginScreen> {
-  bool isRememberMe = false;
+  bool isRememberMe = true;
   static const urlPrefix = 'http://10.0.2.2:2222';
 
   String email ;
@@ -60,14 +60,14 @@ class _loginScreenState extends State<loginScreen> {
     final headers = {"Content-type": "application/json"};
 
     final json = '{"email": "${email}", "password": "${password}" }';
-    print('user: ${json}');
+    print('user login details : ${json}');
     final response = await post(url, headers: headers, body: json);
-    print('usyyyyer: ${response.body}');
+    print('response body: ${response.body}');
 
     resp user = resp.fromJson(jsonDecode(response.body));
     print('user: ${user.message}');
     print('Status code: ${response.statusCode}');
-    print('Body: ${response.body}');
+    print('Body: ${response.body}'); //body also has things above two
     //final message = MessageGet(response);
     return user ;
   }
@@ -85,7 +85,7 @@ class _loginScreenState extends State<loginScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Text(
-          'User ID',
+          'User Email',
           style: TextStyle(
               color: Colors.white,
               fontSize: 14,
@@ -119,7 +119,7 @@ class _loginScreenState extends State<loginScreen> {
               decoration: InputDecoration(
                   border: InputBorder.none,
                   contentPadding: EdgeInsets.only(top: 14),
-                  hintText: 'Enter your user ID',
+                  hintText: 'Enter your Email address',
                   hintStyle: TextStyle(
                       color: Colors.black38,
                       fontSize: 14.0
@@ -197,14 +197,14 @@ class _loginScreenState extends State<loginScreen> {
         elevation: 5,
         onPressed: (){
           setState(() => this._status = 'loading');
-            print("hhhhhh");
+            print("testing - login pressed noted");
           loginPostRequest().then(( result) {
-                 print("vvvv");
+                 print("Post req ok!");
             print(result);
             if (result.message == "successfully authenticated" ) {
               addTokenToSF(result.token , this.email , result.userLevel);
               addTokenToSF2( this.email);
-              print('on click buton: ${result.token}');
+              print('on click button: ${result.token}');
               if(result.userLevel == "teacher"){
                 Navigator.of(context).pushReplacementNamed('/teacher/home');
               }

@@ -140,8 +140,13 @@ class _MyProfileState extends State<MyProfile> {
 
     return  Scaffold(
       appBar: new AppBar(
-        title: new Text("home"),
-        backgroundColor: Colors.blue ,
+        title: Row(
+          children: [
+            SizedBox(width: 80,),
+            Text("My Profile"),
+          ],
+        ),
+        backgroundColor: Colors.blue.shade800 ,
       ),
       body:  new SingleChildScrollView(
           child: new Center(
@@ -158,6 +163,7 @@ class _MyProfileState extends State<MyProfile> {
                       )
                   ),
                   child: Padding(
+
                       padding: const EdgeInsets.all(36.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -171,14 +177,14 @@ class _MyProfileState extends State<MyProfile> {
                             ),
                           ),
                           SizedBox(height: 10,),
-                          Text('user name', style: TextStyle(color: Colors.white, letterSpacing: 2.0,  fontSize:20.0,fontWeight: FontWeight.bold, ),),
+                          Container(child: Text('User Name', style: TextStyle(color: Colors.blue.shade900, letterSpacing: 2.0,  fontSize:20.0,fontWeight: FontWeight.bold, ),)),
                           SizedBox(height: 2.0,),
-                          Text('${this._name}', style: TextStyle(color: Colors.white, letterSpacing: 1.0, fontSize:20.0,fontWeight: FontWeight.bold ),),
+                          Text('${this._name}', style: TextStyle(color: Colors.white, letterSpacing: 1.0, fontSize:20.0, ),),
                           SizedBox(height: 10,),
 
-                          Text('index', style: TextStyle(color: Colors.white, letterSpacing: 2.0, fontSize:20.0, fontWeight: FontWeight.bold, ),),
+                          Text('Index', style: TextStyle(color: Colors.blue.shade900, letterSpacing: 2.0, fontSize:20.0, fontWeight: FontWeight.bold, ),),
                           SizedBox(height: 2.0,),
-                          Text('${this._index}', style: TextStyle(color: Colors.white, letterSpacing: 1.0, fontSize:20.0,fontWeight: FontWeight.bold ),),
+                          Text('${this._index}', style: TextStyle(color: Colors.white, letterSpacing: 1.0, fontSize:20.0,),),
                           SizedBox(height: 10,),
 
                           SizedBox(

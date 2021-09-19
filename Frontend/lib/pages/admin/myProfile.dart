@@ -86,7 +86,7 @@ class myProfile extends StatelessWidget {
                           ),
                           color: Colors.blue.shade100,
                           child: Text(
-                            'Change Password',
+                            'Change Passworxd',
                             style: TextStyle(
                               color: Colors.blue.shade900,
                               fontSize: 16,
