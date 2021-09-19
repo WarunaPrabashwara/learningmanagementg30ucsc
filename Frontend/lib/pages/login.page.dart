@@ -188,45 +188,45 @@ class _loginScreenState extends State<loginScreen> {
       ],
     );
   }
-  Widget buildForgetPasswordButton(){
-    return Container(
-      alignment: Alignment.centerRight,
-      child: FlatButton(
-        onPressed: ()=>print("Forgot password pressed"),
-        padding: EdgeInsets.only(right: 0),
-        child: Text('Forgot Password?', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 14.0),),
-      ),
-    );
-  }
-  Widget buildremembercb(){
-    return Container(
-      height: 20,
-      child: Row(
-        children: <Widget>[
-          Theme(
-            data: ThemeData(unselectedWidgetColor: Colors.blue),
-            child: Checkbox(
-              value: isRememberMe,
-              checkColor: Colors.green,
-              activeColor: Colors.white,
-              onChanged: (value){
-                setState(() {
-                  isRememberMe = value;
-                });
-              },
-            ),
-          ),
-          Text(
-            'Remember me',
-            style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold
-            ),
-          )
-        ],
-      ),
-    );
-  }
+  // Widget buildForgetPasswordButton(){
+  //   return Container(
+  //     alignment: Alignment.centerRight,
+  //     child: FlatButton(
+  //       onPressed: ()=>print("Forgot password pressed"),
+  //       padding: EdgeInsets.only(right: 0),
+  //       child: Text('Forgot Password?', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 14.0),),
+  //     ),
+  //   );
+  // }
+  // Widget buildremembercb(){
+  //   return Container(
+  //     height: 20,
+  //     child: Row(
+  //       children: <Widget>[
+  //         Theme(
+  //           data: ThemeData(unselectedWidgetColor: Colors.blue),
+  //           child: Checkbox(
+  //             value: isRememberMe,
+  //             checkColor: Colors.green,
+  //             activeColor: Colors.white,
+  //             onChanged: (value){
+  //               setState(() {
+  //                 isRememberMe = value;
+  //               });
+  //             },
+  //           ),
+  //         ),
+  //         Text(
+  //           'Remember me',
+  //           style: TextStyle(
+  //               color: Colors.white,
+  //               fontWeight: FontWeight.bold
+  //           ),
+  //         )
+  //       ],
+  //     ),
+  //   );
+  // }
   Widget buildLoginBtn(){
     return Container(
       padding: EdgeInsets.fromLTRB(100.0, 15.0, 100.0, 10.0),
@@ -372,10 +372,12 @@ class _loginScreenState extends State<loginScreen> {
                         buildEmail(),
                         SizedBox(height: 20,),
                         buildPassword(),
-                        buildForgetPasswordButton(),
-                        buildremembercb(),
+                        // buildForgetPasswordButton(),
+                        //buildremembercb(),
+                        SizedBox(height: 20,),
                         buildLoginBtn(),
                         buildSignUpButn(),
+                        SizedBox(height: 20,),
                         Text(_status)
                       ],
                     ),
