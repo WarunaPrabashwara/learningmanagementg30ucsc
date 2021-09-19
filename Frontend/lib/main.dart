@@ -20,28 +20,28 @@ void main() async {
   Widget _defaultHome = new loginScreen();
 
   // Get result of the login function.
-  // bool _result = await appAuth.login();
-  // var _userLevel = 'section_head' ;
-  // if (_result) {
-  //   if (_userLevel == 'teacher' ) {
-  //     _defaultHome = new DashboardTeacher();
-  //   }
-  //   else if (_userLevel == 'admin') {
-  //     _defaultHome = new Dashboard();
-  //   }
-  //   else if (_userLevel == 'section_head') {
-  //  //   _defaultHome = new Dashboard();
-  //   }
-  //   else if (_userLevel == 'principal') {
-  //  //   _defaultHome = new sectionheadHomePage();
-  //   }
-  //   else if (_userLevel == 'student') {
-  //   //  _defaultHome = new sectionheadHomePage();
-  //   }
-  //   else {
-  //     //
-  //   }
-  // }
+  bool _result = await appAuth.login();
+  var _userLevel = 'section_head' ;
+  if (_result) {
+    if (_userLevel == 'teacher' ) {
+      _defaultHome = new DashboardTeacher();
+    }
+    else if (_userLevel == 'admin') {
+      _defaultHome = new Dashboard();
+    }
+    else if (_userLevel == 'section_head') {
+   //   _defaultHome = new Dashboard();
+    }
+    else if (_userLevel == 'principal') {
+   //   _defaultHome = new sectionheadHomePage();
+    }
+    else if (_userLevel == 'student') {
+    //  _defaultHome = new sectionheadHomePage();
+    }
+    else {
+      //
+    }
+  }
 
   // Run app!
   runApp(MyApp());
