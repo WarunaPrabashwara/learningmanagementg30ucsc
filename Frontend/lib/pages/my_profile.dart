@@ -87,54 +87,54 @@ class _MyProfileState extends State<MyProfile> {
     });
 }
 
-    final ChangePasswordButon = Material(
-      elevation: 5.0,
-      borderRadius: BorderRadius.circular(30.0),
-      color: Color(0xff01A0C7),
-      child: MaterialButton(
-        minWidth: MediaQuery
-            .of(context)
-            .size
-            .width,
-        padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        onPressed: () {
-          setState(() => this._status = 'loading');
+    // final ChangePasswordButon = Material(
+    //   elevation: 5.0,
+    //   borderRadius: BorderRadius.circular(30.0),
+    //   color: Colors.blue.shade700,
+    //   child: MaterialButton(
+    //     minWidth: MediaQuery
+    //         .of(context)
+    //         .size
+    //         .width,
+    //     //padding: EdgeInsets.fromLTRB(50.0, 10.0, 50.0, 10.0),
+    //     onPressed: () {
+    //       setState(() => this._status = 'loading');
+    //
+    //       Navigator.push(
+    //         context,
+    //         MaterialPageRoute(builder: (context) {
+    //           return changepassword();
+    //         }),
+    //       );
+    //     },
+    //     child: Text('Change Password',
+    //         textAlign: TextAlign.center,
+    //         style: style.copyWith(
+    //             color: Colors.white, fontWeight: FontWeight.bold)),
+    //   ),
+    // );
 
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) {
-              return changepassword();
-            }),
-          );
-        },
-        child: Text('Change Password',
-            textAlign: TextAlign.center,
-            style: style.copyWith(
-                color: Colors.white, fontWeight: FontWeight.bold)),
-      ),
-    );
-
-    final LogoutButon = Material(
-      elevation: 5.0,
-      borderRadius: BorderRadius.circular(30.0),
-      color: Color(0xff01A0C7),
-      child: MaterialButton(
-        minWidth: MediaQuery
-            .of(context)
-            .size
-            .width,
-        padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        onPressed: () {
-          setState(() => this._status = 'loading');
-
-          Navigator.of(context).pushReplacementNamed('/login');
-        },
-        child: Text('Logout',
-            textAlign: TextAlign.center,
-            style: style.copyWith(
-                color: Colors.white, fontWeight: FontWeight.bold)),
-      ),
-    );
+    // final LogoutButon = Material(
+    //   elevation: 5.0,
+    //   borderRadius: BorderRadius.circular(30.0),
+    //   color: Colors.blue.shade700,
+    //   child: MaterialButton(
+    //     // minWidth: MediaQuery
+    //     //     .of(context)
+    //     //     .size
+    //     //     .width,
+    //     padding: EdgeInsets.fromLTRB(50.0, 10.0, 50.0, 10.0),
+    //     onPressed: () {
+    //       setState(() => this._status = 'loading');
+    //
+    //       Navigator.of(context).pushReplacementNamed('/login');
+    //     },
+    //     child: Text('Logout',
+    //         textAlign: TextAlign.center,
+    //         style: style.copyWith(
+    //             color: Colors.white, fontWeight: FontWeight.bold)),
+    //   ),
+    // );
 
 
 
@@ -178,11 +178,19 @@ class _MyProfileState extends State<MyProfile> {
                           ),
                           SizedBox(height: 10,),
                           Container(child: Text('User Name', style: TextStyle(color: Colors.blue.shade900, letterSpacing: 2.0,  fontSize:20.0,fontWeight: FontWeight.bold, ),)),
+                          Divider(
+                            height: 10.0,
+                            color: Colors.black,
+                          ),
                           SizedBox(height: 2.0,),
                           Text('${this._name}', style: TextStyle(color: Colors.white, letterSpacing: 1.0, fontSize:20.0, ),),
                           SizedBox(height: 10,),
 
                           Text('Index', style: TextStyle(color: Colors.blue.shade900, letterSpacing: 2.0, fontSize:20.0, fontWeight: FontWeight.bold, ),),
+                          Divider(
+                            height: 10.0,
+                            color: Colors.black,
+                          ),
                           SizedBox(height: 2.0,),
                           Text('${this._index}', style: TextStyle(color: Colors.white, letterSpacing: 1.0, fontSize:20.0,),),
                           SizedBox(height: 10,),
@@ -191,13 +199,70 @@ class _MyProfileState extends State<MyProfile> {
                             height: 15.0,
                           ),
                           SizedBox(height: 45.0),
-                          ChangePasswordButon,
+                          //ChangePasswordButon,
+                          Container(
+                            padding: EdgeInsets.symmetric(vertical: 0, horizontal: 80),
+                            width: double.infinity,
+                            child: RaisedButton(
+                              elevation: 5,
+                              onPressed: () {
+                                setState(() => this._status = 'loading');
+
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) {
+                                    return changepassword();
+                                  }),
+                                );
+                              },
+                              padding: EdgeInsets.symmetric(vertical: 12.0),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10)
+                              ),
+                              color: Colors.blue.shade100,
+                              child: Text(
+                                'Change Password',
+                                style: TextStyle(
+                                  color: Colors.blue.shade900,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
                           SizedBox(height: 45.0),
-                          LogoutButon,
+                          //LogoutButon,
+                          Container(
+                            padding: EdgeInsets.symmetric(vertical: 0, horizontal: 80),
+                            width: double.infinity,
+                            child: RaisedButton(
+                              elevation: 5,
+                              onPressed: () {
+                                setState(() => this._status = 'loading');
+
+                                Navigator.of(context).pushReplacementNamed('/login');
+                              },
+                              padding: EdgeInsets.symmetric(vertical: 12.0),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10)
+                              ),
+                              color: Colors.blue.shade100,
+                              child: Text(
+                                'Log out',
+                                style: TextStyle(
+                                  color: Colors.blue.shade900,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
                           SizedBox(height: 45.0),
 
                           Text('${this._status}',),
-                          SizedBox( height: 100,)
+                          SizedBox( height: 100,),
+
+
 
                         ],
                       )

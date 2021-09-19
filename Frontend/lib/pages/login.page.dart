@@ -320,6 +320,11 @@ class _loginScreenState extends State<loginScreen> {
                                 fontWeight: FontWeight.bold,
                                 fontSize: 16.0
                             ),textAlign: TextAlign.center,),
+                            Text("The whole school at a one place", style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 10.0
+                            ),textAlign: TextAlign.center,),
                           ],
                         ),
 
