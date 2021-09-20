@@ -112,6 +112,66 @@ function viewStudents(req , res){
     
     
       }
+
+      function viewPrincipal(req , res){
+        console.log("fdfsaaagfvvx") ;
+      
+        var quer ='SELECT id,name,email,userLevel,indexNo,telephone,address,dob FROM users WHERE userLevel = ?' ;
+        mydatabase.query( quer ,['principal'], function (error, results, fields) {
+        if (error) {
+            res.json({
+              status:false,
+              message:'there are some error with query'
+              })
+        }else{
+        
+        res.end(JSON.stringify(results));
+      
+        }
+        });
+      
+      
+        }
+
+        function viewSectionH(req , res){
+          console.log("fdfsaaagfvvx") ;
+        
+          var quer ='SELECT id,name,email,userLevel,indexNo,telephone,address,dob FROM users WHERE userLevel = ?' ;
+          mydatabase.query( quer ,['section_head'], function (error, results, fields) {
+          if (error) {
+              res.json({
+                status:false,
+                message:'there are some error with query'
+                })
+          }else{
+          
+          res.end(JSON.stringify(results));
+        
+          }
+          });
+        
+        
+          }
+
+          function viewAdmins(req , res){
+            console.log("fdfsaaagfvvx") ;
+          
+            var quer ='SELECT id,name,email,userLevel,indexNo,telephone,address,dob FROM users WHERE userLevel = ?' ;
+            mydatabase.query( quer ,['admin'], function (error, results, fields) {
+            if (error) {
+                res.json({
+                  status:false,
+                  message:'there are some error with query'
+                  })
+            }else{
+            
+            res.end(JSON.stringify(results));
+          
+            }
+            });
+          
+          
+            }
     
     
   
@@ -261,6 +321,10 @@ module.exports = {
     login: login,
     changepswd :changepswd ,
     viewTeachers : viewTeachers ,
-    viewStudents : viewStudents 
+    viewStudents : viewStudents,
+    viewPrincipal : viewPrincipal,
+    viewSectionH : viewSectionH,
+    viewAdmins : viewAdmins,
+     
 
 } 

@@ -57,6 +57,8 @@ class _MyProfileState extends State<MyProfile> {
       _address = text;
     });
   }
+
+
   void _changedob(String text) {
     setState(() {
       _dob = text;
