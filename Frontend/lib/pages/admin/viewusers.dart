@@ -265,9 +265,9 @@ class _UserMgtState extends State<viewuserspage> {
         appBar: AppBar(
           backgroundColor: Colors.blue.shade800,
           title: Padding(
-            padding: const EdgeInsets.only(left: 30.0),
+            padding: const EdgeInsets.only(left: 70.0),
             child: Text(
-                "User Management".toUpperCase(),
+                "all Users".toUpperCase(),
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 20.0,
@@ -366,7 +366,18 @@ class _UserMgtState extends State<viewuserspage> {
                                   Row(
                                     children: [
                                       TextButton(
-                                        onPressed: (){},
+                                        onPressed: (){
+
+
+
+
+
+
+
+
+
+
+                                        },
                                         child: Text("View".toUpperCase(), style: TextStyle(fontSize: 10, color: Colors.black,),),
                                         style: ButtonStyle(
                                             padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0)),

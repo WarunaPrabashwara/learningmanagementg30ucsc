@@ -266,7 +266,7 @@ await getTokenFromSF().then(( token) async {
         color: Colors.white,
         child: Center(
           child: Text(
-            'Delete my published announcements',
+            'Delete published announcements',
             style: TextStyle(
               color: Colors.blue.shade900,
               fontSize: 16.0,
