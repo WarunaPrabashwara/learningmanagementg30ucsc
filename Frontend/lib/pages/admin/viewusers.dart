@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:frontend/pages/admin/adduser.dart';
 import 'package:http/http.dart';
@@ -22,7 +23,7 @@ class respAnnouncement {
   String telephone;
   String address;
   String dob ; 
-  respAnnouncement(this.id, this.name, this.email ,this.userLevel, this.indexNo, this.telephone,this.address, this.dob );
+  respAnnouncement(this.id, this.name, this.email ,this.userLevel, this.indexNo, this.telephone,this.address, this.dob ); //constructor
 
   respAnnouncement.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -62,7 +63,7 @@ class _UserMgtState extends State<viewuserspage> {
     return tokenValue;
   }
   
-  Future<List<respAnnouncement>> AnouncementviewRequest(  ) async {
+  Future<List<respAnnouncement>> AnouncementviewRequest(  ) async {  //connect to backend
     final url = Uri.parse('$urlPrefix/user/viewusers');
     List<respAnnouncement> snapshot = await getTokenFromSF().then(( token) async {
       print('anment: ${token}');
@@ -92,36 +93,7 @@ class _UserMgtState extends State<viewuserspage> {
   }
 
   
-  Widget buildLoginBtn(){
-    return Container(
-      padding: EdgeInsets.fromLTRB(120.0, 10.0, 120.0, 0.0),
-      width: double.infinity,
-      child: RaisedButton(
-        elevation: 5,
-        onPressed: (){
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) {
-                return adduser();
-              }),
-            );
-        },
-        padding: EdgeInsets.all(7),
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(15)
-        ),
-        color: Colors.white,
-        child: Text(
-          'Add a user',
-          style: TextStyle(
-            color: Colors.blue.shade900,
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
-    );
-  }
+
 
 
   @override
@@ -160,18 +132,19 @@ class _UserMgtState extends State<viewuserspage> {
                 //height: 50,
                 child: Column(
                   children: <Widget>[
-                                                Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    Row(
+                      //mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         
                         Padding(
                           padding: const EdgeInsets.fromLTRB(10.0, 15.0, 5.0, 15.0),
                           child: Center(
                             child: Text(
-                              '${setofAnnouncements[index].email}' ,
+                              '${setofAnnouncements[index].name}' ,
                               style: TextStyle(
-                                color: Colors.black,
+                                color: Colors.red,
                                 fontSize: 17.0,
+
                                 //fontWeight: FontWeight.bold
                               ),
                             ),
@@ -182,53 +155,15 @@ class _UserMgtState extends State<viewuserspage> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              TextButton(
-                                onPressed: (){},
-                                child: Text("View".toUpperCase(), style: TextStyle(fontSize: 10, color: Colors.black,),),
-                                style: ButtonStyle(
-                                    padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0)),
-                                    foregroundColor: MaterialStateProperty.all<Color>(Colors.red),
-                                    backgroundColor: MaterialStateProperty.all<Color>(Colors.grey.shade300),
-                                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                        RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(18.0),
-                                          side: BorderSide(color: Colors.white),
-                                        )
-                                    )
+                              Text(
+                                '${setofAnnouncements[index].email}' ,
+                                style: TextStyle(
+                                  color: Colors.red,
+                                  fontSize: 17.0,
+                                  //fontWeight: FontWeight.bold
                                 ),
                               ),
-                              SizedBox(width: 5,),
-                              TextButton(
-                                onPressed: (){},
-                                child: Text("Edit".toUpperCase(), style: TextStyle(fontSize: 10, color: Colors.black,),),
-                                style: ButtonStyle(
-                                    padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0)),
-                                    foregroundColor: MaterialStateProperty.all<Color>(Colors.red),
-                                    backgroundColor: MaterialStateProperty.all<Color>(Colors.grey.shade300),
-                                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                        RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(18.0),
-                                          side: BorderSide(color: Colors.white),
-                                        )
-                                    )
-                                ),
-                              ),
-                              SizedBox(width: 5,),
-                              ElevatedButton(
-                                onPressed: (){},
-                                child: Text("DELETE".toUpperCase(), style: TextStyle(fontSize: 10),),
-                                style: ButtonStyle(
-                                    padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0)),
-                                    foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
-                                    backgroundColor: MaterialStateProperty.all<Color>(Colors.grey.shade300),
-                                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                        RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(18.0),
-                                            side: BorderSide(color: Colors.white)
-                                        )
-                                    )
-                                ),
-                              ),
+
                             ],
                           ),
                         ),

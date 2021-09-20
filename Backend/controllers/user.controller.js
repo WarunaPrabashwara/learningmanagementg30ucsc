@@ -243,6 +243,10 @@ function myProfileData(req , res){
     
           email:results[0].email,
           indexNo: results[0].indexNo ,
+          name: results[0].name ,
+          telephone: results[0].telephone ,
+          address: results[0].address ,
+          dob: results[0].dob ,
   
         });
 
