@@ -126,10 +126,23 @@ class _MyProfileState extends State<MyProfile> {
         title: Row(
           children: [
             SizedBox(width: 80,),
-            Text("My Profile".toUpperCase()),
+            Text("My Profile".toUpperCase(),style: TextStyle(
+                color: Colors.white,
+                fontSize: 18.0,
+                fontWeight: FontWeight.bold,
+                height: 3.0
+            ),),
           ],
         ),
         backgroundColor: Colors.blue.shade800 ,
+        flexibleSpace: Image.asset(
+          "assets/df3.png",
+          fit: BoxFit.cover,
+        ),
+        bottom: PreferredSize(
+          preferredSize: Size.fromHeight(10.0),
+          child: Container(),
+        ),
       ),
       body:  new SingleChildScrollView(
           child: new Center(
@@ -139,8 +152,10 @@ class _MyProfileState extends State<MyProfile> {
                           begin: Alignment.topCenter,
                           end: Alignment.bottomCenter,
                           colors: [
+                            Colors.blue.shade100,
                             Colors.blue.shade300,
-                            Colors.blue.shade900,
+                            Colors.blue.shade300,
+                            Colors.blue.shade400,
                           ]
                       )
                   ),

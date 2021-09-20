@@ -251,7 +251,7 @@ class _UserMgtState extends State<UserMgt> {
                 color: Colors.white,
                 fontSize: 18.0,
                 fontWeight: FontWeight.bold,
-              height: 3.0
+              height: 3.0,
             ),
 
           ),
@@ -268,9 +268,10 @@ class _UserMgtState extends State<UserMgt> {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
+                    Colors.blue.shade100,
+                    Colors.blue.shade200,
                     Colors.blue.shade300,
-                    Colors.blue.shade900,
-
+                    Colors.blue.shade700,
                   ]
               )
           ),

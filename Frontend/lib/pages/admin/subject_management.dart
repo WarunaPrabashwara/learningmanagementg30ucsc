@@ -23,6 +23,14 @@ class _SubMgtState extends State<SubMgt> {
       //backgroundColor: decor,
       appBar: AppBar(
         backgroundColor: Colors.blue.shade800,
+        flexibleSpace: Image.asset(
+          "assets/df3.png",
+          fit: BoxFit.cover,
+        ),
+        bottom: PreferredSize(
+          preferredSize: Size.fromHeight(20.0),
+          child: Container(),
+        ),
         title:
               Center(
                 child: Text(
@@ -30,7 +38,8 @@ class _SubMgtState extends State<SubMgt> {
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 18.0,
-                    fontWeight: FontWeight.bold
+                    fontWeight: FontWeight.bold,
+                  height: 3.0,
                 ),
         ),
               ),
@@ -45,9 +54,10 @@ class _SubMgtState extends State<SubMgt> {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
+                    Colors.blue.shade700,
+                    Colors.blue.shade400,
                     Colors.blue.shade300,
-                    Colors.blue.shade900,
-
+                    Colors.blue.shade200,
                   ]
               )
           ),
@@ -64,7 +74,7 @@ class _SubMgtState extends State<SubMgt> {
                       "Subject Categories",
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 20.0,
+                        fontSize: 18.0,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -131,7 +141,7 @@ class _SubMgtState extends State<SubMgt> {
                       "Subjects",
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 20.0,
+                        fontSize: 18.0,
                         fontWeight: FontWeight.bold,
                       ),
                     ),

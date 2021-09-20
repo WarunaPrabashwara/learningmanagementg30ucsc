@@ -27,7 +27,7 @@ class _ttmanagement extends State<ttmanagement> {
     final ttOfTeacher = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(30.0),
-      color: Color(0xff01A0C7),
+      color: Colors.blue,
       child: MaterialButton(
         minWidth: MediaQuery
             .of(context)
@@ -55,7 +55,7 @@ class _ttmanagement extends State<ttmanagement> {
         child: Text('Add a time table of a teacher',
             textAlign: TextAlign.center,
             style: style.copyWith(
-                color: Colors.white, fontWeight: FontWeight.bold)),
+                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18.0)),
       ),
     );
 
@@ -63,13 +63,13 @@ class _ttmanagement extends State<ttmanagement> {
     final ttOfStudent = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(30.0),
-      color: Color(0xff01A0C7),
+      color: Colors.blue,
       child: MaterialButton(
         minWidth: MediaQuery
             .of(context)
             .size
             .width,
-        padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+        padding: EdgeInsets.fromLTRB(15.0, 15.0, 15.0, 15.0),
         onPressed: () {
           setState(() => this._status = 'loading');
 
@@ -90,7 +90,7 @@ class _ttmanagement extends State<ttmanagement> {
         child: Text('Add a time table of a student',
             textAlign: TextAlign.center,
             style: style.copyWith(
-                color: Colors.white, fontWeight: FontWeight.bold)),
+                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18.0)),
       ),
     );
 
@@ -98,36 +98,60 @@ class _ttmanagement extends State<ttmanagement> {
 
 
     return  Scaffold(
-      appBar: new AppBar(
-        title: new Text('Home'),
+      appBar: AppBar(
+        backgroundColor: Colors.blue.shade800,
+        flexibleSpace: Image.asset(
+          "assets/df3.png",
+          fit: BoxFit.cover,
+        ),
+        bottom: PreferredSize(
+          preferredSize: Size.fromHeight(20.0),
+          child: Container(),
+        ),
+        title:
+        Padding(
+          padding: const EdgeInsets.all(18.0),
+          child: Text(
+            "time table management".toUpperCase(),
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 18.0,
+              fontWeight: FontWeight.bold,
+              height: 3.0,
+            ),
+          ),
+        ),
       ),
-      body:  new SingleChildScrollView(
-          child: new Center(
-              child: new Container(
-                  color: Colors.white,
-                  child: Padding(
-                      padding: const EdgeInsets.all(36.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          SizedBox(
-                            height: 15.0,
-                          ),
-                          SizedBox(height: 45.0),
-                          ttOfTeacher,
-                          SizedBox(height: 45.0),
-                          ttOfStudent,
-                          SizedBox(height: 45.0),
+      body:  Container(
+        
+        child: new SingleChildScrollView(
+            child: new Center(
+                child: new Container(
+                    color: Colors.white,
+                    child: Padding(
+                        padding: const EdgeInsets.all(36.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            SizedBox(
+                              height: 15.0,
+                            ),
+                            SizedBox(height: 45.0),
+                            ttOfTeacher,
+                            SizedBox(height: 45.0),
+                            ttOfStudent,
+                            SizedBox(height: 45.0),
 
-                  //        Text('${this._status}',)
+                    //        Text('${this._status}',)
 
-                        ],
-                      )
-                  )
-              )
-          )
+                          ],
+                        )
+                    )
+                )
+            )
 
+        ),
       ),
     );
   }

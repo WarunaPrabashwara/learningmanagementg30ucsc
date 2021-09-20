@@ -18,6 +18,14 @@ class _ClzMgtState extends State<ClzMgt> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue.shade800,
+        flexibleSpace: Image.asset(
+          "assets/df3.png",
+          fit: BoxFit.cover,
+        ),
+        bottom: PreferredSize(
+          preferredSize: Size.fromHeight(20.0),
+          child: Container(),
+        ),
         title:
         Padding(
           padding: const EdgeInsets.all(18.0),
@@ -26,7 +34,8 @@ class _ClzMgtState extends State<ClzMgt> {
             style: TextStyle(
                 color: Colors.white,
                 fontSize: 18.0,
-                fontWeight: FontWeight.bold
+                fontWeight: FontWeight.bold,
+              height: 3.0,
             ),
           ),
         ),
@@ -40,9 +49,10 @@ class _ClzMgtState extends State<ClzMgt> {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
+                    Colors.blue.shade500,
                     Colors.blue.shade300,
-                    Colors.blue.shade900,
-
+                    Colors.blue.shade200,
+                    Colors.blue.shade100,
                   ]
               )
           ),

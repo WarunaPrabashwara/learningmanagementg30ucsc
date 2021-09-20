@@ -50,35 +50,74 @@ class view_my_timetable extends StatefulWidget {
     //final url = Uri.parse('$urlPrefix/uploads/timetables/' + this.email + '.png');
   //  String urlink = url.toString();
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: title,
       home: Scaffold(
-        appBar: AppBar(
-          title: Text(title),
-        ),
-        body:SingleChildScrollView(
-
-
-            child:
-                Container(
-
-                    width:displaywidth,
-                  // height: double.infinity,
-                  child:
-                    CachedNetworkImage(
-                    imageUrl: url.toString()  ,
-                  httpHeaders: {
-                    "authorization" : "Bearer $_token"
-                  },
-                    placeholder:(context ,url ) =>CircularProgressIndicator() ,
-                    errorWidget:(context, url ,error )=>Text("your time table is not available") ,
-                  fit: BoxFit.fitWidth,
-
-                  ),
-
-
+          appBar: AppBar(
+            backgroundColor: Colors.blue.shade800,
+            flexibleSpace: Image.asset(
+              "assets/df3.png",
+              fit: BoxFit.cover,
+            ),
+            bottom: PreferredSize(
+              preferredSize: Size.fromHeight(20.0),
+              child: Container(),
+            ),
+            title:
+            Padding(
+              padding: const EdgeInsets.all(18.0),
+              child: Text(
+                "My Time Table".toUpperCase(),
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.bold,
+                  height: 3.0,
+                ),
               ),
+            ),
+          ),
+        body:Container(
+
+          height: double.infinity,
+          width: double.infinity,
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Colors.blue.shade500,
+                    Colors.blue.shade400,
+                    Colors.blue.shade300,
+                    Colors.blue.shade200,
+                  ]
+              )
+          ),
+          child: SingleChildScrollView(
 
 
+              child:
+                  Container(
+
+                      width:displaywidth,
+                    // height: double.infinity,
+                    child:
+                      CachedNetworkImage(
+                      imageUrl: url.toString()  ,
+                    httpHeaders: {
+                      "authorization" : "Bearer $_token"
+                    },
+                      placeholder:(context ,url ) =>CircularProgressIndicator() ,
+                      errorWidget:(context, url ,error )=>Text("your time table is not available") ,
+                    fit: BoxFit.fitWidth,
+
+                    ),
+
+
+                ),
+
+
+          ),
         )
 
       ),

@@ -56,7 +56,7 @@ class _generate_term_test_reportsState extends State<generate_term_test_reports>
         hint: Text('select' ,
             textAlign: TextAlign.center,
             style: style.copyWith(
-                color: Colors.blue, fontWeight: FontWeight.bold)), // Not necessary for Option 1
+                color: Colors.black, fontWeight: FontWeight.bold)), // Not necessary for Option 1
         value: _selectedYear,
         onChanged: (newValue) {
           setState(() {
@@ -67,7 +67,7 @@ class _generate_term_test_reportsState extends State<generate_term_test_reports>
           return DropdownMenuItem(
             child: new Text(location ,
                 style: style.copyWith(
-                color: Colors.blue, fontWeight: FontWeight.bold)),
+                color: Colors.black, fontWeight: FontWeight.bold)),
             value: location,
           );
         }).toList(),
@@ -82,7 +82,7 @@ class _generate_term_test_reportsState extends State<generate_term_test_reports>
         hint: Text('select' ,
             textAlign: TextAlign.center,
             style: style.copyWith(
-                color: Colors.blue, fontWeight: FontWeight.bold)), // Not necessary for Option 1
+                color: Colors.black, fontWeight: FontWeight.bold)), // Not necessary for Option 1
         value: _selectedTerm,
         onChanged: (newValue) {
           setState(() {
@@ -93,7 +93,7 @@ class _generate_term_test_reportsState extends State<generate_term_test_reports>
           return DropdownMenuItem(
             child: new Text(location ,
                 style: style.copyWith(
-                    color: Colors.blue, fontWeight: FontWeight.bold)),
+                    color: Colors.black, fontWeight: FontWeight.bold)),
             value: location,
           );
         }).toList(),
@@ -108,7 +108,7 @@ class _generate_term_test_reportsState extends State<generate_term_test_reports>
         hint: Text('select' ,
             textAlign: TextAlign.center,
             style: style.copyWith(
-                color: Colors.blue, fontWeight: FontWeight.bold)), // Not necessary for Option 1
+                color: Colors.black, fontWeight: FontWeight.bold)), // Not necessary for Option 1
         value: _selectedSubject,
         onChanged: (newValue) {
           setState(() {
@@ -119,7 +119,7 @@ class _generate_term_test_reportsState extends State<generate_term_test_reports>
           return DropdownMenuItem(
             child: new Text(location ,
                 style: style.copyWith(
-                    color: Colors.blue, fontWeight: FontWeight.bold)),
+                    color: Colors.black, fontWeight: FontWeight.bold)),
             value: location,
           );
         }).toList(),
@@ -134,7 +134,7 @@ class _generate_term_test_reportsState extends State<generate_term_test_reports>
         hint: Text('select' ,
             textAlign: TextAlign.center,
             style: style.copyWith(
-                color: Colors.blue, fontWeight: FontWeight.bold)), // Not necessary for Option 1
+                color: Colors.black, fontWeight: FontWeight.bold)), // Not necessary for Option 1
         value: _selectedSection,
         onChanged: (newValue) {
           setState(() {
@@ -145,7 +145,7 @@ class _generate_term_test_reportsState extends State<generate_term_test_reports>
           return DropdownMenuItem(
             child: new Text(location ,
                 style: style.copyWith(
-                    color: Colors.blue, fontWeight: FontWeight.bold)),
+                    color: Colors.black, fontWeight: FontWeight.bold)),
             value: location,
           );
         }).toList(),
@@ -160,7 +160,7 @@ class _generate_term_test_reportsState extends State<generate_term_test_reports>
         hint: Text('select' ,
             textAlign: TextAlign.center,
             style: style.copyWith(
-                color: Colors.blue, fontWeight: FontWeight.bold)), // Not necessary for Option 1
+                color: Colors.black, fontWeight: FontWeight.bold)), // Not necessary for Option 1
         value: _selectedClass,
         onChanged: (newValue) {
           setState(() {
@@ -171,7 +171,7 @@ class _generate_term_test_reportsState extends State<generate_term_test_reports>
           return DropdownMenuItem(
             child: new Text(location ,
                 style: style.copyWith(
-                    color: Colors.blue, fontWeight: FontWeight.bold)),
+                    color: Colors.black, fontWeight: FontWeight.bold)),
             value: location,
           );
         }).toList(),
@@ -186,7 +186,7 @@ class _generate_term_test_reportsState extends State<generate_term_test_reports>
         hint: Text('select' ,
             textAlign: TextAlign.center,
             style: style.copyWith(
-                color: Colors.blue, fontWeight: FontWeight.bold)), // Not necessary for Option 1
+                color: Colors.black, fontWeight: FontWeight.bold)), // Not necessary for Option 1
         value: _selectedStudent,
         onChanged: (newValue) {
           setState(() {
@@ -253,145 +253,182 @@ class _generate_term_test_reportsState extends State<generate_term_test_reports>
     );
 
     return  Scaffold(
-      appBar: new AppBar(
-        title: new Text('Home'),
+      appBar: AppBar(
+        backgroundColor: Colors.blue.shade800,
+        flexibleSpace: Image.asset(
+          "assets/df3.png",
+          fit: BoxFit.cover,
+        ),
+        bottom: PreferredSize(
+          preferredSize: Size.fromHeight(20.0),
+          child: Container(),
+        ),
+        title:
+        Padding(
+          padding: const EdgeInsets.all(18.0),
+          child: Text(
+            "Term Test Reports".toUpperCase(),
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 18.0,
+              fontWeight: FontWeight.bold,
+              height: 3.0,
+            ),
+          ),
+        ),
       ),
-      body:  new SingleChildScrollView(
-          child: new Center(
-              child: new Container(
-                //  color: Colors.white,
-                  child: Padding(
-                      padding: const EdgeInsets.all(36.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          SizedBox(
-                            height: 10,
-                          ),
-                       Row(
-                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
-                                children: [
-                                  SizedBox(height: 40.0,
-                                  child :Text('Year' ,
-                                      style: style.copyWith(
-                                          color: Colors.blue, fontWeight: FontWeight.bold)),
-                                  ),
-                                  SizedBox(height: 40.0,
-                                      child :Text('Term' ,
-                                          style: style.copyWith(
-                                              color: Colors.blue, fontWeight: FontWeight.bold)),
-                                  ),
-                                  SizedBox(height: 40.0,
-                                      child :Text('subject' ,
-                                          style: style.copyWith(
-                                              color: Colors.blue, fontWeight: FontWeight.bold)),
-                                  ),
-                                  SizedBox(height: 40.0,
-                                      child :Text('section' ,
-                                          style: style.copyWith(
-                                              color: Colors.blue, fontWeight: FontWeight.bold)),
-                                  ),
-                                  SizedBox(height: 40.0,
-                                      child :Text('class' ,
-                                          style: style.copyWith(
-                                              color: Colors.blue, fontWeight: FontWeight.bold)),
-                                  ),
-                                  SizedBox(height: 40.0,
-                                    child :Text('Student' ,
-                                        style: style.copyWith(
-                                            color: Colors.blue, fontWeight: FontWeight.bold)),
-                                  ),
-                                ],
-                              ) ,
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  SizedBox(
-                                    height: 40.0,
-                                    //width: 400,
-                                    child:SelectYearDropdown ,
-                                  ),
-                                  SizedBox(
-                                    height: 40.0,
-                                    //width: 400,
-                                    child:SelectTermDropdown ,
-                                  ),
-                                  SizedBox(
-                                    height: 40.0,
-                                    //width: 400,
-                                    child:SelectSubjectDropdown ,
-                                  ),
-
-                                  SizedBox(
-                                    height: 40.0,
-                                    //width: 400,
-                                    child:SelectSectionDropdown ,
-                                  ),
-
-                                  SizedBox(
-                                    height: 40.0,
-                                    //width: 400,
-                                    child:SelectClassDropdown ,
-                                  ),
-                                  SizedBox(
-                                    height: 40.0,
-                                    //width: 400,
-                                    child:SelectStudentDropdown ,
-                                  ),
-
-                                ],
-                              ) ,
-                      ],
-                    ),
-                          SizedBox(
-                            height: 40.0,
-                            //width: 400,
-                            child:Submit ,
-                          ),
-                          SizedBox(height: 10.0),
-                          Text('${this._status}',),
-
-
-                          SizedBox(
-                            height: 10,
-                          ),
-                          SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: DataTable(
-
-                              columns: [
-                                DataColumn(label: Text('Rank')),
-                                DataColumn(label: Text('Marks')),
-                                DataColumn(label: Text('Name')),
-                              ],
-                              rows:
-                              listOfColumns // Loops through dataColumnText, each iteration assigning the value to element
-                                  .map(
-                                ((element) => DataRow(
-                                  cells: <DataCell>[
-                                    DataCell(Text(element["Name"])), //Extracting from Map element the value
-                                    DataCell(Text(element["Number"])),
-                                    DataCell(Text(element["State"])),
-                                  ],
-                                )),
-                              )
-                                  .toList(),
+      body:  Container(
+        height: double.infinity,
+        width: double.infinity,
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Colors.blue.shade300,
+                  Colors.blue.shade300,
+                  Colors.blue.shade200,
+                  Colors.blue.shade100,
+                ]
+            )
+        ),
+        child: new SingleChildScrollView(
+            child: new Center(
+                child: new Container(
+                  //  color: Colors.white,
+                    child: Padding(
+                        padding: const EdgeInsets.all(36.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            SizedBox(
+                              height: 10,
                             ),
-                          )
-                          ,
-                          print,
-                        ],
-                      )
-                  )
-              )
-          )
+                         Row(
+                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
 
+                                  children: [
+                                    SizedBox(height: 40.0,
+                                    child :Text('Year' ,
+                                        style: style.copyWith(
+                                            color: Colors.black, fontWeight: FontWeight.bold)),
+                                    ),
+                                    SizedBox(height: 40.0,
+                                        child :Text('Term' ,
+                                            style: style.copyWith(
+                                                color: Colors.black, fontWeight: FontWeight.bold)),
+                                    ),
+                                    SizedBox(height: 40.0,
+                                        child :Text('subject' ,
+                                            style: style.copyWith(
+                                                color: Colors.black, fontWeight: FontWeight.bold)),
+                                    ),
+                                    SizedBox(height: 40.0,
+                                        child :Text('section' ,
+                                            style: style.copyWith(
+                                                color: Colors.black, fontWeight: FontWeight.bold)),
+                                    ),
+                                    SizedBox(height: 40.0,
+                                        child :Text('class' ,
+                                            style: style.copyWith(
+                                                color: Colors.black, fontWeight: FontWeight.bold)),
+                                    ),
+                                    SizedBox(height: 40.0,
+                                      child :Text('Student' ,
+                                          style: style.copyWith(
+                                              color: Colors.black, fontWeight: FontWeight.bold)),
+                                    ),
+                                  ],
+                                ) ,
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    SizedBox(
+                                      height: 40.0,
+                                      //width: 400,
+                                      child:SelectYearDropdown ,
+                                    ),
+                                    SizedBox(
+                                      height: 40.0,
+                                      //width: 400,
+                                      child:SelectTermDropdown ,
+                                    ),
+                                    SizedBox(
+                                      height: 40.0,
+                                      //width: 400,
+                                      child:SelectSubjectDropdown ,
+                                    ),
+
+                                    SizedBox(
+                                      height: 40.0,
+                                      //width: 400,
+                                      child:SelectSectionDropdown ,
+                                    ),
+
+                                    SizedBox(
+                                      height: 40.0,
+                                      //width: 400,
+                                      child:SelectClassDropdown ,
+                                    ),
+                                    SizedBox(
+                                      height: 40.0,
+                                      //width: 400,
+                                      child:SelectStudentDropdown ,
+                                    ),
+
+                                  ],
+                                ) ,
+                        ],
+                      ),
+                            SizedBox(
+                              height: 40.0,
+                              //width: 400,
+                              child:Submit ,
+                            ),
+                            SizedBox(height: 10.0),
+                            Text('${this._status}',),
+
+
+                            SizedBox(
+                              height: 10,
+                            ),
+                            SingleChildScrollView(
+                              scrollDirection: Axis.horizontal,
+                              child: DataTable(
+
+                                columns: [
+                                  DataColumn(label: Text('Rank')),
+                                  DataColumn(label: Text('Marks')),
+                                  DataColumn(label: Text('Name')),
+                                ],
+                                rows:
+                                listOfColumns // Loops through dataColumnText, each iteration assigning the value to element
+                                    .map(
+                                  ((element) => DataRow(
+                                    cells: <DataCell>[
+                                      DataCell(Text(element["Name"])), //Extracting from Map element the value
+                                      DataCell(Text(element["Number"])),
+                                      DataCell(Text(element["State"])),
+                                    ],
+                                  )),
+                                )
+                                    .toList(),
+                              ),
+                            )
+                            ,
+                            print,
+                          ],
+                        )
+                    )
+                )
+            )
+
+        ),
       ),
     );
   }
