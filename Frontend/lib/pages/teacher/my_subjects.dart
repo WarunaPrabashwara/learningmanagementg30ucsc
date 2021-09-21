@@ -167,10 +167,32 @@ class _my_subjects_ofTeacherState extends State<my_subjects_ofTeacher> {
 
 
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        // appBar: AppBar(
-        //   title: Text("Stack Overflow"),
-        // ),
+          appBar: AppBar(
+            backgroundColor: Colors.blue.shade800,
+            flexibleSpace: Image.asset(
+              "assets/df3.png",
+              fit: BoxFit.cover,
+            ),
+            bottom: PreferredSize(
+              preferredSize: Size.fromHeight(20.0),
+              child: Container(),
+            ),
+            title:
+            Padding(
+              padding: const EdgeInsets.all(18.0),
+              child: Text(
+                "My Subjects".toUpperCase(),
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.bold,
+                  height: 3.0,
+                ),
+              ),
+            ),
+          ),
         body:  Material(
       child:
       Column(

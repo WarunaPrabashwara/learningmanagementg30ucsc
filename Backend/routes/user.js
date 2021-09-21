@@ -10,4 +10,7 @@ router.put('/changepswd', checkAuthMiddleware.checkAuth, userController.changeps
 router.get('/myprofile', checkAuthMiddleware.checkAuth, userController.myProfileData);
 router.get('/viewTeachers', checkAuthMiddleware.checkAuth, userController.viewTeachers);
 router.get('/viewStudents', checkAuthMiddleware.checkAuth, userController.viewStudents);
+router.get('/viewPrincipal', checkAuthMiddleware.checkAuth, userController.viewPrincipal);
+router.get('/viewSectionHead', checkAuthMiddleware.checkAuth, userController.viewSectionH);
+router.get('/viewAdmin', checkAuthMiddleware.checkAuth, userController.viewAdmins);
 module.exports = router;

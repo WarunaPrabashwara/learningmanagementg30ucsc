@@ -1,3 +1,5 @@
+//myProfileData,register,viewusers ,login,changepswd ,viewTeachers ,viewStudents 
+
 const mydatabase = require('../util/database ');
 const bcryptjs = require('bcryptjs');
 const jwt = require('jsonwebtoken');
@@ -110,6 +112,66 @@ function viewStudents(req , res){
     
     
       }
+
+      function viewPrincipal(req , res){
+        console.log("fdfsaaagfvvx") ;
+      
+        var quer ='SELECT id,name,email,userLevel,indexNo,telephone,address,dob FROM users WHERE userLevel = ?' ;
+        mydatabase.query( quer ,['principal'], function (error, results, fields) {
+        if (error) {
+            res.json({
+              status:false,
+              message:'there are some error with query'
+              })
+        }else{
+        
+        res.end(JSON.stringify(results));
+      
+        }
+        });
+      
+      
+        }
+
+        function viewSectionH(req , res){
+          console.log("fdfsaaagfvvx") ;
+        
+          var quer ='SELECT id,name,email,userLevel,indexNo,telephone,address,dob FROM users WHERE userLevel = ?' ;
+          mydatabase.query( quer ,['section_head'], function (error, results, fields) {
+          if (error) {
+              res.json({
+                status:false,
+                message:'there are some error with query'
+                })
+          }else{
+          
+          res.end(JSON.stringify(results));
+        
+          }
+          });
+        
+        
+          }
+
+          function viewAdmins(req , res){
+            console.log("fdfsaaagfvvx") ;
+          
+            var quer ='SELECT id,name,email,userLevel,indexNo,telephone,address,dob FROM users WHERE userLevel = ?' ;
+            mydatabase.query( quer ,['admin'], function (error, results, fields) {
+            if (error) {
+                res.json({
+                  status:false,
+                  message:'there are some error with query'
+                  })
+            }else{
+            
+            res.end(JSON.stringify(results));
+          
+            }
+            });
+          
+          
+            }
     
     
   
@@ -142,8 +204,7 @@ function login(req , res){
                       status:true,
                       message:'successfully authenticated',
                       userLevel: results[0].userLevel ,
-                      
-                        token: token
+                      token: token
                     });
                 });
             }else{
@@ -242,6 +303,10 @@ function myProfileData(req , res){
     
           email:results[0].email,
           indexNo: results[0].indexNo ,
+          name: results[0].name ,
+          telephone: results[0].telephone ,
+          address: results[0].address ,
+          dob: results[0].dob ,
   
         });
 
@@ -256,6 +321,10 @@ module.exports = {
     login: login,
     changepswd :changepswd ,
     viewTeachers : viewTeachers ,
-    viewStudents : viewStudents 
+    viewStudents : viewStudents,
+    viewPrincipal : viewPrincipal,
+    viewSectionH : viewSectionH,
+    viewAdmins : viewAdmins,
+     
 
 } 

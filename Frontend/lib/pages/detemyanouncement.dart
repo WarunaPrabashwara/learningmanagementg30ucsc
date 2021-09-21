@@ -116,99 +116,134 @@ class _view_notice_boardState extends State<deleteMyAnouncements> {
 
     
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Announcements'),
+        appBar: new AppBar(
+          title: Row(
+            children: [
+              SizedBox(width: 20,),
+              Text("Announcements-deletion".toUpperCase(),style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.bold,
+                  height: 3.0
+              ),),
+            ],
+          ),
+          backgroundColor: Colors.blue.shade800 ,
+          flexibleSpace: Image.asset(
+            "assets/df3.png",
+            fit: BoxFit.cover,
+          ),
+          bottom: PreferredSize(
+            preferredSize: Size.fromHeight(10.0),
+            child: Container(),
+          ),
         ),
-        body: ListView.builder(
-            padding: const EdgeInsets.all(8),
-            itemCount: setofAnnouncements.length,
-            itemBuilder: (BuildContext context, int index) {
-              return Container(
-                //height: 50,
+        body: Container(
+          height: double.infinity,
+          width: double.infinity,
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Colors.blue.shade100,
+                    Colors.blue.shade200,
+                    Colors.blue.shade300,
+                    Colors.blue.shade700,
+                  ]
+              )
+          ),
+          child: ListView.builder(
+              padding: const EdgeInsets.all(8),
+              itemCount: setofAnnouncements.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Container(
+                  //height: 50,
 
-                child: Column(
-                  children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: SizedBox(
-                        width: 380.0,
-                        height: 140.0,
-                        child: Card(
-                          color: Colors.grey[200],
-                          elevation: 2.0,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: SingleChildScrollView(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  children: [
+                  child: Column(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: SizedBox(
+                          width: 380.0,
+                          height: 140.0,
+                          child: Card(
+                            color: Colors.grey[200],
+                            elevation: 2.0,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                            child: SingleChildScrollView(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    children: [
 
-                                    Padding(
-                                      padding: const EdgeInsets.fromLTRB(8.0, 8.0, 0.0, 8.0),
-                                      child: AutoSizeText('${setofAnnouncements[index].date_time}',style: TextStyle(fontSize: 16.0, fontStyle: FontStyle.italic)),
-                                    ),
-                                  ],
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Text(
-                                    '${setofAnnouncements[index].description} ',
-                                    style: TextStyle(fontSize: 15.0),
+                                      Padding(
+                                        padding: const EdgeInsets.fromLTRB(8.0, 8.0, 0.0, 8.0),
+                                        child: AutoSizeText('${setofAnnouncements[index].date_time}',style: TextStyle(fontSize: 16.0, fontStyle: FontStyle.italic)),
+                                      ),
+                                    ],
                                   ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child:    Container(
-                                      padding: EdgeInsets.fromLTRB(100.0, 15.0, 100.0, 10.0),
-                                      width: double.infinity,
-                                      child: RaisedButton(
-                                        elevation: 5,
-                                        onPressed: (){
-                                           deleteAnouncement(setofAnnouncements[index].description);
-                                           print("fsdfdfdf" +setofAnnouncements[index].description);
-                                            Navigator.pop(context);
-                                            Navigator.push(
-                                              context,
-                                              MaterialPageRoute(builder: (context) {
-                                                return deleteMyAnouncements();
-                                              }),
-                                            );
-                                            
-        
-                                        },
-                                        padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(15)
-                                        ),
-                                        color: Colors.white,
-                                        child: Text(
-                                          'Delete',
-                                          style: TextStyle(
-                                            color: Colors.blue.shade900,
-                                            fontSize: 16.0,
-                                            fontWeight: FontWeight.bold,
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text(
+                                      '${setofAnnouncements[index].description} ',
+                                      style: TextStyle(fontSize: 15.0),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child:    Container(
+                                        padding: EdgeInsets.fromLTRB(100.0, 15.0, 100.0, 10.0),
+                                        width: double.infinity,
+                                        child: RaisedButton(
+                                          elevation: 5,
+                                          onPressed: (){
+                                             deleteAnouncement(setofAnnouncements[index].description);
+                                             print("fsdfdfdf" +setofAnnouncements[index].description);
+                                              Navigator.pop(context);
+                                              Navigator.push(
+                                                context,
+                                                MaterialPageRoute(builder: (context) {
+                                                  return deleteMyAnouncements();
+                                                }),
+                                              );
+
+
+                                          },
+                                          padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                                          shape: RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.circular(15)
+                                          ),
+                                          color: Colors.white,
+                                          child: Text(
+                                            'Delete',
+                                            style: TextStyle(
+                                              color: Colors.blue.shade900,
+                                              fontSize: 16.0,
+                                              fontWeight: FontWeight.bold,
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                    )
-  
- 
-                                ),
-                              ],
+                                      )
+
+
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
 
 
-                  ]
-                ),
-              );
-            }
+                    ]
+                  ),
+                );
+              }
+          ),
         )
     );
   }

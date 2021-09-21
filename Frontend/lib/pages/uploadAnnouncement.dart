@@ -198,7 +198,7 @@ await getTokenFromSF().then(( token) async {
 
   Widget buildLoginBtn(){
     return Container(
-      padding: EdgeInsets.fromLTRB(100.0, 15.0, 100.0, 10.0),
+      padding: EdgeInsets.fromLTRB(100.0, 15.0, 100.0, 15.0),
       width: double.infinity,
       child: RaisedButton(
         elevation: 5,
@@ -229,7 +229,7 @@ await getTokenFromSF().then(( token) async {
         },
         padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(15)
+            borderRadius: BorderRadius.circular(35)
         ),
         color: Colors.white,
         child: Text(
@@ -247,7 +247,7 @@ await getTokenFromSF().then(( token) async {
 
   Widget deleteOldAnouncementBtn(){
     return Container(
-      padding: EdgeInsets.fromLTRB(50.0, 15.0, 100.0, 10.0),
+      padding: EdgeInsets.fromLTRB(30.0, 10.0, 30.0, 10.0),
       width: double.infinity,
       child: RaisedButton(
         elevation: 5,
@@ -257,19 +257,21 @@ await getTokenFromSF().then(( token) async {
                 MaterialPageRoute(builder: (context) {
                   return deleteMyAnouncements();
                 }),
-              ); 
+              );
         },
-        padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+        padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(15)
+            borderRadius: BorderRadius.circular(35)
         ),
         color: Colors.white,
-        child: Text(
-          'Delete my published announcements',
-          style: TextStyle(
-            color: Colors.blue.shade900,
-            fontSize: 16.0,
-            fontWeight: FontWeight.bold,
+        child: Center(
+          child: Text(
+            'Delete published announcements',
+            style: TextStyle(
+              color: Colors.blue.shade900,
+              fontSize: 16.0,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
       ),
@@ -280,6 +282,32 @@ await getTokenFromSF().then(( token) async {
   Widget build(BuildContext context) {
 
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.blue.shade800,
+        flexibleSpace: Image.asset(
+          "assets/df3.png",
+          fit: BoxFit.cover,
+        ),
+        bottom: PreferredSize(
+          preferredSize: Size.fromHeight(20.0),
+          child: Container(),
+        ),
+        title:
+        Padding(
+          padding: const EdgeInsets.all(18.0),
+          child: Text(
+            "Announcement Management".toUpperCase(),
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 18.0,
+              fontWeight: FontWeight.bold,
+              height: 3.0,
+            ),
+
+          ),
+        ),
+
+      ),
 
       body: SafeArea(
         child: AnnotatedRegion<SystemUiOverlayStyle>(
@@ -295,11 +323,10 @@ await getTokenFromSF().then(( token) async {
                           begin: Alignment.topCenter,
                           end: Alignment.bottomCenter,
                           colors: [
-                            Colors.transparent,
-                            Colors.transparent,
-
-                            // Colors.blue.shade800,
-                            // Colors.blue.shade800,
+                            Colors.blue.shade100,
+                            Colors.blue.shade200,
+                            Colors.blue.shade300,
+                            Colors.blue.shade700,
                           ]
                       )
                   ),
@@ -319,6 +346,8 @@ await getTokenFromSF().then(( token) async {
       
                         SizedBox(height: 20,),
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Column(children: [
                             SizedBox(
@@ -377,39 +406,43 @@ await getTokenFromSF().then(( token) async {
                                                  ),
                          ),                                               
                         ],),
-                        Column(children: [
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+
                           SizedBox(
                             height: 25,
                             child: Text(
-                            'For Admins: ',
+                            'For Admins ',
                             style: TextStyle(fontSize: 17.0),
                                                   ),
                           ), 
                           SizedBox(
                             height: 25,
                             child: Text(
-                            'For Principals: ',
+                            'For Principals ',
                             style: TextStyle(fontSize: 17.0),
                                                   ),
                           ),  
                           SizedBox(
                           height: 25,
                           child: Text(
-                            'For section Heads: ',
+                            'For section Heads ',
                             style: TextStyle(fontSize: 17.0),
                           ),
                         ),  
                           SizedBox(
                           height: 25,
                           child: Text(
-                            'For teachers: ',
+                            'For teachers ',
                             style: TextStyle(fontSize: 17.0),
                           ),
                         ),      
                           SizedBox(
                            height: 25,
                            child: Text(
-                            'For Students: ',
+                            'For Students ',
                             style: TextStyle(fontSize: 17.0),
                                                  ),
                          ),                                       

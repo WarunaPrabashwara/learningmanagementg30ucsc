@@ -253,8 +253,29 @@ class _upload_term_test_marksState extends State<upload_term_test_marks> {
     );
 
     return  Scaffold(
-      appBar: new AppBar(
-        title: new Text('Home'),
+      appBar: AppBar(
+        backgroundColor: Colors.blue.shade800,
+        flexibleSpace: Image.asset(
+          "assets/df3.png",
+          fit: BoxFit.cover,
+        ),
+        bottom: PreferredSize(
+          preferredSize: Size.fromHeight(20.0),
+          child: Container(),
+        ),
+        title:
+        Padding(
+          padding: const EdgeInsets.all(18.0),
+          child: Text(
+            "Upload term test marks".toUpperCase(),
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 18.0,
+              fontWeight: FontWeight.bold,
+              height: 3.0,
+            ),
+          ),
+        ),
       ),
       body:  new SingleChildScrollView(
           child: new Center(

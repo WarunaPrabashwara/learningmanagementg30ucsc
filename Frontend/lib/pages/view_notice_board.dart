@@ -86,65 +86,92 @@ class _view_notice_boardState extends State<view_notice_board> {
 
     return Scaffold(
         appBar: AppBar(
-          title: Text('Announcements'),
+          title: Text('Announcements',style: TextStyle(
+              color: Colors.white,
+              fontSize: 18.0,
+              fontWeight: FontWeight.bold,
+              height: 3.0
+          ),),
+          flexibleSpace: Image.asset(
+            "assets/df3.png",
+            fit: BoxFit.cover,
+          ),
+          bottom: PreferredSize(
+            preferredSize: Size.fromHeight(20.0),
+            child: Container(),
+          ),
         ),
-        body: ListView.builder(
-          
-            padding: const EdgeInsets.all(8),
-            itemCount: setofAnnouncements.length,
-            itemBuilder: (BuildContext context, int index) {
-              return Container(
-                //height: 50,
+        body: Container(
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Colors.blue.shade100,
+                    Colors.blue.shade200,
+                    Colors.blue.shade300,
+                    Colors.blue.shade400,
+                  ]
+              )
+          ),
+          child: ListView.builder(
 
-                child: Column(
-                  children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: SizedBox(
-                        width: 380.0,
-                        height: 140.0,
-                        child: Card(
-                          color: Colors.grey[200],
-                          elevation: 2.0,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: SingleChildScrollView(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  children: [
+              padding: const EdgeInsets.all(8),
+              itemCount: setofAnnouncements.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Container(
+                  //height: 50,
 
-                                    Padding(
-                                      padding: const EdgeInsets.fromLTRB(8.0, 8.0, 0.0, 8.0),
-                                      child: AutoSizeText('${setofAnnouncements[index].date_time}',style: TextStyle(fontSize: 16.0, fontStyle: FontStyle.italic)),
-                                    ),
-                                  ],
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Text(
-                                    '${setofAnnouncements[index].description} ',
-                                    style: TextStyle(fontSize: 15.0),
+                  child: Column(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: SizedBox(
+                          width: 380.0,
+                          height: 140.0,
+                          child: Card(
+                            color: Colors.grey[200],
+                            elevation: 2.0,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                            child: SingleChildScrollView(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    children: [
+
+                                      Padding(
+                                        padding: const EdgeInsets.fromLTRB(8.0, 8.0, 0.0, 8.0),
+                                        child: AutoSizeText('${setofAnnouncements[index].date_time}',style: TextStyle(fontSize: 16.0, fontStyle: FontStyle.italic)),
+                                      ),
+                                    ],
                                   ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: AutoSizeText("-"+'${setofAnnouncements[index].made_by} ',style: TextStyle(fontSize: 16.0, fontStyle: FontStyle.italic)),
-                                ),
-                              ],
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text(
+                                      '${setofAnnouncements[index].description} ',
+                                      style: TextStyle(fontSize: 15.0),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: AutoSizeText("-"+'${setofAnnouncements[index].made_by} ',style: TextStyle(fontSize: 16.0, fontStyle: FontStyle.italic)),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
 
 
-                  ]
-                ),
-              );
-            }
+                    ]
+                  ),
+                );
+              }
+          ),
         )
    
    
