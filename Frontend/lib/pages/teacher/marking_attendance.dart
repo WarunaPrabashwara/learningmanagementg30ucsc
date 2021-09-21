@@ -46,8 +46,12 @@ class _mark_attendanceState extends State<mark_attendance> {
   ];
 
    int i = 0 ;
-
-
+String mark ; 
+    void _changeemail2(String text) {
+    setState(() {
+      mark = text;
+    });
+  }
 
   //  List<String> _locations = ['Please choose a location', 'A', 'B', 'C', 'D']; // Option 1
 //  String _selectedLocation = 'Please choose a location'; // Option 1
@@ -60,6 +64,53 @@ class _mark_attendanceState extends State<mark_attendance> {
 
   List<String> _classes = ['ALL'] + ['A', 'B',  'D']; // Option 2
   String _selectedClass; // Option 2
+  Widget buildEmail2(){
+  
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+
+        Container(
+          alignment: Alignment.centerLeft,
+          decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(10),
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.black26,
+                    blurRadius: 6,
+                    offset: Offset(0,2)
+                )
+              ]
+          ),
+          height: 50,
+          child: TextField(
+              onChanged: (text) {
+                _changeemail2(text);
+              },
+
+              keyboardType: TextInputType.emailAddress,
+              style: TextStyle(
+                  color: Colors.black87
+              ),
+              decoration: InputDecoration(
+                  border: InputBorder.none,
+                  contentPadding: EdgeInsets.only(top: 14),
+                  hintText: 'Enter Material link',
+                  hintStyle: TextStyle(
+                      color: Colors.black38,
+                      fontSize: 14.0
+                  ),
+    
+              )
+          ),
+        )
+   ,
+          
+      ],
+    );
+  }
+  
 
   @override
   Widget build(BuildContext context) {

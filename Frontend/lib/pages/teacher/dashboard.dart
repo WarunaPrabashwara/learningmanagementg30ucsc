@@ -199,7 +199,7 @@ class _DashboardTeacher extends State<DashboardTeacher>{
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(builder: (context) {
-                                            return my_subjects_ofTeacher();
+                                            return my_subjects_ofTeacher( );
                                           }),
                                         );
                                       },

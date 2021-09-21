@@ -64,6 +64,28 @@ var quer ='SELECT id,section,grade FROM classes' ;
 
 }
 
+
+function viewClassesandStudents(req , res){
+  var userLevel = req.userData.userLevel;
+  var filter = "";
+
+var quer ='SELECT className, studentEmail FROM clasAtdent' ;
+mydatabase.query( quer , function (error, results, fields) {
+if (error) {
+    res.json({
+      status:false,
+      message:'there are some error with query'
+      })
+}else{
+ 
+
+res.end(JSON.stringify(results));
+
+}
+});
+
+}
+
 function viewMyAnnouncement(req , res){
   var userLevel = req.userData.userLevel;
 
@@ -112,5 +134,6 @@ module.exports = {
     register: add,
     view:view ,
     viewMyAnnouncement:viewMyAnnouncement ,
-    deleteann : deleteann 
+    deleteann : deleteann ,
+    viewClassesandStudents :viewClassesandStudents  
 } 

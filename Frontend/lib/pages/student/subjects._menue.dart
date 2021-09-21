@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:frontend/main.dart';
 import 'package:flutter/material.dart';
+import 'package:frontend/pages/student/subjectmaterialofstudent.dart';
 import 'package:frontend/pages/teacher/subject_materials.dart';
 import 'package:http/http.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -183,7 +184,7 @@ class _my_subjects_ofTeacherState extends State<Subjects> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) {
-                    return subject_Matirials_ofTeacher(data.teacher_name + "*" +data.subject_name + "*" + data.class_name);
+                    return subject_Matirials_ofStudent(data.teacher_name + "*" +data.subject_name + "*" + data.class_name);
                   }),
                 );
               },
