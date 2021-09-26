@@ -153,9 +153,11 @@ class _MyProfileState extends State<MyProfile> {
                           end: Alignment.bottomCenter,
                           colors: [
                             Colors.blue.shade100,
+                            Colors.blue.shade100,
+                            Colors.blue.shade200,
                             Colors.blue.shade300,
-                            Colors.blue.shade300,
-                            Colors.blue.shade400,
+                            Colors.blue.shade900,
+
                           ]
                       )
                   ),
@@ -177,40 +179,40 @@ class _MyProfileState extends State<MyProfile> {
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: <Widget>[
 
-                              Container(child: Text('User E-mail', style: TextStyle(color: Colors.blue.shade900, letterSpacing: 2.0,  fontSize:16.0,fontWeight: FontWeight.bold, ),)),
+                              Container(child: Text('User E-mail', style: TextStyle(color: Colors.black, letterSpacing: 2.0,  fontSize:16.0,fontWeight: FontWeight.bold, ),)),
 
                               SizedBox(height: 1.0,),
-                              Text('${this._name}', style: TextStyle(color: Colors.white, letterSpacing: 1.0, fontSize:16.0, ),),
+                              Text('${this._name}', style: TextStyle(color: Colors.black87, letterSpacing: 1.0, fontSize:16.0, ),),
                               SizedBox(height: 15,),
 
-                              Text('Index', style: TextStyle(color: Colors.blue.shade900, letterSpacing: 2.0, fontSize:16.0, fontWeight: FontWeight.bold, ),),
+                              Text('Index', style: TextStyle(color: Colors.black, letterSpacing: 2.0, fontSize:16.0, fontWeight: FontWeight.bold, ),),
                               // Divider(
                               //   height: 10.0,
                               //   color: Colors.black,
                               //   thickness: 1.0,
                               // ),
                               SizedBox(height: 1.0,),
-                              Text('${this._index}', style: TextStyle(color: Colors.white, letterSpacing: 1.0, fontSize:16.0,),),
+                              Text('${this._index}', style: TextStyle(color: Colors.black87, letterSpacing: 1.0, fontSize:16.0,),),
                               SizedBox(height: 15,),
-                              Container(child: Text('Your Name', style: TextStyle(color: Colors.blue.shade900, letterSpacing: 2.0,  fontSize:16.0,fontWeight: FontWeight.bold, ),)),
+                              Container(child: Text('Your Name', style: TextStyle(color: Colors.black, letterSpacing: 2.0,  fontSize:16.0,fontWeight: FontWeight.bold, ),)),
 
                               SizedBox(height: 1.0,),
-                              Text('${this._funame}', style: TextStyle(color: Colors.white, letterSpacing: 1.0, fontSize:16.0, ),),
+                              Text('${this._funame}', style: TextStyle(color: Colors.black87, letterSpacing: 1.0, fontSize:16.0, ),),
                               SizedBox(height: 10,),
-                              Container(child: Text('Contact Number', style: TextStyle(color: Colors.blue.shade900, letterSpacing: 2.0,  fontSize:16.0,fontWeight: FontWeight.bold, ),)),
+                              Container(child: Text('Contact Number', style: TextStyle(color: Colors.black, letterSpacing: 2.0,  fontSize:16.0,fontWeight: FontWeight.bold, ),)),
 
                               SizedBox(height: 1.0,),
-                              Text('${this._phone}', style: TextStyle(color: Colors.white, letterSpacing: 1.0, fontSize:16.0, ),),
+                              Text('${this._phone}', style: TextStyle(color: Colors.black87, letterSpacing: 1.0, fontSize:16.0, ),),
                               SizedBox(height: 15,),
-                              Container(child: Text('Permanent Address', style: TextStyle(color: Colors.blue.shade900, letterSpacing: 2.0,  fontSize:16.0,fontWeight: FontWeight.bold, ),)),
+                              Container(child: Text('Permanent Address', style: TextStyle(color: Colors.black, letterSpacing: 2.0,  fontSize:16.0,fontWeight: FontWeight.bold, ),)),
 
                               SizedBox(height: 1.0,),
-                              Text('${this._address}', style: TextStyle(color: Colors.white, letterSpacing: 1.0, fontSize:16.0, ),),
+                              Text('${this._address}', style: TextStyle(color: Colors.black87, letterSpacing: 1.0, fontSize:16.0, ),),
                               SizedBox(height: 15,),
-                              Container(child: Text('Date of Birth', style: TextStyle(color: Colors.blue.shade900, letterSpacing: 2.0,  fontSize:16.0,fontWeight: FontWeight.bold, ),)),
+                              Container(child: Text('Date of Birth', style: TextStyle(color: Colors.black, letterSpacing: 2.0,  fontSize:16.0,fontWeight: FontWeight.bold, ),)),
 
                               SizedBox(height: 1.0,),
-                              Text('${this._dob}', style: TextStyle(color: Colors.white, letterSpacing: 1.0, fontSize:16.0, ),),
+                              Text('${this._dob}', style: TextStyle(color: Colors.black87, letterSpacing: 1.0, fontSize:16.0, ),),
 
 
                               SizedBox(height: 15.0),

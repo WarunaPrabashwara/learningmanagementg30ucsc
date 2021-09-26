@@ -268,8 +268,8 @@ class _UserMgtState extends State<UserMgt> {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                    Colors.blue.shade100,
-                    Colors.blue.shade200,
+                    Colors.blue.shade300,
+                    Colors.blue.shade300,
                     Colors.blue.shade300,
                     Colors.blue.shade700,
                   ]
