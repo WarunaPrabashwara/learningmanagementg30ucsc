@@ -31,8 +31,8 @@ class Dashboard extends StatelessWidget {
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                     colors: [
-                      Colors.blue.shade300,
-                      Colors.blue.shade900,
+                      Colors.white,
+                      Colors.white70,
 
                     ]
                 )
@@ -47,7 +47,7 @@ class Dashboard extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         CircleAvatar(
-                          backgroundColor: Colors.grey[200],
+                          backgroundColor: Colors.purple.shade300,
                           child: IconButton(
                             icon: Icon(
                               Icons.menu,
@@ -63,7 +63,7 @@ class Dashboard extends StatelessWidget {
                               icon: Icon(Icons.notifications_active),
                               onPressed: (){},
                               iconSize: 30.0,
-                              color: Colors.black54,
+                              color: Colors.purple.shade400,
                             ),
                             SizedBox(width: 10.0,),
                             Image.asset("assets/pro2.png", width: 50.0,),
@@ -76,9 +76,9 @@ class Dashboard extends StatelessWidget {
                     padding: const EdgeInsets.all(0.0),
                     child: Center(
                       child: Text(
-                        "Hello Admin!",
+                        "You are Logged in as an Admin!",
                         style: TextStyle(
-                            color: Colors.white,
+                            color: Colors.purple,
                             fontSize: 20.0,
                             fontWeight: FontWeight.bold
                         ),
@@ -96,7 +96,7 @@ class Dashboard extends StatelessWidget {
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
                                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-                                primary: Colors.blue.shade700,
+                                primary: Colors.purpleAccent.shade700,
                                 padding: EdgeInsets.all(0)
                             ),
                             child: Container(
@@ -104,7 +104,8 @@ class Dashboard extends StatelessWidget {
                                 width: 140.0,
                                 height: 140.0,
                                 child: Card(
-                                  color: Color.fromARGB(200, 20, 21, 21),
+                                  color: Colors.purpleAccent.shade400,
+                                  //color: Color.fromARGB(200, 20, 21, 21),
                                   elevation: 2.0,
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10.0),
@@ -142,7 +143,7 @@ class Dashboard extends StatelessWidget {
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
                                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-                                primary: Colors.blue.shade700,
+                                primary: Colors.purpleAccent.shade700,
                                 padding: EdgeInsets.all(0)
                             ),
                             child: Container(
@@ -150,7 +151,7 @@ class Dashboard extends StatelessWidget {
                                 width: 140.0,
                                 height: 140.0,
                                 child: Card(
-                                  color: Color.fromARGB(200, 20, 21, 21),
+                                  color: Colors.purpleAccent.shade400,
                                   elevation: 2.0,
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10.0),
@@ -189,7 +190,7 @@ class Dashboard extends StatelessWidget {
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
                                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-                                primary: Colors.blue.shade900,
+                                primary: Colors.purpleAccent.shade700,
                                 padding: EdgeInsets.all(0)
                             ),
                             child: Container(
@@ -197,7 +198,7 @@ class Dashboard extends StatelessWidget {
                                 width: 140.0,
                                 height: 140.0,
                                 child: Card(
-                                  color: Color.fromARGB(200, 20, 21, 21),
+                                  color: Colors.purpleAccent.shade400,
                                   elevation: 2.0,
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10.0),
@@ -236,7 +237,7 @@ class Dashboard extends StatelessWidget {
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
                                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-                                primary: Colors.blue.shade900,
+                                primary: Colors.purpleAccent.shade700,
                                 padding: EdgeInsets.all(0)
                             ),
                             child: Container(
@@ -244,7 +245,7 @@ class Dashboard extends StatelessWidget {
                                 width: 140.0,
                                 height: 140.0,
                                 child: Card(
-                                  color: Color.fromARGB(200, 20, 21, 21),
+                                  color: Colors.purpleAccent.shade400,
                                   elevation: 2.0,
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10.0),
@@ -254,8 +255,8 @@ class Dashboard extends StatelessWidget {
                                       padding: const EdgeInsets.all(8.0),
                                       child: Column(
                                         children: [
-                                          SizedBox(height: 15.0),
-                                          Image.asset("assets/noticeboard.png", width: 48.0,),
+                                          SizedBox(height: 6.0),
+                                          Image.asset("assets/noticeboard.png", width: 68.0,),
                                           SizedBox(height: 10.0),
                                           Text("Notice Board", style: TextStyle(
                                               color: Colors.white,
@@ -282,7 +283,7 @@ class Dashboard extends StatelessWidget {
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
                                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-                                primary: Colors.blue.shade800,
+                                primary: Colors.purpleAccent.shade700,
                                 padding: EdgeInsets.all(0)
                             ),
                             child: Container(
@@ -290,7 +291,7 @@ class Dashboard extends StatelessWidget {
                                 width: 140.0,
                                 height: 140.0,
                                 child: Card(
-                                  color: Color.fromARGB(200, 20, 21, 21),
+                                  color: Colors.purpleAccent.shade400,
                                   elevation: 2.0,
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10.0),
@@ -328,7 +329,7 @@ class Dashboard extends StatelessWidget {
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
                                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-                                primary: Colors.blue.shade800,
+                                primary: Colors.purpleAccent.shade700,
                                 padding: EdgeInsets.all(0)
                             ),
                             child: Container(
@@ -336,7 +337,7 @@ class Dashboard extends StatelessWidget {
                                 width: 140.0,
                                 height: 140.0,
                                 child: Card(
-                                  color: Color.fromARGB(200, 20, 21, 21),
+                                  color: Colors.purpleAccent.shade400,
                                   elevation: 2.0,
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10.0),
