@@ -125,20 +125,20 @@ class _MyProfileState extends State<MyProfile> {
       appBar: new AppBar(
         title: Row(
           children: [
-            SizedBox(width: 80,),
+            SizedBox(width: 50,),
             Text("My Profile".toUpperCase(),style: TextStyle(
                 color: Colors.white,
-                fontSize: 18.0,
+                fontSize: 25.0,
                 fontWeight: FontWeight.bold,
-                height: 3.0
+                height:2.0
             ),),
           ],
         ),
-        backgroundColor: Colors.blue.shade800 ,
-        flexibleSpace: Image.asset(
+        backgroundColor: Colors.purple.shade500 ,
+        /*flexibleSpace: Image.asset(
           "assets/df3.png",
           fit: BoxFit.cover,
-        ),
+        ),*/
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(10.0),
           child: Container(),
@@ -152,71 +152,186 @@ class _MyProfileState extends State<MyProfile> {
                           begin: Alignment.topCenter,
                           end: Alignment.bottomCenter,
                           colors: [
-                            Colors.blue.shade100,
-                            Colors.blue.shade300,
-                            Colors.blue.shade300,
-                            Colors.blue.shade400,
+                            Color.fromARGB(255, 246, 246, 246),
+                            Color.fromARGB(255, 246, 246, 246),
+                            Colors.white,
+                            Colors.purple.shade50,
+                            Colors.purple.shade100,
+                           // Colors.blue.shade400,
                           ]
                       )
                   ),
                   child: Column(
                     children: [
-                      SizedBox(height: 10,),
-                      SizedBox(
-                        height: 100.0,
+                      SizedBox(height: 8,),
+                      Image.asset("assets/user-pic.png", width: 120.0,),
+                      //SizedBox(
+                        /*height: 100.0,
                         child: Image.asset(
                           // "./assets/profile-pic.JPG"
-                            './assets/pro2.png'
-                        ),
-                      ),
-                      SizedBox(height: 10,),
+                           // './assets/pro2.png'
+                        ), */
+                     // ),
+                      //SizedBox(height: 10,),
                       Padding(
-                          padding: const EdgeInsets.all(36.0),
+                          padding: const EdgeInsets.fromLTRB(40,30,20,50),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: <Widget>[
 
-                              Container(child: Text('User E-mail', style: TextStyle(color: Colors.blue.shade900, letterSpacing: 2.0,  fontSize:16.0,fontWeight: FontWeight.bold, ),)),
-
-                              SizedBox(height: 1.0,),
-                              Text('${this._name}', style: TextStyle(color: Colors.white, letterSpacing: 1.0, fontSize:16.0, ),),
-                              SizedBox(height: 15,),
-
-                              Text('Index', style: TextStyle(color: Colors.blue.shade900, letterSpacing: 2.0, fontSize:16.0, fontWeight: FontWeight.bold, ),),
-                              // Divider(
-                              //   height: 10.0,
-                              //   color: Colors.black,
-                              //   thickness: 1.0,
-                              // ),
-                              SizedBox(height: 1.0,),
-                              Text('${this._index}', style: TextStyle(color: Colors.white, letterSpacing: 1.0, fontSize:16.0,),),
-                              SizedBox(height: 15,),
-                              Container(child: Text('Your Name', style: TextStyle(color: Colors.blue.shade900, letterSpacing: 2.0,  fontSize:16.0,fontWeight: FontWeight.bold, ),)),
-
-                              SizedBox(height: 1.0,),
-                              Text('${this._funame}', style: TextStyle(color: Colors.white, letterSpacing: 1.0, fontSize:16.0, ),),
-                              SizedBox(height: 10,),
-                              Container(child: Text('Contact Number', style: TextStyle(color: Colors.blue.shade900, letterSpacing: 2.0,  fontSize:16.0,fontWeight: FontWeight.bold, ),)),
-
-                              SizedBox(height: 1.0,),
-                              Text('${this._phone}', style: TextStyle(color: Colors.white, letterSpacing: 1.0, fontSize:16.0, ),),
-                              SizedBox(height: 15,),
-                              Container(child: Text('Permanent Address', style: TextStyle(color: Colors.blue.shade900, letterSpacing: 2.0,  fontSize:16.0,fontWeight: FontWeight.bold, ),)),
-
-                              SizedBox(height: 1.0,),
-                              Text('${this._address}', style: TextStyle(color: Colors.white, letterSpacing: 1.0, fontSize:16.0, ),),
-                              SizedBox(height: 15,),
-                              Container(child: Text('Date of Birth', style: TextStyle(color: Colors.blue.shade900, letterSpacing: 2.0,  fontSize:16.0,fontWeight: FontWeight.bold, ),)),
-
-                              SizedBox(height: 1.0,),
-                              Text('${this._dob}', style: TextStyle(color: Colors.white, letterSpacing: 1.0, fontSize:16.0, ),),
+                              Row(
+                                  children: [
+                                    SizedBox(width: 1, height: 10.0,),
+                                    Text
+                                      ('User E-mail',
+                                      style: TextStyle(
+                                      color: Colors.purple.shade800,
+                                       letterSpacing: 1.0,
+                                       fontSize:18.0,
+                                        fontWeight: FontWeight.bold, ),),
 
 
-                              SizedBox(height: 15.0),
-                              //ChangePasswordButon,
+                                SizedBox(width: 50, height: 1.0,),
+                                    Text('${this._name}',
+                                      style: TextStyle(
+                                          color: Colors.purple.shade800,
+                                          letterSpacing: 1.0,
+                                          fontSize:17.0,
+                                          fontWeight: FontWeight.w500),),
+
+                                  ]
+
+                              ),
+
+
+
+                              Row(
+                                  children: [
+                                    SizedBox(width: 1, height: 10.0,),
+                                    Text
+                                      ('Index',
+                                      style: TextStyle(
+                                        color: Colors.purple.shade800,
+                                        letterSpacing: 1.0,
+                                        fontSize:18.0,
+                                        fontWeight: FontWeight.bold, ),),
+
+
+                                    SizedBox(width: 160, height: 10.0,),
+                                    Text('${this._index}',
+                                      style: TextStyle(
+                                          color: Colors.purple.shade800,
+                                          letterSpacing: 1.0,
+                                          fontSize:17.0,
+                                          fontWeight: FontWeight.w500),),
+
+                                  ]
+
+                              ),
+
+
+                              Row(
+                                  children: [
+                                    SizedBox(width: 1, height: 10.0,),
+                                    Text
+                                      ('Your Name',
+                                      style: TextStyle(
+                                        color: Colors.purple.shade800,
+                                        letterSpacing: 1.0,
+                                        fontSize:18.0,
+                                        fontWeight: FontWeight.bold, ),),
+
+
+                                    SizedBox(width: 110, height: 10.0,),
+                                    Text('${this._funame}',
+                                      style: TextStyle(
+                                          color: Colors.purple.shade800,
+                                          letterSpacing: 1.0,
+                                          fontSize:17.0,
+                                          fontWeight: FontWeight.w500),),
+
+                                  ]
+
+                              ),
+
+                              Row(
+                                  children: [
+                                    SizedBox(width: 1, height: 10.0,),
+                                    Text
+                                      ('Contact Number',
+                                      style: TextStyle(
+                                        color: Colors.purple.shade800,
+                                        letterSpacing: 1.0,
+                                        fontSize:18.0,
+                                        fontWeight: FontWeight.bold, ),),
+
+
+                                    SizedBox(width: 70, height: 10.0,),
+                                    Text('${this._phone}',
+                                      style: TextStyle(
+                                          color: Colors.purple.shade800,
+                                          letterSpacing: 1.0,
+                                          fontSize:17.0,
+                                          fontWeight: FontWeight.w500),),
+
+                                  ]
+
+                              ),
+
+
+                              Row(
+                                  children: [
+                                    SizedBox(width: 1, height: 10.0,),
+                                    Text
+                                      ('Permanent Address',
+                                      style: TextStyle(
+                                        color: Colors.purple.shade800,
+                                        letterSpacing: 1.0,
+                                        fontSize:18.0,
+                                        fontWeight: FontWeight.bold, ),),
+
+
+                                    SizedBox(width: 40, height: 10.0,),
+                                    Text('${this._address}',
+                                      style: TextStyle(
+                                          color: Colors.purple.shade800,
+                                          letterSpacing: 1.0,
+                                          fontSize:17.0,
+                                          fontWeight: FontWeight.w500),),
+
+                                  ]
+
+                              ),
+
+
+                              Row(
+                                  children: [
+                                    SizedBox(width: 1, height: 10.0,),
+                                    Text
+                                      ('Date of Birth',
+                                      style: TextStyle(
+                                        color: Colors.purple.shade800,
+                                        letterSpacing: 1.0,
+                                        fontSize:18.0,
+                                        fontWeight: FontWeight.bold, ),),
+
+
+                                    SizedBox(width: 100, height: 10.0,),
+                                    Text('${this._dob}',
+                                      style: TextStyle(
+                                          color: Colors.purple.shade800,
+                                          letterSpacing: 1.0,
+                                          fontSize:17.0,
+                                          fontWeight: FontWeight.w500),),
+
+                                  ]
+
+                              ),
+
+
                               Container(
-                                padding: EdgeInsets.symmetric(vertical: 0, horizontal: 80),
+                                padding: EdgeInsets.symmetric(vertical: 40, horizontal: 80),
                                 width: double.infinity,
                                 child: RaisedButton(
                                   elevation: 5,
@@ -234,11 +349,11 @@ class _MyProfileState extends State<MyProfile> {
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(30)
                                   ),
-                                  color: Colors.blue.shade100,
+                                  color: Colors.purpleAccent.shade700,
                                   child: Text(
                                     'Change Password',
                                     style: TextStyle(
-                                      color: Colors.blue.shade900,
+                                      color: Colors.purple.shade100,
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -261,11 +376,11 @@ class _MyProfileState extends State<MyProfile> {
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(30)
                                   ),
-                                  color: Colors.blue.shade100,
+                                  color: Colors.purpleAccent.shade700,
                                   child: Text(
                                     'Log out',
                                     style: TextStyle(
-                                      color: Colors.blue.shade900,
+                                      color: Colors.purple.shade100,
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold,
                                     ),
