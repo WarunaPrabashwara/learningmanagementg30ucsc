@@ -51,7 +51,8 @@ class _generate_term_test_reportsState extends State<generate_term_test_reports>
     final SelectYearDropdown = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(5.0),
-      color: Colors.cyanAccent,
+      color: Colors.purple.shade50,
+
       child: DropdownButton(
         hint: Text('select' ,
             textAlign: TextAlign.center,
@@ -77,7 +78,7 @@ class _generate_term_test_reportsState extends State<generate_term_test_reports>
     final SelectTermDropdown = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(5.0),
-      color: Colors.cyanAccent,
+      color: Colors.purple.shade50,
       child: DropdownButton(
         hint: Text('select' ,
             textAlign: TextAlign.center,
@@ -103,7 +104,7 @@ class _generate_term_test_reportsState extends State<generate_term_test_reports>
     final SelectSubjectDropdown = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(5.0),
-      color: Colors.cyanAccent,
+      color: Colors.purple.shade50,
       child: DropdownButton(
         hint: Text('select' ,
             textAlign: TextAlign.center,
@@ -129,7 +130,7 @@ class _generate_term_test_reportsState extends State<generate_term_test_reports>
     final SelectSectionDropdown = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(5.0),
-      color: Colors.cyanAccent,
+      color: Colors.purple.shade50,
       child: DropdownButton(
         hint: Text('select' ,
             textAlign: TextAlign.center,
@@ -155,7 +156,7 @@ class _generate_term_test_reportsState extends State<generate_term_test_reports>
     final SelectClassDropdown = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(5.0),
-      color: Colors.cyanAccent,
+      color: Colors.purple.shade50,
       child: DropdownButton(
         hint: Text('select' ,
             textAlign: TextAlign.center,
@@ -181,7 +182,7 @@ class _generate_term_test_reportsState extends State<generate_term_test_reports>
     final SelectStudentDropdown = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(5.0),
-      color: Colors.cyanAccent,
+      color: Colors.purple.shade50,
       child: DropdownButton(
         hint: Text('select' ,
             textAlign: TextAlign.center,
@@ -207,7 +208,7 @@ class _generate_term_test_reportsState extends State<generate_term_test_reports>
     final Submit = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(5.0),
-      color: Colors.greenAccent,
+      color: Colors.purple.shade500,
       child: MaterialButton(
         //padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         onPressed: () {
@@ -226,14 +227,16 @@ class _generate_term_test_reportsState extends State<generate_term_test_reports>
         child: Text('Submit',
             textAlign: TextAlign.center,
             style: style.copyWith(
-                color: Colors.black, fontWeight: FontWeight.bold)),
+                color: Colors.white,
+                fontSize: 20.0,
+                fontWeight: FontWeight.bold)),
       ),
     );
 
     final print = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(5.0),
-      color: Colors.greenAccent,
+      color: Colors.purple.shade500,
       child: MaterialButton(
         //padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         onPressed: () {
@@ -248,29 +251,28 @@ class _generate_term_test_reportsState extends State<generate_term_test_reports>
         child: Text('Download Result sheet ',
             textAlign: TextAlign.center,
             style: style.copyWith(
-                color: Colors.black, fontWeight: FontWeight.bold)),
+                color: Colors.white,
+                fontSize: 20.0,
+                fontWeight: FontWeight.bold)),
       ),
     );
 
     return  Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue.shade800,
-        flexibleSpace: Image.asset(
-          "assets/df3.png",
-          fit: BoxFit.cover,
-        ),
+        backgroundColor: Colors.purple.shade500 ,
+
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(20.0),
           child: Container(),
         ),
         title:
         Padding(
-          padding: const EdgeInsets.all(18.0),
+          padding: const EdgeInsets.fromLTRB(22.0, 15.0, 22.0, 10.0),
           child: Text(
             "Term Test Reports".toUpperCase(),
             style: TextStyle(
               color: Colors.white,
-              fontSize: 18.0,
+              fontSize: 20.0,
               fontWeight: FontWeight.bold,
               height: 3.0,
             ),
@@ -285,10 +287,11 @@ class _generate_term_test_reportsState extends State<generate_term_test_reports>
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  Colors.blue.shade300,
-                  Colors.blue.shade300,
-                  Colors.blue.shade200,
-                  Colors.blue.shade100,
+                  Colors.white,
+                  Colors.purple.shade50,
+                 // Colors.purpleAccent.shade200,
+                  Colors.purple.shade100,
+                 // Colors.purple.shade300,
                 ]
             )
         ),
@@ -316,32 +319,38 @@ class _generate_term_test_reportsState extends State<generate_term_test_reports>
                                     SizedBox(height: 40.0,
                                     child :Text('Year' ,
                                         style: style.copyWith(
-                                            color: Colors.black, fontWeight: FontWeight.bold)),
+                                            color: Colors.deepPurple.shade400,
+                                            fontWeight: FontWeight.bold)),
                                     ),
                                     SizedBox(height: 40.0,
                                         child :Text('Term' ,
                                             style: style.copyWith(
-                                                color: Colors.black, fontWeight: FontWeight.bold)),
+                                                color: Colors.deepPurple.shade400,
+                                                fontWeight: FontWeight.bold)),
                                     ),
                                     SizedBox(height: 40.0,
                                         child :Text('subject' ,
                                             style: style.copyWith(
-                                                color: Colors.black, fontWeight: FontWeight.bold)),
+                                                color: Colors.deepPurple.shade400,
+                                                fontWeight: FontWeight.bold)),
                                     ),
                                     SizedBox(height: 40.0,
                                         child :Text('section' ,
                                             style: style.copyWith(
-                                                color: Colors.black, fontWeight: FontWeight.bold)),
+                                                color: Colors.deepPurple.shade400,
+                                                fontWeight: FontWeight.bold)),
                                     ),
                                     SizedBox(height: 40.0,
                                         child :Text('class' ,
                                             style: style.copyWith(
-                                                color: Colors.black, fontWeight: FontWeight.bold)),
+                                                color: Colors.deepPurple.shade400,
+                                                fontWeight: FontWeight.bold)),
                                     ),
                                     SizedBox(height: 40.0,
                                       child :Text('Student' ,
                                           style: style.copyWith(
-                                              color: Colors.black, fontWeight: FontWeight.bold)),
+                                              color: Colors.deepPurple.shade400,
+                                              fontWeight: FontWeight.bold)),
                                     ),
                                   ],
                                 ) ,
@@ -350,6 +359,7 @@ class _generate_term_test_reportsState extends State<generate_term_test_reports>
                                   children: [
                                     SizedBox(
                                       height: 40.0,
+
                                       //width: 400,
                                       child:SelectYearDropdown ,
                                     ),

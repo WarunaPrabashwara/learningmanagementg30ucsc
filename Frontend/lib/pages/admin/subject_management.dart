@@ -22,22 +22,20 @@ class _SubMgtState extends State<SubMgt> {
     return Scaffold(
       //backgroundColor: decor,
       appBar: AppBar(
-        backgroundColor: Colors.blue.shade800,
-        flexibleSpace: Image.asset(
-          "assets/df3.png",
-          fit: BoxFit.cover,
-        ),
+        backgroundColor: Colors.purple.shade500 ,
+
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(20.0),
           child: Container(),
         ),
         title:
-              Center(
+              Padding(
+                padding: EdgeInsets.fromLTRB(20.0, 5.0, 20.0, 0.0),
                 child: Text(
                 "Subject Management".toUpperCase(),
                 style: TextStyle(
                     color: Colors.white,
-                    fontSize: 18.0,
+                    fontSize: 20.0,
                     fontWeight: FontWeight.bold,
                   height: 3.0,
                 ),
@@ -54,10 +52,8 @@ class _SubMgtState extends State<SubMgt> {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                    Colors.blue.shade700,
-                    Colors.blue.shade400,
-                    Colors.blue.shade300,
-                    Colors.blue.shade200,
+                    Colors.purpleAccent.shade100,
+                    Colors.purpleAccent.shade200,
                   ]
               )
           ),
@@ -68,13 +64,13 @@ class _SubMgtState extends State<SubMgt> {
               children: [
 
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(22.0, 15.0, 22.0, 22.0),
+                  padding: const EdgeInsets.fromLTRB(22.0, 15.0, 22.0, 10.0),
                   child: Center(
                     child: Text(
                       "Subject Categories",
                       style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18.0,
+                        color: Colors.deepPurple,
+                        fontSize: 20.0,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -86,18 +82,20 @@ class _SubMgtState extends State<SubMgt> {
                   padding: const EdgeInsets.all(18.0),
                   child: ElevatedButton(
                     onPressed: (){
-                                              Navigator.push(
+                      Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) {
                             return viewsubjectcatogories();
                           }),
                         );
                     },
-                    child: Text("view".toUpperCase(), style: TextStyle(fontSize: 14, fontWeight:FontWeight.w900),),
+                    child: Text("view".toUpperCase(), style: TextStyle(fontSize: 16,
+                        color: Colors.deepPurpleAccent.shade700,
+                        fontWeight:FontWeight.w900),),
                     style: ButtonStyle(
-                        padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0)),
-                        foregroundColor: MaterialStateProperty.all<Color>(Colors.blue.shade900),
-                        backgroundColor: MaterialStateProperty.all<Color>(Colors.blue.shade100),
+                        padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0)),
+                        foregroundColor: MaterialStateProperty.all<Color>(Colors.purple.shade900),
+                        backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
                         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10.0),
@@ -119,11 +117,13 @@ class _SubMgtState extends State<SubMgt> {
                           }),
                         );
                     },
-                    child: Text("add new".toUpperCase(), style: TextStyle(fontSize: 14, fontWeight:FontWeight.w900),),
+                    child: Text("add new".toUpperCase(), style: TextStyle(fontSize: 16,
+                        color: Colors.deepPurpleAccent.shade700,
+                        fontWeight:FontWeight.w900),),
                     style: ButtonStyle(
-                        padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0)),
-                        foregroundColor: MaterialStateProperty.all<Color>(Colors.blue.shade900),
-                        backgroundColor: MaterialStateProperty.all<Color>(Colors.blue.shade100),
+                        padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0)),
+                        foregroundColor: MaterialStateProperty.all<Color>(Colors.purple.shade900),
+                        backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
                         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10.0),
@@ -135,13 +135,13 @@ class _SubMgtState extends State<SubMgt> {
                 ),
 
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(22.0, 15.0, 22.0, 22.0),
+                  padding: const EdgeInsets.fromLTRB(22.0, 15.0, 22.0, 10.0),
                   child: Center(
                     child: Text(
                       "Subjects",
                       style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18.0,
+                        color: Colors.deepPurple,
+                        fontSize: 25.0,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -153,18 +153,20 @@ class _SubMgtState extends State<SubMgt> {
                   padding: const EdgeInsets.all(18.0),
                   child: ElevatedButton(
                     onPressed: (){
-                                              Navigator.push(
+                      Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) {
                             return viewsubjects();
                           }),
                         );
                     },
-                    child: Text("view".toUpperCase(), style: TextStyle(fontSize: 14, fontWeight:FontWeight.w900),),
+                    child: Text("view".toUpperCase(), style: TextStyle(fontSize: 16,
+                        color: Colors.deepPurpleAccent.shade700,
+                        fontWeight:FontWeight.w900),),
                     style: ButtonStyle(
-                        padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0)),
-                        foregroundColor: MaterialStateProperty.all<Color>(Colors.blue.shade900),
-                        backgroundColor: MaterialStateProperty.all<Color>(Colors.blue.shade100),
+                        padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0)),
+                        foregroundColor: MaterialStateProperty.all<Color>(Colors.purple.shade900),
+                        backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
                         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10.0),
@@ -186,11 +188,13 @@ class _SubMgtState extends State<SubMgt> {
                           }),
                         );
                     },
-                    child: Text("add new".toUpperCase(), style: TextStyle(fontSize: 14, fontWeight:FontWeight.w900),),
+                    child: Text("add new".toUpperCase(), style: TextStyle(fontSize: 16,
+                        color: Colors.deepPurpleAccent.shade700,
+                        fontWeight:FontWeight.w900),),
                     style: ButtonStyle(
-                        padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0)),
-                        foregroundColor: MaterialStateProperty.all<Color>(Colors.blue.shade900),
-                        backgroundColor: MaterialStateProperty.all<Color>(Colors.blue.shade100),
+                        padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0)),
+                        foregroundColor: MaterialStateProperty.all<Color>(Colors.purple.shade900),
+                        backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
                         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10.0),
@@ -202,7 +206,7 @@ class _SubMgtState extends State<SubMgt> {
                 ),
 
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(22.0, 15.0, 22.0, 22.0),
+                  padding: const EdgeInsets.fromLTRB(22.0, 10.0, 22.0, 15.0),
                   child: Center(
                     child: Text(
                       "-------------------------",
@@ -228,11 +232,13 @@ class _SubMgtState extends State<SubMgt> {
                           }),
                         );          
                     },
-                    child: Text("Assign subjects with\n\t\t teacher and class".toUpperCase(), style: TextStyle(fontSize: 14, fontWeight:FontWeight.w900),),
+                    child: Text("Assign subjects with\n\t\t teacher and class".toUpperCase(), style: TextStyle(fontSize: 16,
+                        color: Colors.deepPurpleAccent.shade700,
+                        fontWeight:FontWeight.w900),),
                     style: ButtonStyle(
-                        padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0)),
-                        foregroundColor: MaterialStateProperty.all<Color>(Colors.blue.shade900),
-                        backgroundColor: MaterialStateProperty.all<Color>(Colors.blue.shade100),
+                        padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0)),
+                        foregroundColor: MaterialStateProperty.all<Color>(Colors.purple.shade900),
+                        backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
                         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10.0),

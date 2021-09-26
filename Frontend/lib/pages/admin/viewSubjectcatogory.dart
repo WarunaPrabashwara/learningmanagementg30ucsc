@@ -143,6 +143,7 @@ class _UserMgtState extends State<viewsubjectcatogories> {
             itemBuilder: (BuildContext context, int index) {
               return Container(
                 //height: 50,
+
                 child: Column(
                   children: <Widget>[
                                    
@@ -155,8 +156,8 @@ class _UserMgtState extends State<viewsubjectcatogories> {
                         child: Text(
                           '${setofAnnouncements[index].name}' ,
                           style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 16.0,
+                              color: Colors.purple,
+                              fontSize: 18.0,
                               fontWeight: FontWeight.bold
                           ),
                         ),
@@ -169,11 +170,11 @@ class _UserMgtState extends State<viewsubjectcatogories> {
                         children: [
                           TextButton(
                             onPressed: (){},
-                            child: Text("UPDATE".toUpperCase(), style: TextStyle(fontSize: 12, color: Colors.black, ),),
+                            child: Text("UPDATE".toUpperCase(), style: TextStyle(fontSize: 16, color: Colors.white, ),),
                             style: ButtonStyle(
                                 padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 20.0, vertical: 8.0)),
                                 foregroundColor: MaterialStateProperty.all<Color>(Colors.red),
-                                backgroundColor: MaterialStateProperty.all<Color>(Colors.grey.shade300),
+                                backgroundColor: MaterialStateProperty.all<Color>(Colors.purple.shade800),
                                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                                     RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(18.0),
@@ -185,11 +186,11 @@ class _UserMgtState extends State<viewsubjectcatogories> {
                           SizedBox(width: 5,),
                           ElevatedButton(
                             onPressed: (){},
-                            child: Text("DELETE".toUpperCase(), style: TextStyle(fontSize: 12),),
+                            child: Text("DELETE".toUpperCase(), style: TextStyle(fontSize: 16, color: Colors.white,),),
                             style: ButtonStyle(
                                 padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 20.0, vertical: 8.0)),
                                 foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
-                                backgroundColor: MaterialStateProperty.all<Color>(Colors.grey.shade300),
+                                backgroundColor: MaterialStateProperty.all<Color>(Colors.purple.shade800),
                                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                                     RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(18.0),
