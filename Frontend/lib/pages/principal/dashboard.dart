@@ -73,7 +73,7 @@ class _DashboardPrincipal extends State<DashboardPrincipal> {
                                       child: IconButton(
                                         icon: Icon(
                                           Icons.menu,
-                                          color: Colors.black,
+                                          color: Colors.purple.shade900,
                                         ),
                                         onPressed: () {},
                                       ),
@@ -84,11 +84,18 @@ class _DashboardPrincipal extends State<DashboardPrincipal> {
                                         IconButton(
                                           icon: Icon(Icons.notifications_active),
                                           onPressed: (){},
-                                          iconSize: 30.0,
+                                          iconSize: 35.0,
                                           color: Colors.purple.shade400,
                                         ),
-                                        SizedBox(width: 10.0,),
-                                        Image.asset("assets/user.png", width: 50.0,),
+                                        //SizedBox(width: 10.0,),
+
+                                        IconButton(
+                                          icon: Icon(Icons.person_rounded),
+                                          onPressed: (){},
+                                          iconSize: 45.0,
+                                          color: Colors.purple.shade400,
+                                        ),
+                                        SizedBox(width: 5.0,),
                                       ],
                                     )
                                   ]
@@ -230,8 +237,8 @@ class _DashboardPrincipal extends State<DashboardPrincipal> {
                                                 child: Column(
                                                   mainAxisAlignment: MainAxisAlignment.center,
                                                   children: [
-                                                    Image.asset("assets/noticeboard.png", width: 60.0,),
-                                                    SizedBox(height: 10.0),
+                                                    Image.asset("assets/noticeboard.png", width: 70.0,),
+                                                    SizedBox(height: 06.0),
                                                     Text("View Noticeboard", style: TextStyle(
                                                       color: Colors.white,
                                                       fontWeight: FontWeight.bold,
@@ -276,12 +283,12 @@ class _DashboardPrincipal extends State<DashboardPrincipal> {
                                                 child: Column(
                                                   mainAxisAlignment: MainAxisAlignment.center,
                                                   children: [
-                                                    Image.asset("assets/bookshelf.png", width: 60.0,),
-                                                    SizedBox(height: 10.0),
+                                                    Image.asset("assets/bookshelf.png", width: 70.0,),
+                                                    SizedBox(height: 08.0),
                                                     Text("Subject List", style: TextStyle(
                                                       color: Colors.white,
                                                       fontWeight: FontWeight.bold,
-                                                      fontSize: 15.0,
+                                                      fontSize: 16.0,
                                                     ),textAlign: TextAlign.center,),
                                                   ],
                                                 ),

@@ -51,22 +51,30 @@ class Dashboard extends StatelessWidget {
                           child: IconButton(
                             icon: Icon(
                               Icons.menu,
-                              color: Colors.black,
+                              color: Colors.purple.shade900,
                             ),
                             onPressed: () {},
                           ),
                         ),
+
 
                         Row(
                           children: [
                             IconButton(
                               icon: Icon(Icons.notifications_active),
                               onPressed: (){},
-                              iconSize: 30.0,
+                              iconSize: 35.0,
                               color: Colors.purple.shade400,
                             ),
-                            SizedBox(width: 10.0,),
-                            Image.asset("assets/pro2.png", width: 50.0,),
+                            //SizedBox(width: 10.0,),
+
+                            IconButton(
+                              icon: Icon(Icons.person_rounded),
+                              onPressed: (){},
+                              iconSize: 45.0,
+                              color: Colors.purple.shade400,
+                            ),
+                            SizedBox(width: 5.0,),
                           ],
                         )
                       ],

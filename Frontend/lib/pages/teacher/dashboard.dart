@@ -70,7 +70,7 @@ class _DashboardTeacher extends State<DashboardTeacher>{
                                       child: IconButton(
                                         icon: Icon(
                                           Icons.menu,
-                                          color: Colors.black,
+                                          color: Colors.purple.shade900,
                                         ),
                                         onPressed: () {},
                                       ),
@@ -81,11 +81,18 @@ class _DashboardTeacher extends State<DashboardTeacher>{
                                         IconButton(
                                           icon: Icon(Icons.notifications_active),
                                           onPressed: (){},
-                                          iconSize: 30.0,
+                                          iconSize: 35.0,
                                           color: Colors.purple.shade400,
                                         ),
-                                        SizedBox(width: 10.0,),
-                                        Image.asset("assets/man-user.png", width: 50.0,),
+                                        //SizedBox(width: 10.0,),
+
+                                        IconButton(
+                                          icon: Icon(Icons.person_rounded),
+                                          onPressed: (){},
+                                          iconSize: 45.0,
+                                          color: Colors.purple.shade400,
+                                        ),
+                                        SizedBox(width: 5.0,),
                                       ],
                                     )
                                   ]
@@ -140,7 +147,7 @@ class _DashboardTeacher extends State<DashboardTeacher>{
                                                     Text("My Profile", style: TextStyle(
                                                         color: Colors.white,
                                                         fontWeight: FontWeight.bold,
-                                                        fontSize: 15.0
+                                                        fontSize: 16.0
                                                     ),),
                                                   ],
                                                 ),
@@ -186,7 +193,7 @@ class _DashboardTeacher extends State<DashboardTeacher>{
                                                     Text("My Subjects", style: TextStyle(
                                                       color: Colors.white,
                                                       fontWeight: FontWeight.bold,
-                                                      fontSize: 15.0,
+                                                      fontSize: 16.0,
                                                     ),textAlign: TextAlign.center,),
                                                   ],
                                                 ),
@@ -227,12 +234,12 @@ class _DashboardTeacher extends State<DashboardTeacher>{
                                                 child: Column(
                                                   mainAxisAlignment: MainAxisAlignment.center,
                                                   children: [
-                                                    Image.asset("assets/noticeboard.png", width: 60.0,),
-                                                    SizedBox(height: 10.0),
+                                                    Image.asset("assets/noticeboard.png", width: 70.0,),
+                                                    SizedBox(height: 7.0),
                                                     Text("View Noticeboard", style: TextStyle(
                                                       color: Colors.white,
                                                       fontWeight: FontWeight.bold,
-                                                      fontSize: 15.0,
+                                                      fontSize: 16.0,
                                                     ),textAlign: TextAlign.center,),
                                                   ],
                                                 ),
@@ -273,12 +280,12 @@ class _DashboardTeacher extends State<DashboardTeacher>{
                                                 child: Column(
                                                   mainAxisAlignment: MainAxisAlignment.center,
                                                   children: [
-                                                    Image.asset("assets/calendar.png", width: 60.0,),
+                                                    Image.asset("assets/calendar.png", width: 70.0,),
                                                     SizedBox(height: 10.0),
                                                     Text("My Time Table", style: TextStyle(
                                                       color: Colors.white,
                                                       fontWeight: FontWeight.bold,
-                                                      fontSize: 15.0,
+                                                      fontSize: 16.0,
                                                     ),textAlign: TextAlign.center,),
                                                   ],
                                                 ),
@@ -324,7 +331,7 @@ class _DashboardTeacher extends State<DashboardTeacher>{
                                                     Text("Term Test Reports", style: TextStyle(
                                                       color: Colors.white,
                                                       fontWeight: FontWeight.bold,
-                                                      fontSize: 15.0,
+                                                      fontSize: 16.0,
                                                     ),textAlign: TextAlign.center,),
                                                   ],
                                                 ),
@@ -365,12 +372,12 @@ class _DashboardTeacher extends State<DashboardTeacher>{
                                                 child: Column(
                                                   mainAxisAlignment: MainAxisAlignment.center,
                                                   children: [
-                                                    Image.asset("assets/category.png", width: 50.0,),
-                                                    SizedBox(height: 10.0),
+                                                    Image.asset("assets/category.png", width: 70.0,),
+                                                    SizedBox(height: 8.0),
                                                     Text("Add students to bucket Subjects", style: TextStyle(
                                                       color: Colors.white,
                                                       fontWeight: FontWeight.bold,
-                                                      fontSize: 15.0,
+                                                      fontSize: 16.0,
                                                     ),textAlign: TextAlign.center,),
                                                   ],
                                                 ),
