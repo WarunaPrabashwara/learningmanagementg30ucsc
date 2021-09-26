@@ -21,8 +21,8 @@ class myProfile extends StatelessWidget {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                    Colors.blue.shade300,
-                    Colors.blue.shade900,
+                    Colors.purpleAccent.shade400,
+                    Colors.purple,
                   ]
               )
           ),
