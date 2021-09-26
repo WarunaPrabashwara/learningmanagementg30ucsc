@@ -99,8 +99,8 @@ class _loginScreenState extends State<addsubcatogory> {
         Text(
           'Enter new catogory',
           style: TextStyle(
-              color: Colors.white,
-              fontSize: 14,
+              color: Colors.deepPurple.shade900,
+              fontSize: 20,
               fontWeight: FontWeight.bold
           ),
         ),
@@ -130,11 +130,11 @@ class _loginScreenState extends State<addsubcatogory> {
               ),
               decoration: InputDecoration(
                   border: InputBorder.none,
-                  contentPadding: EdgeInsets.only(top: 14),
+                  contentPadding: EdgeInsets.only(top: 14, left: 20, bottom: 10),
                //   hintText: 'Enter your user ID',
                   hintStyle: TextStyle(
                       color: Colors.black38,
-                      fontSize: 14.0
+                      fontSize: 16.0
                   ),
              
               )
@@ -175,7 +175,7 @@ class _loginScreenState extends State<addsubcatogory> {
           });
    
         },
-        padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+        padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15)
         ),
@@ -183,8 +183,8 @@ class _loginScreenState extends State<addsubcatogory> {
         child: Text(
           'Add',
           style: TextStyle(
-            color: Colors.blue.shade900,
-            fontSize: 16.0,
+            color: Colors.purple.shade900,
+            fontSize: 19.0,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -217,8 +217,8 @@ class _loginScreenState extends State<addsubcatogory> {
                           begin: Alignment.topCenter,
                           end: Alignment.bottomCenter,
                           colors: [
-                            Colors.blue.shade300,
-                            Colors.blue.shade900,
+                            Colors.purpleAccent.shade100,
+                            Colors.purpleAccent.shade200,
 
                             // Colors.blue.shade800,
                             // Colors.blue.shade800,
