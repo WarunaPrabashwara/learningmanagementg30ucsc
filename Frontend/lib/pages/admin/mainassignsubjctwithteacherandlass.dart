@@ -3,6 +3,7 @@ import 'package:frontend/pages/admin/AddNEwaassignsubjctwithteacherandlass.dart'
 import 'package:frontend/pages/admin/add_new_subject.dart';
 import 'package:frontend/pages/admin/addsubcatogery.dart';
 import 'package:frontend/pages/admin/addsubjects.dart';
+import 'package:frontend/pages/admin/seeAssignedsubjects.dart';
 import 'package:frontend/pages/admin/viewSubjectcatogory.dart';
 import 'package:frontend/pages/viewsubjects.dart';
 
@@ -66,7 +67,7 @@ class _SubMgtState extends State<SubjectTeacherClass> {
                                               Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) {
-                            return viewsubjectcatogories();
+                            return seeAssignedsubjeccs();
                           }),
                         );
                     },

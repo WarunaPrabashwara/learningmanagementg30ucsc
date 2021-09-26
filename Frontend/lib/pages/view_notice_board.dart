@@ -86,16 +86,15 @@ class _view_notice_boardState extends State<view_notice_board> {
 
     return Scaffold(
         appBar: AppBar(
-          title: Text('Announcements',style: TextStyle(
+          backgroundColor: Colors.purple.shade500 ,
+          title: Text('Notice Board'.toUpperCase(),
+            style: TextStyle(
               color: Colors.white,
-              fontSize: 18.0,
+              fontSize: 20.0,
               fontWeight: FontWeight.bold,
               height: 3.0
           ),),
-          flexibleSpace: Image.asset(
-            "assets/df3.png",
-            fit: BoxFit.cover,
-          ),
+
           bottom: PreferredSize(
             preferredSize: Size.fromHeight(20.0),
             child: Container(),
@@ -107,10 +106,11 @@ class _view_notice_boardState extends State<view_notice_board> {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                    Colors.blue.shade100,
-                    Colors.blue.shade200,
-                    Colors.blue.shade300,
-                    Colors.blue.shade400,
+                    //Color.fromARGB(255, 246, 246, 246),
+                    //Color.fromARGB(255, 246, 246, 246),
+                    Colors.white,
+                    Colors.purple.shade50,
+                    Colors.purple.shade100,
                   ]
               )
           ),
@@ -130,7 +130,7 @@ class _view_notice_boardState extends State<view_notice_board> {
                           width: 380.0,
                           height: 140.0,
                           child: Card(
-                            color: Colors.grey[200],
+                            color: Colors.purpleAccent.shade100,
                             elevation: 2.0,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10.0),
@@ -143,21 +143,29 @@ class _view_notice_boardState extends State<view_notice_board> {
                                     children: [
 
                                       Padding(
-                                        padding: const EdgeInsets.fromLTRB(8.0, 8.0, 0.0, 8.0),
-                                        child: AutoSizeText('${setofAnnouncements[index].date_time}',style: TextStyle(fontSize: 16.0, fontStyle: FontStyle.italic)),
+                                        padding: EdgeInsets.fromLTRB(30.0, 20.0, 20.0, 0.0),
+                                        child: AutoSizeText('${setofAnnouncements[index].date_time}',
+                                            style: TextStyle(fontSize: 16.0,
+                                                color: Colors.purple.shade900,
+                                                fontStyle: FontStyle.italic)),
                                       ),
                                     ],
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.all(8.0),
+                                    padding: EdgeInsets.fromLTRB(30.0, 10.0, 20.0, 0.0),
                                     child: Text(
                                       '${setofAnnouncements[index].description} ',
-                                      style: TextStyle(fontSize: 15.0),
+                                      style: TextStyle(fontSize: 20.0,
+                                          color: Colors.purple.shade900,
+                                          fontWeight: FontWeight.bold),
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: AutoSizeText("-"+'${setofAnnouncements[index].made_by} ',style: TextStyle(fontSize: 16.0, fontStyle: FontStyle.italic)),
+                                    padding: EdgeInsets.fromLTRB(30.0, 10.0, 20.0, 0.0),
+                                    child: AutoSizeText("-"+'${setofAnnouncements[index].made_by} ',
+                                        style: TextStyle(fontSize: 17.0,
+                                            color: Colors.purple.shade900,
+                                            fontStyle: FontStyle.italic)),
                                   ),
                                 ],
                               ),

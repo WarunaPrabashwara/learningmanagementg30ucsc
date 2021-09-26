@@ -10,6 +10,8 @@ router.post('/addtoclassStudentsGroup',checkAuthMiddleware.checkAuth, announceme
 //router.delete('/delete', userController.delete);
 //router.put('/update', checkAuthMiddleware.checkAuth, userController.update);
 router.get('/view', checkAuthMiddleware.checkAuth, announcementController.view);
+router.get('/viewClassesandStudents', checkAuthMiddleware.checkAuth, announcementController.viewClassesandStudents);
+
 router.get('/viewMyAnnouncement', checkAuthMiddleware.checkAuth, announcementController.viewMyAnnouncement);
 router.delete('/deleteAnounce' , checkAuthMiddleware.checkAuth, announcementController.deleteann );
 module.exports = router;

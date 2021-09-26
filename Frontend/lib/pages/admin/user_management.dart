@@ -97,10 +97,10 @@ class _UserMgtState extends State<UserMgt> {
   
   Widget buildLoginBtn(){
     return Container(
-      padding: EdgeInsets.fromLTRB(120.0, 10.0, 120.0, 0.0),
+      padding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 0.0),
       width: double.infinity,
       child: RaisedButton(
-        elevation: 5,
+        elevation: 10,
         onPressed: (){
             Navigator.push(
               context,
@@ -109,16 +109,16 @@ class _UserMgtState extends State<UserMgt> {
               }),
             );
         },
-        padding: EdgeInsets.all(7),
+        padding: EdgeInsets.all(15),
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15)
         ),
-        color: Colors.white,
+        color: Colors.purple,
         child: Text(
           'Add a user',
           style: TextStyle(
-            color: Colors.blue.shade900,
-            fontSize: 16,
+            color: Colors.purple.shade50,
+            fontSize: 20,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -127,10 +127,10 @@ class _UserMgtState extends State<UserMgt> {
   }
   Widget viewusers(){
     return Container(
-      padding: EdgeInsets.fromLTRB(120.0, 10.0, 120.0, 0.0),
+      padding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 0.0),
       width: double.infinity,
       child: RaisedButton(
-        elevation: 5,
+        elevation: 10,
         onPressed: (){
             Navigator.push(
               context,
@@ -139,16 +139,16 @@ class _UserMgtState extends State<UserMgt> {
               }),
             );
         },
-        padding: EdgeInsets.all(7),
+        padding: const EdgeInsets.all(15.0),
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15)
         ),
-        color: Colors.white,
+        color: Colors.purple,
         child: Text(
           'View users',
           style: TextStyle(
-            color: Colors.blue.shade900,
-            fontSize: 16,
+            color: Colors.purple.shade50,
+            fontSize: 20,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -158,10 +158,10 @@ class _UserMgtState extends State<UserMgt> {
 
   Widget createStudentGroups(){
     return Container(
-      padding: EdgeInsets.fromLTRB(120.0, 10.0, 120.0, 0.0),
+        padding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 0.0),
       width: double.infinity,
       child: RaisedButton(
-        elevation: 5,
+        elevation: 10,
         onPressed: (){
             Navigator.push(
               context,
@@ -170,16 +170,16 @@ class _UserMgtState extends State<UserMgt> {
               }),
             );
         },
-        padding: EdgeInsets.all(7),
+        padding: const EdgeInsets.all(15.0),
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15)
         ),
-        color: Colors.white,
+        color: Colors.purple,
         child: Text(
           'View Students and their classes',
           style: TextStyle(
-            color: Colors.blue.shade900,
-            fontSize: 16,
+            color: Colors.purple.shade50,
+            fontSize: 20,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -189,10 +189,10 @@ class _UserMgtState extends State<UserMgt> {
 
   Widget addstudentstogroups(){
     return Container(
-      padding: EdgeInsets.fromLTRB(120.0, 10.0, 120.0, 0.0),
+      padding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 0.0),
       width: double.infinity,
       child: RaisedButton(
-        elevation: 5,
+        elevation: 10,
         onPressed: (){
             Navigator.push(
               context,
@@ -201,16 +201,17 @@ class _UserMgtState extends State<UserMgt> {
               }),
             );
         },
-        padding: EdgeInsets.all(7),
+        padding: const EdgeInsets.all(15.0),
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15)
         ),
-        color: Colors.white,
+        color: Colors.purple,
         child: Text(
           'Add students to Classes',
           style: TextStyle(
-            color: Colors.blue.shade900,
-            fontSize: 16,
+            color: Colors.purple.shade50,
+
+            fontSize: 20,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -233,13 +234,10 @@ class _UserMgtState extends State<UserMgt> {
     return Scaffold(
       //backgroundColor: decor,
       appBar: AppBar(
-        backgroundColor: Colors.blue.shade800,
-        flexibleSpace: Image.asset(
-          "assets/df3.png",
-          fit: BoxFit.cover,
-        ),
+        backgroundColor: Colors.purple.shade500 ,
+
         bottom: PreferredSize(
-          preferredSize: Size.fromHeight(20.0),
+          preferredSize: Size.fromHeight(23.0),
           child: Container(),
         ),
         title:
@@ -249,7 +247,7 @@ class _UserMgtState extends State<UserMgt> {
             "User Management".toUpperCase(),
             style: TextStyle(
                 color: Colors.white,
-                fontSize: 18.0,
+                fontSize: 20.0,
                 fontWeight: FontWeight.bold,
               height: 3.0,
             ),
@@ -268,10 +266,18 @@ class _UserMgtState extends State<UserMgt> {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
+<<<<<<< HEAD
                     Colors.blue.shade300,
                     Colors.blue.shade300,
                     Colors.blue.shade300,
                     Colors.blue.shade700,
+=======
+                  Color.fromARGB(255, 246, 246, 246),
+              Color.fromARGB(255, 246, 246, 246),
+              Colors.white,
+              Colors.purple.shade50,
+              Colors.purple.shade100,
+>>>>>>> 54b8fd590cd38c892857987bf546fe3b65e7e4aa
                   ]
               )
           ),
@@ -280,13 +286,13 @@ class _UserMgtState extends State<UserMgt> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                SizedBox(height: 10.0,),
+                SizedBox(height: 15.0,),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 0.0),
                   child: Container(
                     alignment: Alignment.centerLeft,
                     decoration: BoxDecoration(
-                        color: Colors.blue.shade100,
+                        color: Colors.purple.shade100,
                         borderRadius: BorderRadius.circular(10),
                         boxShadow: [
                           BoxShadow(
@@ -307,11 +313,11 @@ class _UserMgtState extends State<UserMgt> {
                           contentPadding: EdgeInsets.only(top: 14,left: 25),
                           hintText: 'Search',
                           hintStyle: TextStyle(
-                            color: Colors.black38,
+                            color: Colors.purple.shade800,
                           ),
                           suffixIcon: Icon(
                             Icons.search,
-                            color: Colors.black,
+                            color: Colors.purple.shade600,
                           )
                         )
                     ),
@@ -319,16 +325,16 @@ class _UserMgtState extends State<UserMgt> {
                 ),
 
                 buildLoginBtn(),
-                 SizedBox(height: 10.0,),
+                 SizedBox(height: 15.0,),
                  viewusers(),
-                 SizedBox(height: 10.0,),
+                 SizedBox(height: 15.0,),
                  Padding(
                   padding: const EdgeInsets.fromLTRB(22.0, 15.0, 22.0, 22.0),
                   child: Center(
                     child: Text(
-                      "-------------------------",
+                      "--------------------------------------------",
                       style: TextStyle(
-                        color: Colors.white,
+                        color: Colors.purpleAccent,
                         fontSize: 20.0,
                         fontWeight: FontWeight.bold,
                       ),
@@ -338,7 +344,7 @@ class _UserMgtState extends State<UserMgt> {
 
 
                  createStudentGroups(),
-                 SizedBox(height: 10.0,),
+                 SizedBox(height: 15.0,),
                  addstudentstogroups(),
 
               ],

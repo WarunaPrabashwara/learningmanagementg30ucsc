@@ -98,15 +98,16 @@ class _loginScreenState extends State<addnewclass> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
+        SizedBox(height: 40,),
         Text(
           'Enter Section',
           style: TextStyle(
               color: Colors.white,
-              fontSize: 14,
+              fontSize: 18,
               fontWeight: FontWeight.bold
           ),
         ),
-        SizedBox(height: 10,),
+        SizedBox(height: 20,),
         Container(
           alignment: Alignment.centerLeft,
           decoration: BoxDecoration(
@@ -132,7 +133,7 @@ class _loginScreenState extends State<addnewclass> {
               ),
               decoration: InputDecoration(
                   border: InputBorder.none,
-                  contentPadding: EdgeInsets.only(top: 14),
+                contentPadding: EdgeInsets.only(top: 20, left: 20, bottom: 15),
                //   hintText: 'Enter your user ID',
                   hintStyle: TextStyle(
                       color: Colors.black38,
@@ -149,15 +150,16 @@ class _loginScreenState extends State<addnewclass> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
+        SizedBox(height: 40,),
         Text(
           'Enter Class',
           style: TextStyle(
               color: Colors.white,
-              fontSize: 14,
+              fontSize: 18,
               fontWeight: FontWeight.bold
           ),
         ),
-        SizedBox(height: 10,),
+        SizedBox(height: 20,),
         Container(
           alignment: Alignment.centerLeft,
           decoration: BoxDecoration(
@@ -183,7 +185,7 @@ class _loginScreenState extends State<addnewclass> {
               ),
               decoration: InputDecoration(
                   border: InputBorder.none,
-                  contentPadding: EdgeInsets.only(top: 14),
+    contentPadding: EdgeInsets.only(top: 20, left: 20, bottom: 10),
                //   hintText: 'Enter your user ID',
                   hintStyle: TextStyle(
                       color: Colors.black38,
@@ -201,7 +203,7 @@ class _loginScreenState extends State<addnewclass> {
 
   Widget buildLoginBtn(){
     return Container(
-      padding: EdgeInsets.fromLTRB(100.0, 15.0, 100.0, 10.0),
+      padding: EdgeInsets.fromLTRB(100.0, 50.0, 100.0, 10.0),
       width: double.infinity,
       child: RaisedButton(
         elevation: 5,
@@ -236,8 +238,9 @@ class _loginScreenState extends State<addnewclass> {
         child: Text(
           'Add',
           style: TextStyle(
-            color: Colors.blue.shade900,
-            fontSize: 16.0,
+            color: Colors.purple.shade600,
+            fontSize: 20.0,
+            letterSpacing: 0.5,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -270,8 +273,8 @@ class _loginScreenState extends State<addnewclass> {
                           begin: Alignment.topCenter,
                           end: Alignment.bottomCenter,
                           colors: [
-                            Colors.blue.shade300,
-                            Colors.blue.shade900,
+                            Colors.purpleAccent.shade400,
+                            Colors.purpleAccent.shade200,
 
                             // Colors.blue.shade800,
                             // Colors.blue.shade800,

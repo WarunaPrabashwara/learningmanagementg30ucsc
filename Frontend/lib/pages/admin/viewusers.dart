@@ -263,7 +263,7 @@ class _UserMgtState extends State<viewuserspage> {
       child: Scaffold(
         //backgroundColor: decor,
         appBar: AppBar(
-          backgroundColor: Colors.blue.shade800,
+          backgroundColor: Colors.purple.shade500,
           title: Padding(
             padding: const EdgeInsets.only(left: 70.0),
             child: Text(
@@ -277,23 +277,7 @@ class _UserMgtState extends State<viewuserspage> {
                   height: 4.0
                 ),),
           ),
-          // Padding(
-          //   padding: const EdgeInsets.all(18.0),
-          //   child: Text(
-          //     "User Management".toUpperCase(),
-          //     style: TextStyle(
-          //         color: Colors.white,
-          //         fontSize: 18.0,
-          //         fontWeight: FontWeight.bold
-          //     ),
-          //
-          //   ),
-          //
-          // ),
-          flexibleSpace: Image.asset(
-            "assets/df3.png",
-            fit: BoxFit.cover,
-          ),
+
           bottom: TabBar(
             tabs: [
               Tab(icon: Icon(Icons.directions_walk, color: Colors.white,), text: 'Students',),
@@ -323,7 +307,7 @@ class _UserMgtState extends State<viewuserspage> {
                           width: double.infinity,
                           decoration: new BoxDecoration(
                             borderRadius: new BorderRadius.circular(5.0),
-                            color: Colors.blue.shade400,
+                            color: Colors.purpleAccent.shade400,
                           ),
 
                           //height: 50,
@@ -341,8 +325,12 @@ class _UserMgtState extends State<viewuserspage> {
                                         child: Text(
                                           'Name: ${setofAnnouncements1[index].name}' ,
                                           style: TextStyle(
-                                            color: Colors.black,
-                                            fontSize: 17.0,
+                                            color: Colors.white,
+                                            fontSize: 18.0,
+                                              fontWeight: FontWeight.bold,
+                                              //backgroundColor: Colors.blue,
+                                              letterSpacing: 1.0,
+
 
                                             //fontWeight: FontWeight.bold
                                           ),
@@ -354,8 +342,10 @@ class _UserMgtState extends State<viewuserspage> {
                                         child: Text(
                                           'E-mail : ${setofAnnouncements1[index].email}' ,
                                           style: TextStyle(
-                                            color: Colors.black54,
-                                            fontSize: 17.0,
+                                            color: Colors.purple.shade100,
+                                            fontSize: 18.0,
+                                            fontWeight: FontWeight.bold,
+                                            letterSpacing: 1.0,
 
                                             //fontWeight: FontWeight.bold
                                           ),
@@ -369,16 +359,8 @@ class _UserMgtState extends State<viewuserspage> {
                                         onPressed: (){
 
 
-
-
-
-
-
-
-
-
                                         },
-                                        child: Text("View".toUpperCase(), style: TextStyle(fontSize: 10, color: Colors.black,),),
+                                        child: Text("View".toUpperCase(), style: TextStyle(fontSize: 14, color: Colors.deepPurple,),),
                                         style: ButtonStyle(
                                             padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0)),
                                             foregroundColor: MaterialStateProperty.all<Color>(Colors.red),
@@ -394,7 +376,7 @@ class _UserMgtState extends State<viewuserspage> {
                                       SizedBox(width: 5,),
                                       TextButton(
                                         onPressed: (){},
-                                        child: Text("Edit".toUpperCase(), style: TextStyle(fontSize: 10, color: Colors.black,),),
+                                        child: Text("Edit".toUpperCase(), style: TextStyle(fontSize: 14, color: Colors.deepPurple,),),
                                         style: ButtonStyle(
                                             padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0)),
                                             foregroundColor: MaterialStateProperty.all<Color>(Colors.red),
@@ -410,7 +392,7 @@ class _UserMgtState extends State<viewuserspage> {
                                       SizedBox(width: 5,),
                                       ElevatedButton(
                                         onPressed: (){},
-                                        child: Text("DELETE".toUpperCase(), style: TextStyle(fontSize: 10),),
+                                        child: Text("DELETE".toUpperCase(), style: TextStyle(fontSize: 14, color: Colors.deepPurple,),),
                                         style: ButtonStyle(
                                             padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0)),
                                             foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
@@ -453,7 +435,7 @@ class _UserMgtState extends State<viewuserspage> {
                           width: double.infinity,
                           decoration: new BoxDecoration(
                             borderRadius: new BorderRadius.circular(5.0),
-                            color: Colors.blue.shade400,
+                            color: Colors.purpleAccent.shade400,
                           ),
 
                           //height: 50,
@@ -471,8 +453,11 @@ class _UserMgtState extends State<viewuserspage> {
                                     child: Text(
                                       'Name: ${setofAnnouncements2[index].name}' ,
                                       style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 17.0,
+                                        color: Colors.white,
+                                        fontSize: 18.0,
+                                        fontWeight: FontWeight.bold,
+                                        //backgroundColor: Colors.blue,
+                                        letterSpacing: 1.0,
 
                                         //fontWeight: FontWeight.bold
                                       ),
@@ -484,8 +469,10 @@ class _UserMgtState extends State<viewuserspage> {
                                     child: Text(
                                       'E-mail : ${setofAnnouncements2[index].email}' ,
                                       style: TextStyle(
-                                        color: Colors.black54,
-                                        fontSize: 17.0,
+                                        color: Colors.purple.shade100,
+                                        fontSize: 18.0,
+                                        fontWeight: FontWeight.bold,
+                                        letterSpacing: 1.0,
 
                                         //fontWeight: FontWeight.bold
                                       ),
@@ -497,7 +484,7 @@ class _UserMgtState extends State<viewuserspage> {
                                     children: [
                                       TextButton(
                                         onPressed: (){},
-                                        child: Text("View".toUpperCase(), style: TextStyle(fontSize: 10, color: Colors.black,),),
+                                        child: Text("View".toUpperCase(), style: TextStyle(fontSize: 14, color: Colors.deepPurple,),),
                                         style: ButtonStyle(
                                             padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0)),
                                             foregroundColor: MaterialStateProperty.all<Color>(Colors.red),
@@ -513,7 +500,7 @@ class _UserMgtState extends State<viewuserspage> {
                                       SizedBox(width: 5,),
                                       TextButton(
                                         onPressed: (){},
-                                        child: Text("Edit".toUpperCase(), style: TextStyle(fontSize: 10, color: Colors.black,),),
+                                        child: Text("Edit".toUpperCase(), style: TextStyle(fontSize: 14, color: Colors.deepPurple,),),
                                         style: ButtonStyle(
                                             padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0)),
                                             foregroundColor: MaterialStateProperty.all<Color>(Colors.red),
@@ -529,7 +516,7 @@ class _UserMgtState extends State<viewuserspage> {
                                       SizedBox(width: 5,),
                                       ElevatedButton(
                                         onPressed: (){},
-                                        child: Text("DELETE".toUpperCase(), style: TextStyle(fontSize: 10),),
+                                        child: Text("DELETE".toUpperCase(), style: TextStyle(fontSize: 14, color: Colors.deepPurple,),),
                                         style: ButtonStyle(
                                             padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0)),
                                             foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
@@ -572,7 +559,7 @@ class _UserMgtState extends State<viewuserspage> {
                           width: double.infinity,
                           decoration: new BoxDecoration(
                             borderRadius: new BorderRadius.circular(5.0),
-                            color: Colors.blue.shade400,
+                            color: Colors.purpleAccent.shade400,
                           ),
 
                           //height: 50,
@@ -590,9 +577,11 @@ class _UserMgtState extends State<viewuserspage> {
                                     child: Text(
                                       'Name: ${setofAnnouncements3[index].name}' ,
                                       style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 17.0,
-
+                                        color: Colors.white,
+                                        fontSize: 18.0,
+                                        fontWeight: FontWeight.bold,
+                                        //backgroundColor: Colors.blue,
+                                        letterSpacing: 1.0,
                                         //fontWeight: FontWeight.bold
                                       ),
                                     ),
@@ -603,8 +592,10 @@ class _UserMgtState extends State<viewuserspage> {
                                     child: Text(
                                       'E-mail : ${setofAnnouncements3[index].email}' ,
                                       style: TextStyle(
-                                        color: Colors.black54,
-                                        fontSize: 17.0,
+                                        color: Colors.purple.shade100,
+                                        fontSize: 18.0,
+                                        fontWeight: FontWeight.bold,
+                                        letterSpacing: 1.0,
 
                                         //fontWeight: FontWeight.bold
                                       ),
@@ -616,7 +607,7 @@ class _UserMgtState extends State<viewuserspage> {
                                     children: [
                                       TextButton(
                                         onPressed: (){},
-                                        child: Text("View".toUpperCase(), style: TextStyle(fontSize: 10, color: Colors.black,),),
+                                        child: Text("View".toUpperCase(), style: TextStyle(fontSize: 14, color: Colors.deepPurple,),),
                                         style: ButtonStyle(
                                             padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0)),
                                             foregroundColor: MaterialStateProperty.all<Color>(Colors.red),
@@ -632,7 +623,7 @@ class _UserMgtState extends State<viewuserspage> {
                                       SizedBox(width: 5,),
                                       TextButton(
                                         onPressed: (){},
-                                        child: Text("Edit".toUpperCase(), style: TextStyle(fontSize: 10, color: Colors.black,),),
+                                        child: Text("Edit".toUpperCase(), style: TextStyle(fontSize: 14, color: Colors.deepPurple,),),
                                         style: ButtonStyle(
                                             padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0)),
                                             foregroundColor: MaterialStateProperty.all<Color>(Colors.red),
@@ -648,7 +639,7 @@ class _UserMgtState extends State<viewuserspage> {
                                       SizedBox(width: 5,),
                                       ElevatedButton(
                                         onPressed: (){},
-                                        child: Text("DELETE".toUpperCase(), style: TextStyle(fontSize: 10),),
+                                        child: Text("DELETE".toUpperCase(), style: TextStyle(fontSize: 14, color: Colors.deepPurple,),),
                                         style: ButtonStyle(
                                             padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0)),
                                             foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
@@ -691,7 +682,7 @@ class _UserMgtState extends State<viewuserspage> {
                           width: double.infinity,
                           decoration: new BoxDecoration(
                             borderRadius: new BorderRadius.circular(5.0),
-                            color: Colors.blue.shade400,
+                            color: Colors.purpleAccent.shade400,
                           ),
 
                           //height: 50,
@@ -709,9 +700,11 @@ class _UserMgtState extends State<viewuserspage> {
                                     child: Text(
                                       'Name: ${setofAnnouncements4[index].name}' ,
                                       style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 17.0,
-
+                                        color: Colors.white,
+                                        fontSize: 18.0,
+                                        fontWeight: FontWeight.bold,
+                                        //backgroundColor: Colors.blue,
+                                        letterSpacing: 1.0,
                                         //fontWeight: FontWeight.bold
                                       ),
                                     ),
@@ -722,9 +715,10 @@ class _UserMgtState extends State<viewuserspage> {
                                     child: Text(
                                       'E-mail : ${setofAnnouncements4[index].email}' ,
                                       style: TextStyle(
-                                        color: Colors.black54,
-                                        fontSize: 17.0,
-
+                                        color: Colors.purple.shade100,
+                                        fontSize: 18.0,
+                                        fontWeight: FontWeight.bold,
+                                        letterSpacing: 1.0,
                                         //fontWeight: FontWeight.bold
                                       ),
                                     ),
@@ -735,7 +729,8 @@ class _UserMgtState extends State<viewuserspage> {
                                     children: [
                                       TextButton(
                                         onPressed: (){},
-                                        child: Text("View".toUpperCase(), style: TextStyle(fontSize: 10, color: Colors.black,),),
+
+                                        child: Text("View".toUpperCase(), style: TextStyle(fontSize: 14, color: Colors.deepPurple,),),
                                         style: ButtonStyle(
                                             padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0)),
                                             foregroundColor: MaterialStateProperty.all<Color>(Colors.red),
@@ -751,7 +746,7 @@ class _UserMgtState extends State<viewuserspage> {
                                       SizedBox(width: 5,),
                                       TextButton(
                                         onPressed: (){},
-                                        child: Text("Edit".toUpperCase(), style: TextStyle(fontSize: 10, color: Colors.black,),),
+                                        child: Text("Edit".toUpperCase(), style: TextStyle(fontSize: 14, color: Colors.deepPurple,),),
                                         style: ButtonStyle(
                                             padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0)),
                                             foregroundColor: MaterialStateProperty.all<Color>(Colors.red),
@@ -767,7 +762,7 @@ class _UserMgtState extends State<viewuserspage> {
                                       SizedBox(width: 5,),
                                       ElevatedButton(
                                         onPressed: (){},
-                                        child: Text("DELETE".toUpperCase(), style: TextStyle(fontSize: 10),),
+                                        child: Text("DELETE".toUpperCase(), style: TextStyle(fontSize: 14, color: Colors.deepPurple,),),
                                         style: ButtonStyle(
                                             padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0)),
                                             foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
@@ -810,7 +805,7 @@ class _UserMgtState extends State<viewuserspage> {
                           width: double.infinity,
                           decoration: new BoxDecoration(
                             borderRadius: new BorderRadius.circular(5.0),
-                            color: Colors.blue.shade400,
+                            color: Colors.purpleAccent.shade400,
                           ),
 
                           //height: 50,
@@ -828,8 +823,11 @@ class _UserMgtState extends State<viewuserspage> {
                                     child: Text(
                                       'Name: ${setofAnnouncements5[index].name}' ,
                                       style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 17.0,
+                                        color: Colors.white,
+                                        fontSize: 18.0,
+                                        fontWeight: FontWeight.bold,
+                                        //backgroundColor: Colors.blue,
+                                        letterSpacing: 1.0,
 
                                         //fontWeight: FontWeight.bold
                                       ),
@@ -841,9 +839,10 @@ class _UserMgtState extends State<viewuserspage> {
                                     child: Text(
                                       'E-mail : ${setofAnnouncements5[index].email}' ,
                                       style: TextStyle(
-                                        color: Colors.black54,
-                                        fontSize: 17.0,
-
+                                        color: Colors.purple.shade100,
+                                        fontSize: 18.0,
+                                        fontWeight: FontWeight.bold,
+                                        letterSpacing: 1.0,
                                         //fontWeight: FontWeight.bold
                                       ),
                                     ),
@@ -854,7 +853,7 @@ class _UserMgtState extends State<viewuserspage> {
                                     children: [
                                       TextButton(
                                         onPressed: (){},
-                                        child: Text("View".toUpperCase(), style: TextStyle(fontSize: 10, color: Colors.black,),),
+                                        child: Text("View".toUpperCase(), style: TextStyle(fontSize: 14, color: Colors.deepPurple,),),
                                         style: ButtonStyle(
                                             padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0)),
                                             foregroundColor: MaterialStateProperty.all<Color>(Colors.red),
@@ -870,7 +869,7 @@ class _UserMgtState extends State<viewuserspage> {
                                       SizedBox(width: 5,),
                                       TextButton(
                                         onPressed: (){},
-                                        child: Text("Edit".toUpperCase(), style: TextStyle(fontSize: 10, color: Colors.black,),),
+                                        child: Text("Edit".toUpperCase(), style: TextStyle(fontSize: 14, color: Colors.deepPurple,),),
                                         style: ButtonStyle(
                                             padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0)),
                                             foregroundColor: MaterialStateProperty.all<Color>(Colors.red),
@@ -886,7 +885,7 @@ class _UserMgtState extends State<viewuserspage> {
                                       SizedBox(width: 5,),
                                       ElevatedButton(
                                         onPressed: (){},
-                                        child: Text("DELETE".toUpperCase(), style: TextStyle(fontSize: 10),),
+                                        child: Text("DELETE".toUpperCase(), style: TextStyle(fontSize: 14, color: Colors.deepPurple,),),
                                         style: ButtonStyle(
                                             padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0)),
                                             foregroundColor: MaterialStateProperty.all<Color>(Colors.black),

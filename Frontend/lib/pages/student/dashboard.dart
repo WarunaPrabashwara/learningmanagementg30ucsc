@@ -50,8 +50,8 @@ class _DashboardStudent extends State<DashboardStudent> {
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
                         colors: [
-                          Colors.blue.shade300,
-                          Colors.blue.shade900,
+                          Colors.white,
+                          Colors.white70,
                         ]
                     )
                 ),
@@ -66,11 +66,11 @@ class _DashboardStudent extends State<DashboardStudent> {
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
                                     CircleAvatar(
-                                      backgroundColor: Colors.grey[200],
+                                      backgroundColor: Colors.purple.shade300,
                                       child: IconButton(
                                         icon: Icon(
                                           Icons.menu,
-                                          color: Colors.black,
+                                          color: Colors.purple.shade900,
                                         ),
                                         onPressed: () {},
                                       ),
@@ -81,11 +81,18 @@ class _DashboardStudent extends State<DashboardStudent> {
                                         IconButton(
                                           icon: Icon(Icons.notifications_active),
                                           onPressed: (){},
-                                          iconSize: 30.0,
-                                          color: Colors.black54,
+                                          iconSize: 35.0,
+                                          color: Colors.purple.shade400,
                                         ),
-                                        SizedBox(width: 10.0,),
-                                        Image.asset("assets/man-user.png", width: 50.0,),
+                                        //SizedBox(width: 10.0,),
+
+                                        IconButton(
+                                          icon: Icon(Icons.person_rounded),
+                                          onPressed: (){},
+                                          iconSize: 45.0,
+                                          color: Colors.purple.shade400,
+                                        ),
+                                        SizedBox(width: 5.0,),
                                       ],
                                     )
                                   ]
@@ -98,7 +105,7 @@ class _DashboardStudent extends State<DashboardStudent> {
                                 child: Text(
                                   "You are Logged in as a student !",
                                   style: TextStyle(
-                                      color: Colors.white,
+                                      color: Colors.purple,
                                       fontSize: 20.0,
                                       fontWeight: FontWeight.bold
                                   ),
@@ -116,7 +123,7 @@ class _DashboardStudent extends State<DashboardStudent> {
                                     ElevatedButton(
                                       style: ElevatedButton.styleFrom(
                                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-                                          primary: Colors.blue.shade700,
+                                          primary: Colors.purpleAccent.shade700,
                                           padding: EdgeInsets.all(0)
                                       ),
                                       child: Container(
@@ -124,7 +131,7 @@ class _DashboardStudent extends State<DashboardStudent> {
                                           width: 140.0,
                                           height: 140.0,
                                           child: Card(
-                                            color: Color.fromARGB(200, 20, 21, 21),
+                                              color: Colors.purpleAccent.shade400,
                                             elevation: 2.0,
                                             shape: RoundedRectangleBorder(
                                               borderRadius: BorderRadius.circular(10.0),
@@ -136,11 +143,11 @@ class _DashboardStudent extends State<DashboardStudent> {
                                                   children: [
                                                     SizedBox(height: 15.0),
                                                     Image.asset("assets/userX.png", width: 58.0,),
-                                                    SizedBox(height: 15.0),
+                                                    SizedBox(height: 13.0),
                                                     Text("My Profile", style: TextStyle(
                                                         color: Colors.white,
                                                         fontWeight: FontWeight.bold,
-                                                        fontSize: 15.0
+                                                        fontSize: 16.0
                                                     ),),
                                                   ],
                                                 ),
@@ -162,7 +169,7 @@ class _DashboardStudent extends State<DashboardStudent> {
                                     ElevatedButton(
                                       style: ElevatedButton.styleFrom(
                                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-                                          primary: Colors.blue.shade700,
+                                          primary: Colors.purpleAccent.shade700,
                                           padding: EdgeInsets.all(0)
                                       ),
                                       child: Container(
@@ -170,7 +177,7 @@ class _DashboardStudent extends State<DashboardStudent> {
                                           width: 140.0,
                                           height: 140.0,
                                           child: Card(
-                                            color: Color.fromARGB(200, 20, 21, 21),
+                                            color: Colors.purpleAccent.shade400,
                                             elevation: 2.0,
                                             shape: RoundedRectangleBorder(
                                               borderRadius: BorderRadius.circular(10.0),
@@ -186,7 +193,7 @@ class _DashboardStudent extends State<DashboardStudent> {
                                                     Text("Subjects", style: TextStyle(
                                                       color: Colors.white,
                                                       fontWeight: FontWeight.bold,
-                                                      fontSize: 15.0,
+                                                      fontSize: 16.0,
                                                     ),textAlign: TextAlign.center,),
                                                   ],
                                                 ),
@@ -208,7 +215,7 @@ class _DashboardStudent extends State<DashboardStudent> {
                                     ElevatedButton(
                                       style: ElevatedButton.styleFrom(
                                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-                                          primary: Colors.blue.shade700,
+                                          primary: Colors.purpleAccent.shade700,
                                           padding: EdgeInsets.all(0)
                                       ),
                                       child: Container(
@@ -216,7 +223,7 @@ class _DashboardStudent extends State<DashboardStudent> {
                                           width: 140.0,
                                           height: 140.0,
                                           child: Card(
-                                            color: Color.fromARGB(200, 20, 21, 21),
+                                            color: Colors.purpleAccent.shade400,
                                             elevation: 2.0,
                                             shape: RoundedRectangleBorder(
                                               borderRadius: BorderRadius.circular(10.0),
@@ -227,12 +234,12 @@ class _DashboardStudent extends State<DashboardStudent> {
                                                 child: Column(
                                                   mainAxisAlignment: MainAxisAlignment.center,
                                                   children: [
-                                                    Image.asset("assets/noticeboard.png", width: 60.0,),
-                                                    SizedBox(height: 10.0),
+                                                    Image.asset("assets/noticeboard.png", width: 70.0,),
+                                                    SizedBox(height: 5.0),
                                                     Text("View Noticeboard", style: TextStyle(
                                                       color: Colors.white,
                                                       fontWeight: FontWeight.bold,
-                                                      fontSize: 15.0,
+                                                      fontSize: 16.0,
                                                     ),textAlign: TextAlign.center,),
                                                   ],
                                                 ),
@@ -254,7 +261,7 @@ class _DashboardStudent extends State<DashboardStudent> {
                                     ElevatedButton(
                                       style: ElevatedButton.styleFrom(
                                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-                                          primary: Colors.blue.shade700,
+                                          primary: Colors.purpleAccent.shade700,
                                           padding: EdgeInsets.all(0)
                                       ),
                                       child: Container(
@@ -262,7 +269,7 @@ class _DashboardStudent extends State<DashboardStudent> {
                                           width: 140.0,
                                           height: 140.0,
                                           child: Card(
-                                            color: Color.fromARGB(200, 20, 21, 21),
+                                            color: Colors.purpleAccent.shade400,
                                             elevation: 2.0,
                                             shape: RoundedRectangleBorder(
                                               borderRadius: BorderRadius.circular(10.0),
@@ -273,12 +280,12 @@ class _DashboardStudent extends State<DashboardStudent> {
                                                 child: Column(
                                                   mainAxisAlignment: MainAxisAlignment.center,
                                                   children: [
-                                                    Image.asset("assets/calendar.png", width: 60.0,),
-                                                    SizedBox(height: 10.0),
+                                                    Image.asset("assets/calendar.png", width: 70.0,),
+                                                    SizedBox(height: 8.0),
                                                     Text("Time Table", style: TextStyle(
                                                       color: Colors.white,
                                                       fontWeight: FontWeight.bold,
-                                                      fontSize: 15.0,
+                                                      fontSize: 16.0,
                                                     ),textAlign: TextAlign.center,),
                                                   ],
                                                 ),
@@ -300,7 +307,7 @@ class _DashboardStudent extends State<DashboardStudent> {
                                     ElevatedButton(
                                       style: ElevatedButton.styleFrom(
                                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-                                          primary: Colors.blue.shade700,
+                                          primary: Colors.purpleAccent.shade700,
                                           padding: EdgeInsets.all(0)
                                       ),
                                       child: Container(
@@ -308,7 +315,7 @@ class _DashboardStudent extends State<DashboardStudent> {
                                           width: 140.0,
                                           height: 140.0,
                                           child: Card(
-                                            color: Color.fromARGB(200, 20, 21, 21),
+                                            color: Colors.purpleAccent.shade400,
                                             elevation: 2.0,
                                             shape: RoundedRectangleBorder(
                                               borderRadius: BorderRadius.circular(10.0),
@@ -324,7 +331,7 @@ class _DashboardStudent extends State<DashboardStudent> {
                                                     Text("Term Test Reports", style: TextStyle(
                                                       color: Colors.white,
                                                       fontWeight: FontWeight.bold,
-                                                      fontSize: 15.0,
+                                                      fontSize: 16.0,
                                                     ),textAlign: TextAlign.center,),
                                                   ],
                                                 ),

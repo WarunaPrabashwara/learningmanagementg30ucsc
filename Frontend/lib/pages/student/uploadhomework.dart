@@ -1,21 +1,20 @@
+
+
+
 import 'dart:convert';
 import 'dart:math';
 
 import 'package:frontend/main.dart';
 import 'package:flutter/material.dart';
-import 'package:frontend/pages/teacher/mark_homework.dart';
 import 'package:frontend/pages/teacher/upload_test_test_mark.dart';
 import 'package:http/http.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 
-import 'marking_attendance.dart';
-
-
 // ignore: camel_case_types
-class subject_Matirials_ofTeacher extends StatefulWidget {
+class uploadhwandseeResult extends StatefulWidget {
     final String title;
-  const subject_Matirials_ofTeacher(this.title);
+  const uploadhwandseeResult(this.title);
  // subject_Matirials_ofTeacher(String subject, {Key key, this.title}) : super(key: key);
 
   State<StatefulWidget> createState() => new _subject_Matirials_ofTeacherState();
@@ -79,6 +78,7 @@ class materials {
   }
 }
 
+
 class homework {
 
   String teacher_name;
@@ -120,15 +120,16 @@ class homework {
 
 
 // ignore: camel_case_types
-class _subject_Matirials_ofTeacherState extends State<subject_Matirials_ofTeacher> {
+class _subject_Matirials_ofTeacherState extends State<uploadhwandseeResult> {
 
       int i =0;
       int j = 0;
-      int k =0 ;
+      int k = 0 ;
   static const urlPrefix = 'http://10.0.2.2:2222';
   List<mysubjects> setofAnnouncements = [];
     List<materials> setofAnnouncements2 = [];
         List<homework> setofAnnouncements3 = [];
+    
      getTokenFromSF() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String tokenValue = prefs.getString('token');
@@ -193,8 +194,8 @@ class _subject_Matirials_ofTeacherState extends State<subject_Matirials_ofTeache
     return snapshot ;
   }
 
-    Future<List<homework>> AnouncementviewRequest3(  ) async {
-    final url = Uri.parse('$urlPrefix/subjectmanagement/teacherviewHomeworkofstudents?class_name='+ class_name +'&teacher_name=' + teacher_name + '&subject_name='+ subject_name);
+  Future<List<homework>> AnouncementviewRequest3(  ) async {
+    final url = Uri.parse('$urlPrefix/subjectmanagement/studentpagehasIFhomeworkwassubmittedornot?class_name='+ class_name +'&teacher_name=' + teacher_name + '&subject_name='+ subject_name);
     List<homework> snapshot = await getTokenFromSF().then(( token) async {
       print('anment: ${token}');
       print('userse: ${token}');
@@ -222,6 +223,8 @@ class _subject_Matirials_ofTeacherState extends State<subject_Matirials_ofTeache
     return snapshot ;
   }
 
+  
+  
     Future<void> loginPostRequest(  ) async {
     final url = Uri.parse('$urlPrefix/subjectmanagement/addzoomlink');
 
@@ -249,10 +252,7 @@ class _subject_Matirials_ofTeacherState extends State<subject_Matirials_ofTeache
   }
 
     Future<void> loginPostRequest2(  ) async {
-    
-
-
-    final url = Uri.parse('$urlPrefix/subjectmanagement/addsubjectmaterial');
+    final url = Uri.parse('$urlPrefix/subjectmanagement/studentaddresponse');
 
      await getTokenFromSF().then(( token) async {
 
@@ -260,7 +260,7 @@ class _subject_Matirials_ofTeacherState extends State<subject_Matirials_ofTeache
         'Accept': 'application/json',
         'Authorization': 'Bearer $token',};
 
-    final json = '{"teacher_name": "${teacher_name}", "class_name": "${class_name}" , "subject_name": "${subject_name}",  "material": "${subject_material}"   }';
+    final json = '{"teacher_name": "${teacher_name}", "class_name": "${class_name}" , "subject_name": "${subject_name}",  "submission_text": "${subject_material}"   }';
     print('user: ${json}');
     final response = await post(url, headers: headers, body: json);
     print('usyyyyer: ${response.body}');
@@ -277,56 +277,6 @@ class _subject_Matirials_ofTeacherState extends State<subject_Matirials_ofTeache
 
   }
 
-    Future<void> loginPostRequest3(  ) async {
-    final url = Uri.parse('$urlPrefix/subjectmanagement/teacheraddhomework');
-
-     await getTokenFromSF().then(( token) async {
-
-    final headers = {  'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        'Authorization': 'Bearer $token',};
-
-    final json = '{"teacher_name": "${teacher_name}", "class_name": "${class_name}" , "subject_name": "${subject_name}",  "zoom_link": "${email}"   }';
-    print('user: ${json}');
-    final response = await post(url, headers: headers, body: json);
-    print('usyyyyer: ${response.body}');
-    //  profiledata dataset = profiledata.fromJson(jsonDecode(response.body));
-
-    //resp user = resp.fromJson(jsonDecode(response.body));
-  //  print('user: ${user.message}');
-    print('Status code: ${response.statusCode}');
-    print('Body: ${response.body}');
-    //final message = MessageGet(response);
-  //  return user ;
-
-    });
-
-  }
-    Future<void> loginPostRequest4(  ) async {
-    final url = Uri.parse('$urlPrefix/subjectmanagement/teacherDeleteHomework');
-
-     await getTokenFromSF().then(( token) async {
-
-    final headers = {  'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        'Authorization': 'Bearer $token',};
-
-    final json = '{"teacher_name": "${teacher_name}", "class_name": "${class_name}" , "subject_name": "${subject_name}",  "zoom_link": "${email}"   }';
-    print('user: ${json}');
-    final response = await post(url, headers: headers, body: json);
-    print('usyyyyer: ${response.body}');
-    //  profiledata dataset = profiledata.fromJson(jsonDecode(response.body));
-
-    //resp user = resp.fromJson(jsonDecode(response.body));
-  //  print('user: ${user.message}');
-    print('Status code: ${response.statusCode}');
-    print('Body: ${response.body}');
-    //final message = MessageGet(response);
-  //  return user ;
-
-    });
-
-  }
 
 
   //List<String> list = ["Science 7 A", "Maths 7 A", "Maths 7 B", "Maths 7 C"];
@@ -336,7 +286,7 @@ class _subject_Matirials_ofTeacherState extends State<subject_Matirials_ofTeache
   List<String> list2 = ["kamal's", "nimal's", "amal's"];
   //TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
   String _status = '';
-
+String teachersresponse = "Not evaluvated yet" ;
   String email ;
 String teacher_name ;
 String subject_name ;
@@ -408,7 +358,7 @@ String subject_material;
                         Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) {
-                            return subject_Matirials_ofTeacher(   widget.title);
+                     //       return subject_Matirials_ofTeacher(   widget.title);
                           }),
                         );
 
@@ -440,7 +390,6 @@ String subject_material;
   }
   
   Widget buildEmail2(){
-  
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
@@ -471,7 +420,7 @@ String subject_material;
               decoration: InputDecoration(
                   border: InputBorder.none,
                   contentPadding: EdgeInsets.only(top: 14),
-                  hintText: 'Enter Material link',
+                  hintText: 'Enter Answer',
                   hintStyle: TextStyle(
                       color: Colors.black38,
                       fontSize: 14.0
@@ -496,14 +445,14 @@ String subject_material;
                         Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) {
-                            return subject_Matirials_ofTeacher(   widget.title);
+                            return uploadhwandseeResult(   widget.title);
                           }),
                         );
 
                        });
       
                                 },
-                                child: Text("Add new material".toUpperCase(),          style: TextStyle(
+                                child: Text("Add answer".toUpperCase(),          style: TextStyle(
               color: Colors.black,
               fontSize: 15,
               fontWeight: FontWeight.bold,
@@ -558,11 +507,21 @@ String subject_material;
          j=1;
     });
 }
+
               if(k==0){
     AnouncementviewRequest3().then(( result){
    //   print('anouncement: ${result[0].made_by}');
           setState(() {
             setofAnnouncements3 =result;
+            if (setofAnnouncements3 != []) {
+              print("hi");
+              
+              this._status = 'you have submitted you assignment';
+              if (setofAnnouncements3[0].mark != null) {
+                this.teachersresponse = setofAnnouncements3[0].mark ;
+              }
+            }
+
            });
          k=1;
     });
@@ -585,7 +544,7 @@ String subject_material;
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) {
-                  return mark_attendance();
+             //     return mark_attendance();
                 }),
               );
               //Navigator.of(context).pushNamed('/teacher/my_profile');
@@ -645,15 +604,22 @@ String subject_material;
 
 
         onPressed: () {
+          setState(() => this._status = 'loading');
 
-            loginPostRequest4().then(( result){
-   //   print('anouncement: ${result[0].made_by}');
-          setState(() {
-                setState(() => this._status = 'Deleted homework');
-          print("fssgfgfg");
-           });
-         i=1;
-    });
+          appAuth.login().then((result) {
+            if (result) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) {
+                  //        return MyProfile();
+                }),
+              );
+              //Navigator.of(context).pushNamed('/teacher/my_profile');
+              //Navigator.of(context).pushReplacementNamed('/teacher/my_profile');
+            } else {
+              setState(() => this._status = 'something went wrong ! try again');
+            }
+          });
         },
         child: Text('Delete H/W',
             textAlign: TextAlign.center,
@@ -674,20 +640,24 @@ String subject_material;
             .width,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         onPressed: () {
+          setState(() => this._status = 'loading');
 
-            loginPostRequest3().then(( result){
-   //   print('anouncement: ${result[0].made_by}');
-          setState(() {
-                setState(() => this._status = 'Added homework');
-          print("fssgfgfg");
-           });
-         i=1;
-    });
-
-
-
-        }, 
-        child: Text('Add new H/W',
+          appAuth.login().then((result) {
+            if (result) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) {
+          //        return MyProfile();
+                }),
+              );
+              //Navigator.of(context).pushNamed('/teacher/my_profile');
+              //Navigator.of(context).pushReplacementNamed('/teacher/my_profile');
+            } else {
+              setState(() => this._status = 'something went wrong ! try again');
+            }
+          });
+        },
+        child: Text('Add new H/W and Delete old',
             textAlign: TextAlign.center,
             style: style.copyWith(
                 color: Colors.white, fontWeight: FontWeight.bold)),
@@ -782,7 +752,100 @@ String subject_material;
 
     );
 
-  
+    final Homeworklist = Material(
+      child:
+      Column(
+
+        children: list2.map((String data) {
+          return Container(
+            child: GestureDetector(
+              onTap: () {
+
+              },
+              child: Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Row(
+
+                      children :[
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width -180 ,
+                          child: Column(
+                              children :[
+
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Text(
+                                    data,
+
+                                    style: TextStyle(
+                                      color: Color(0xFFF05A22),
+                                      fontFamily: 'Montserrat',
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600,
+                                      letterSpacing: 1,
+                                    ),
+                                  ),
+                                ),
+
+
+                              ]
+                          ),
+                        ),
+                        SizedBox(
+                          width: 90,
+                          child: Column(
+                              children : [
+
+
+                                Align(
+                                  alignment: Alignment.centerRight,
+                                  child: MaterialButton(
+                                    //padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+                                    onPressed: () {
+                                      setState(() => this._status = 'loading');
+
+                                      appAuth.login().then((result) {
+                                        if (result) {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(builder: (context) {
+                               //                       return mark_homework();
+                                            }),
+                                          );
+                                          // Navigator.of(context).pushNamed('/teacher/student_to_bucket_sub');
+
+                                        } else {
+                                          setState(() => this._status = 'something went wrong ! try again');
+                                        }
+                                      });
+                                    },
+                                    child: Text('Check',
+                                        textAlign: TextAlign.center,
+                                        style: style.copyWith(
+                                            color: Colors.black, fontWeight: FontWeight.bold)),
+                                  ),
+                                ),
+
+                              ]
+                          ),
+                        ),
+                      ],
+                    ),
+
+
+
+                  ],
+                ),
+              ),
+            ),
+          );
+
+        }).toList(),
+      ),
+    );
+
     final AddnewMatirialButon = Material(
        child :Container(
                   child: buildEmail2(),
@@ -805,26 +868,35 @@ String subject_material;
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                            
+
+
+                              maerial, 
 
                             SizedBox(height: 10,),
-                            Text("Materials"          , style: TextStyle(
+  
+
+                            SizedBox(height: 10,),
+                            Text("Add the Text"          , style: TextStyle(
               color: Colors.black,
               fontSize: 20,
               fontWeight: FontWeight.bold,
           ),),
                             SizedBox(height: 10,),
-                            maerial,
+                          
+                            //meke dapan you aready submitted kiyala balala
                             SizedBox(height: 10,),
                             AddnewMatirialButon,
                             SizedBox(height: 10,),
-                            Text("Zoom link" ,           style: TextStyle(
-              color: Colors.black,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-          ),),
-                            SizedBox(height: 10,),
-                            Container(
+                                                           Text(
+                          _status,
+                          style: TextStyle(
+                            color: Colors.red,
+                            fontSize: 17.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                  SizedBox(height: 10,),
+                          Container(
                               height: 120,
                               child: 
                               ListView.builder(
@@ -842,7 +914,7 @@ String subject_material;
               height: 50,
                 child: Column(
                   children: <Widget>[
-                      Row(
+                                                Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         
@@ -915,112 +987,21 @@ String subject_material;
 
                            // MarkAttendanceButon,
                             SizedBox(height: 10,),
-                            Text("Home Works of childern" ,           style: TextStyle(
+                            Text("Teacher's response :" ,           style: TextStyle(
               color: Colors.black,
               fontSize: 20,
               fontWeight: FontWeight.bold,
           ),),
                             SizedBox(height: 10,),
-                                                       Container(
-                              height: 180,
-                              child: 
-                              ListView.builder(
-          //  padding: const EdgeInsets.all(8),
-            itemCount: setofAnnouncements.length,
- 
-            itemBuilder: (BuildContext context, int index) {
-              if (setofAnnouncements[index].zoom_link == "null" ) {
-                return Container(
-                  child: buildEmail(),
-                ) ;
-              }
-              else{
-              return Container(
-              height: 50,
-                child: Column(
-                  children: <Widget>[
-                      Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(10.0, 15.0, 5.0, 15.0),
-                          child: Center(
-                            child: Text(
-                              '${setofAnnouncements3[index].studentUserName}' ,
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 17.0,
-                                //fontWeight: FontWeight.bold
-                              ),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 5.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                            SizedBox(width: 5,),
-                              TextButton(
-                                onPressed: (){
-                                  Navigator.pop(context  );
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(builder: (context) {
-                                        return mark_homework(  widget.title + '*'+'${setofAnnouncements3[index].studentUserName}' );
-                                      }),
-                                    );
-                                },
-                                child: Text("Check".toUpperCase(), style: TextStyle(fontSize: 10, color: Colors.black,),),
-                                style: ButtonStyle(
-                                    padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0)),
-                                    foregroundColor: MaterialStateProperty.all<Color>(Colors.red),
-                                    backgroundColor: MaterialStateProperty.all<Color>(Colors.grey.shade300),
-                                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                        RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(18.0),
-                                          side: BorderSide(color: Colors.white),
-                                        )
-                                    )
-                                ),
-                              ),
-                              SizedBox(width: 5,),
-                           ],
-                          ),
-                        ),
-                      ],
-                    ),
-
-
-
-                  ]
-                ),
-              );
- 
-              }
-           }
-        ),
-                            ) ,
-
-
-                            SizedBox(height: 10,),
-                            AddNewHWButton,
-
-                            SizedBox(height: 10,),
-                            DeleteHWButton,
-                            SizedBox(height: 10,),
-                            UploadTermTestMarksButon,
-                            SizedBox(height: 10.0),
-                           Text(
-                          _status,
+    
+                               Text(
+                          teachersresponse,
                           style: TextStyle(
                             color: Colors.black,
-                            fontSize: 16.0,
+                            fontSize: 20.0,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-
 
 
                           ],

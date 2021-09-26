@@ -119,7 +119,7 @@ class _changepasswordState extends State<changepassword> {
     final ChangeButton = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(30.0),
-      color: Color(0xff01A0C7),
+      color: Colors.purple.shade500,
       child: MaterialButton(
         minWidth: MediaQuery
             .of(context)
@@ -157,8 +157,14 @@ class _changepasswordState extends State<changepassword> {
     return Scaffold(
 
       appBar: new AppBar(
-        title: new Text("data"),
-       // leading: new IconButton(
+        title: new Text("Change Password".toUpperCase(),style: TextStyle(
+            color: Colors.white,
+            fontSize: 20.0,
+            fontWeight: FontWeight.bold,
+            height:2.0
+        ),),
+          backgroundColor: Colors.purple.shade500
+        // leading: new IconButton(
         //  icon: new Icon(Icons.arrow_back_ios),
        //    onPressed: () => //Navigator.popAndPushNamed(context, '/changePassword');
        //   Navigator.of(context).pop()
@@ -167,7 +173,20 @@ class _changepasswordState extends State<changepassword> {
       body: new SingleChildScrollView(
           child: new Center(
               child: new Container(
-                  color: Colors.white,
+                  decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [
+                            Color.fromARGB(255, 246, 246, 246),
+                            Color.fromARGB(255, 246, 246, 246),
+                            Colors.white,
+                            Colors.purple.shade50,
+                            Colors.purple.shade100,
+                            // Colors.blue.shade400,
+                          ]
+                      )
+                  ),
                   child: Padding(
                       padding: const EdgeInsets.all(36.0),
                       child: Column(

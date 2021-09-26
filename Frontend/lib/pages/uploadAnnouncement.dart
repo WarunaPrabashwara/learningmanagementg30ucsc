@@ -151,7 +151,7 @@ await getTokenFromSF().then(( token) async {
         Text(
           'Enter Announcement',
           style: TextStyle(
-              color: Colors.black,
+              color: Colors.purple.shade500,
               fontSize: 20,
               fontWeight: FontWeight.bold,
           ),
@@ -182,7 +182,7 @@ await getTokenFromSF().then(( token) async {
               ),
               decoration: InputDecoration(
                   border: InputBorder.none,
-                  contentPadding: EdgeInsets.only(top: 14),
+                contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                   hintText: '',
                   hintStyle: TextStyle(
                       color: Colors.black38,
@@ -231,12 +231,12 @@ await getTokenFromSF().then(( token) async {
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(35)
         ),
-        color: Colors.white,
+        color: Colors.purple.shade700,
         child: Text(
           'Publish',
           style: TextStyle(
-            color: Colors.blue.shade900,
-            fontSize: 16.0,
+            color: Colors.purple.shade100,
+            fontSize: 20.0,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -247,7 +247,7 @@ await getTokenFromSF().then(( token) async {
 
   Widget deleteOldAnouncementBtn(){
     return Container(
-      padding: EdgeInsets.fromLTRB(30.0, 10.0, 30.0, 10.0),
+      padding: EdgeInsets.fromLTRB(10.0, 10.0, 20.0, 0.0),
       width: double.infinity,
       child: RaisedButton(
         elevation: 5,
@@ -259,17 +259,17 @@ await getTokenFromSF().then(( token) async {
                 }),
               );
         },
-        padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+        padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(35)
         ),
-        color: Colors.white,
+        color: Colors.purple.shade700,
         child: Center(
           child: Text(
             'Delete published announcements',
             style: TextStyle(
-              color: Colors.blue.shade900,
-              fontSize: 16.0,
+              color: Colors.purple.shade100,
+              fontSize: 20.0,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -283,18 +283,15 @@ await getTokenFromSF().then(( token) async {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue.shade800,
-        flexibleSpace: Image.asset(
-          "assets/df3.png",
-          fit: BoxFit.cover,
-        ),
+        backgroundColor: Colors.purple.shade500 ,
+
         bottom: PreferredSize(
-          preferredSize: Size.fromHeight(20.0),
+          preferredSize: Size.fromHeight(23.0),
           child: Container(),
         ),
         title:
         Padding(
-          padding: const EdgeInsets.all(18.0),
+          padding: const EdgeInsets.fromLTRB(8, 10, 10, 10),
           child: Text(
             "Announcement Management".toUpperCase(),
             style: TextStyle(
@@ -323,10 +320,11 @@ await getTokenFromSF().then(( token) async {
                           begin: Alignment.topCenter,
                           end: Alignment.bottomCenter,
                           colors: [
-                            Colors.blue.shade100,
-                            Colors.blue.shade200,
-                            Colors.blue.shade300,
-                            Colors.blue.shade700,
+                            Color.fromARGB(255, 246, 246, 246),
+                            Color.fromARGB(255, 246, 246, 246),
+                            Colors.white,
+                            Colors.purple.shade50,
+                            Colors.purple.shade100,
                           ]
                       )
                   ),
@@ -415,35 +413,35 @@ await getTokenFromSF().then(( token) async {
                             height: 25,
                             child: Text(
                             'For Admins ',
-                            style: TextStyle(fontSize: 17.0),
+                            style: TextStyle(fontSize: 18.0, color: Colors.purple.shade900),
                                                   ),
                           ), 
                           SizedBox(
                             height: 25,
                             child: Text(
                             'For Principals ',
-                            style: TextStyle(fontSize: 17.0),
+                            style: TextStyle(fontSize: 18.0, color: Colors.purple.shade900),
                                                   ),
                           ),  
                           SizedBox(
                           height: 25,
                           child: Text(
                             'For section Heads ',
-                            style: TextStyle(fontSize: 17.0),
+                            style: TextStyle(fontSize: 18.0, color: Colors.purple.shade900),
                           ),
                         ),  
                           SizedBox(
                           height: 25,
                           child: Text(
                             'For teachers ',
-                            style: TextStyle(fontSize: 17.0),
+                            style: TextStyle(fontSize: 18.0 , color: Colors.purple.shade900),
                           ),
                         ),      
                           SizedBox(
                            height: 25,
                            child: Text(
                             'For Students ',
-                            style: TextStyle(fontSize: 17.0),
+                            style: TextStyle(fontSize: 18.0 , color: Colors.purple.shade900),
                                                  ),
                          ),                                       
                         ],),

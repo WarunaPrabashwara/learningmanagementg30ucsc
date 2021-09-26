@@ -128,9 +128,10 @@ class _loginScreenState extends State<adduser> {
         Text(
           'Full name',
           style: TextStyle(
-              color: Colors.white,
-              fontSize: 14,
-              fontWeight: FontWeight.bold
+              color: Colors.deepPurple.shade900,
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            letterSpacing: 0.5,
           ),
         ),
         SizedBox(height: 10,),
@@ -141,8 +142,8 @@ class _loginScreenState extends State<adduser> {
               borderRadius: BorderRadius.circular(10),
               boxShadow: [
                 BoxShadow(
-                    color: Colors.black26,
-                    blurRadius: 6,
+                    color: Colors.deepPurpleAccent,
+                    blurRadius: 3,
                     offset: Offset(0,2)
                 )
               ]
@@ -155,11 +156,13 @@ class _loginScreenState extends State<adduser> {
 
               keyboardType: TextInputType.emailAddress,
               style: TextStyle(
-                  color: Colors.black87
+                  color: Colors.deepPurple,
+                  fontWeight: FontWeight.w500,
+                letterSpacing: 1.0,
               ),
               decoration: InputDecoration(
                   border: InputBorder.none,
-                  contentPadding: EdgeInsets.only(top: 14),
+                  contentPadding: EdgeInsets.only(top: 14, left: 20, bottom: 10),
                //   hintText: 'Enter your user ID',
                   hintStyle: TextStyle(
                       color: Colors.black38,
@@ -179,9 +182,10 @@ class _loginScreenState extends State<adduser> {
         Text(
           'Index no',
           style: TextStyle(
-              color: Colors.white,
-              fontSize: 14,
-              fontWeight: FontWeight.bold
+            color: Colors.deepPurple.shade900,
+            fontSize: 18,
+              fontWeight: FontWeight.bold,
+            letterSpacing: 0.5,
           ),
         ),
         SizedBox(height: 10,),
@@ -192,8 +196,8 @@ class _loginScreenState extends State<adduser> {
               borderRadius: BorderRadius.circular(10),
               boxShadow: [
                 BoxShadow(
-                    color: Colors.black26,
-                    blurRadius: 6,
+                    color: Colors.deepPurpleAccent,
+                    blurRadius: 3,
                     offset: Offset(0,2)
                 )
               ]
@@ -206,11 +210,13 @@ class _loginScreenState extends State<adduser> {
 
             //  obscureText: true,
               style: TextStyle(
-                  color: Colors.black87
+                  color: Colors.deepPurple,
+                fontWeight: FontWeight.w500,
+                letterSpacing: 1.0,
               ),
               decoration: InputDecoration(
                   border: InputBorder.none,
-                  contentPadding: EdgeInsets.only(top: 14),
+                  contentPadding: EdgeInsets.only(top: 14, left: 20, bottom: 10),
                //   hintText: 'Enter your password',
                   hintStyle: TextStyle(
                       color: Colors.black38,
@@ -228,11 +234,12 @@ class _loginScreenState extends State<adduser> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Text(
-          'Tp no',
+          'Telephone no',
           style: TextStyle(
-              color: Colors.white,
-              fontSize: 14,
-              fontWeight: FontWeight.bold
+            color: Colors.deepPurple.shade900,
+            fontSize: 18,
+              fontWeight: FontWeight.bold,
+            letterSpacing: 0.5,
           ),
         ),
         SizedBox(height: 10,),
@@ -243,8 +250,8 @@ class _loginScreenState extends State<adduser> {
               borderRadius: BorderRadius.circular(10),
               boxShadow: [
                 BoxShadow(
-                    color: Colors.black26,
-                    blurRadius: 6,
+                    color: Colors.deepPurpleAccent,
+                    blurRadius: 3,
                     offset: Offset(0,2)
                 )
               ]
@@ -257,11 +264,13 @@ class _loginScreenState extends State<adduser> {
 
               keyboardType: TextInputType.emailAddress,
               style: TextStyle(
-                  color: Colors.black87
+                  color: Colors.deepPurple,
+                fontWeight: FontWeight.w500,
+                letterSpacing: 1.0,
               ),
               decoration: InputDecoration(
                   border: InputBorder.none,
-                  contentPadding: EdgeInsets.only(top: 14),
+                  contentPadding: EdgeInsets.only(top: 14, left: 20, bottom: 10),
               //    hintText: 'Enter your user ID',
                   hintStyle: TextStyle(
                       color: Colors.black38,
@@ -281,8 +290,8 @@ class _loginScreenState extends State<adduser> {
         Text(
           'Address',
           style: TextStyle(
-              color: Colors.white,
-              fontSize: 14,
+              color: Colors.deepPurple.shade900,
+              fontSize: 18,
               fontWeight: FontWeight.bold
           ),
         ),
@@ -294,8 +303,8 @@ class _loginScreenState extends State<adduser> {
               borderRadius: BorderRadius.circular(10),
               boxShadow: [
                 BoxShadow(
-                    color: Colors.black26,
-                    blurRadius: 6,
+                    color: Colors.deepPurpleAccent,
+                    blurRadius: 3,
                     offset: Offset(0,2)
                 )
               ]
@@ -308,11 +317,13 @@ class _loginScreenState extends State<adduser> {
 
               // obscureText: true,
               style: TextStyle(
-                  color: Colors.black87
+                  color: Colors.deepPurple,
+                fontWeight: FontWeight.w500,
+                letterSpacing: 1.0,
               ),
               decoration: InputDecoration(
                   border: InputBorder.none,
-                  contentPadding: EdgeInsets.only(top: 14),
+                  contentPadding: EdgeInsets.only(top: 14, left: 20, bottom: 10),
                  // hintText: 'Enter your password',
                   hintStyle: TextStyle(
                       color: Colors.black38,
@@ -332,9 +343,9 @@ class _loginScreenState extends State<adduser> {
         Text(
           'Date of birth',
           style: TextStyle(
-              color: Colors.white,
-              fontSize: 14,
-              fontWeight: FontWeight.bold
+            color: Colors.deepPurple.shade900,
+            fontSize: 18,
+              fontWeight: FontWeight.bold,letterSpacing: 0.5,
           ),
         ),
         SizedBox(height: 10,),
@@ -345,8 +356,8 @@ class _loginScreenState extends State<adduser> {
               borderRadius: BorderRadius.circular(10),
               boxShadow: [
                 BoxShadow(
-                    color: Colors.black26,
-                    blurRadius: 6,
+                    color: Colors.deepPurpleAccent,
+                    blurRadius: 3,
                     offset: Offset(0,2)
                 )
               ]
@@ -359,11 +370,13 @@ class _loginScreenState extends State<adduser> {
 
               keyboardType: TextInputType.emailAddress,
               style: TextStyle(
-                  color: Colors.black87
+                  color: Colors.deepPurple,
+                fontWeight: FontWeight.w500,
+                letterSpacing: 1.0,
               ),
               decoration: InputDecoration(
                   border: InputBorder.none,
-                  contentPadding: EdgeInsets.only(top: 14),
+                  contentPadding: EdgeInsets.only(top: 14, left: 20, bottom: 10),
              //     hintText: 'Enter your user ID',
                   hintStyle: TextStyle(
                       color: Colors.black38,
@@ -383,9 +396,10 @@ class _loginScreenState extends State<adduser> {
         Text(
           'Username',
           style: TextStyle(
-              color: Colors.white,
-              fontSize: 14,
-              fontWeight: FontWeight.bold
+            color: Colors.deepPurple.shade900,
+            fontSize: 18,
+              fontWeight: FontWeight.bold,
+            letterSpacing: 0.5,
           ),
         ),
         SizedBox(height: 10,),
@@ -396,8 +410,8 @@ class _loginScreenState extends State<adduser> {
               borderRadius: BorderRadius.circular(10),
               boxShadow: [
                 BoxShadow(
-                    color: Colors.black26,
-                    blurRadius: 6,
+                    color: Colors.deepPurpleAccent,
+                    blurRadius: 3,
                     offset: Offset(0,2)
                 )
               ]
@@ -410,11 +424,13 @@ class _loginScreenState extends State<adduser> {
 
          //     obscureText: true,
               style: TextStyle(
-                  color: Colors.black87
+                  color: Colors.deepPurple,
+                fontWeight: FontWeight.w500,
+                letterSpacing: 1.0,
               ),
               decoration: InputDecoration(
                   border: InputBorder.none,
-                  contentPadding: EdgeInsets.only(top: 14),
+                  contentPadding: EdgeInsets.only(top: 14, left: 20, bottom: 10),
                   //hintText: 'Enter your password',
                   hintStyle: TextStyle(
                       color: Colors.black38,
@@ -434,9 +450,10 @@ class _loginScreenState extends State<adduser> {
         Text(
           'First Login password',
           style: TextStyle(
-              color: Colors.white,
-              fontSize: 14,
-              fontWeight: FontWeight.bold
+            color: Colors.deepPurple.shade900,
+            fontSize: 18,
+              fontWeight: FontWeight.bold,
+            letterSpacing: 0.5,
           ),
         ),
         SizedBox(height: 10,),
@@ -447,8 +464,8 @@ class _loginScreenState extends State<adduser> {
               borderRadius: BorderRadius.circular(10),
               boxShadow: [
                 BoxShadow(
-                    color: Colors.black26,
-                    blurRadius: 6,
+                    color: Colors.deepPurpleAccent,
+                    blurRadius: 3,
                     offset: Offset(0,2)
                 )
               ]
@@ -461,11 +478,13 @@ class _loginScreenState extends State<adduser> {
 
              // obscureText: true,
               style: TextStyle(
-                  color: Colors.black87
+                color: Colors.deepPurple,
+                fontWeight: FontWeight.w500,
+                letterSpacing: 1.0,
               ),
               decoration: InputDecoration(
                   border: InputBorder.none,
-                  contentPadding: EdgeInsets.only(top: 14),
+                  contentPadding: EdgeInsets.only(top: 14, left: 20, bottom: 10),
               //    hintText: 'Enter your password',
                   hintStyle: TextStyle(
                       color: Colors.black38,
@@ -519,12 +538,12 @@ class _loginScreenState extends State<adduser> {
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15)
         ),
-        color: Colors.white,
+        color: Colors.purple.shade900,
         child: Text(
           'Add user',
           style: TextStyle(
-            color: Colors.blue.shade900,
-            fontSize: 16.0,
+            color:  Colors.purple.shade50,
+            fontSize: 20.0,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -543,12 +562,14 @@ class _loginScreenState extends State<adduser> {
     final SelectStudentDropdown = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(5.0),
-      color: Colors.cyanAccent,
+      color: Colors.purple.shade50,
       child: DropdownButton(
+
         hint: Text('select user level' ,
             textAlign: TextAlign.center,
             style: style.copyWith(
-                color: Colors.blue, fontWeight: FontWeight.bold)), // Not necessary for Option 1
+                color: Colors.deepPurple,
+                fontWeight: FontWeight.bold)), // Not necessary for Option 1
         value: _selectedStudent,
         onChanged: (newValue) {
           setState(() {
@@ -558,8 +579,10 @@ class _loginScreenState extends State<adduser> {
         items: _students.map((location) {
           return DropdownMenuItem(
             child: new Text(location ,
+                textAlign: TextAlign.center,
                 style: style.copyWith(
-                    color: Colors.blue, fontWeight: FontWeight.bold)),
+                    color: Colors.deepPurple,
+                    fontWeight: FontWeight.bold)),
             value: location,
           );
         }).toList(),
@@ -583,43 +606,56 @@ class _loginScreenState extends State<adduser> {
                           begin: Alignment.topCenter,
                           end: Alignment.bottomCenter,
                           colors: [
-                            Colors.blue.shade300,
-                            Colors.blue.shade900,
+                            //Color.fromARGB(255, 246, 246, 246),
+                            //Color.fromARGB(255, 246, 246, 246),
+                            Colors.purple.shade300,
+                            Colors.purple.shade300,
+                            //Colors.purple.shade50,
+                            //Colors.purple.shade100,
 
-                            // Colors.blue.shade800,
-                            // Colors.blue.shade800,
                           ]
                       )
                   ),
                   child: SingleChildScrollView(
                     physics: AlwaysScrollableScrollPhysics(),
-                    padding: EdgeInsets.symmetric(
-                        horizontal: 25,
-                        vertical: 40
-                    ),
+                    //padding: EdgeInsets.symmetric(
+                       // horizontal: 45,
+                        //vertical: 40
+                    //),
+                    padding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 0.0),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
 
-                        SizedBox(height: 20,),
+                        SizedBox(height: 20, width: 20,),
  
                           SelectStudentDropdown ,
+                        SizedBox(height: 20, width: 20,),
 
                       
                         fullname(),
+                        SizedBox(height: 20, width: 20,),
                        
                         indexno(),
+                        SizedBox(height: 20, width: 20,),
                         
                         tpnumber(),
+                        SizedBox(height: 20, width: 20,),
                      
                         address(),
+                        SizedBox(height: 20, width: 20,),
                         
                         doBirth(),
-                      
+                        SizedBox(height: 20, width: 20,),
+
                         username(),
+                        SizedBox(height: 20, width: 20,),
                        
                         firstloginpswdd(),
+                        SizedBox(height: 20, width: 20,),
+
                         buildLoginBtn(),
+                        SizedBox(height: 20, width: 20,),
                   
                         Text(
                           _status,

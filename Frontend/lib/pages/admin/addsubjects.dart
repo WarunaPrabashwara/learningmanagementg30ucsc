@@ -319,7 +319,7 @@ print("a");
         ),
         color: Colors.white,
         child: Text(
-          'Add user',
+          'Add Subject',
           style: TextStyle(
             color: Colors.blue.shade900,
             fontSize: 16.0,

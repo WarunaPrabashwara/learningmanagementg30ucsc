@@ -88,8 +88,8 @@ class _loginScreenState extends State<loginScreen> {
           'User Email',
           style: TextStyle(
               color: Colors.white,
-              fontSize: 14,
-              fontWeight: FontWeight.bold
+              fontSize: 17,
+              fontWeight: FontWeight.w700
           ),
         ),
         SizedBox(height: 10,),
@@ -121,12 +121,12 @@ class _loginScreenState extends State<loginScreen> {
                   contentPadding: EdgeInsets.only(top: 14),
                   hintText: 'Enter your Email address',
                   hintStyle: TextStyle(
-                      color: Colors.black38,
+                      color: Colors.purple,
                       fontSize: 14.0
                   ),
                   prefixIcon: Icon(
                     Icons.email,
-                    color: Colors.blue.shade500,
+                    color: Colors.purple.shade500,
                   )
               )
           ),
@@ -142,8 +142,8 @@ class _loginScreenState extends State<loginScreen> {
           'Password',
           style: TextStyle(
               color: Colors.white,
-              fontSize: 14,
-              fontWeight: FontWeight.bold
+              fontSize: 17,
+              fontWeight: FontWeight.w700
           ),
         ),
         SizedBox(height: 10,),
@@ -175,12 +175,12 @@ class _loginScreenState extends State<loginScreen> {
                   contentPadding: EdgeInsets.only(top: 14),
                   hintText: 'Enter your password',
                   hintStyle: TextStyle(
-                      color: Colors.black38,
+                      color: Colors.purple,
                       fontSize: 14.0
                   ),
                   prefixIcon: Icon(
                     Icons.lock,
-                    color: Colors.blue.shade700,
+                    color: Colors.purple.shade500,
                   )
               )
           ),
@@ -239,8 +239,8 @@ class _loginScreenState extends State<loginScreen> {
         child: Text(
           'LOGIN',
           style: TextStyle(
-            color: Colors.blue.shade900,
-            fontSize: 16.0,
+            color: Colors.purple,
+            fontSize: 17.0,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -257,15 +257,15 @@ class _loginScreenState extends State<loginScreen> {
                 text: 'Need any help? ',
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
               TextSpan(
                   text: 'Click here!',
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 14,
+                    fontSize: 15,
                     fontWeight: FontWeight.bold,
                   )
               )
@@ -293,8 +293,10 @@ class _loginScreenState extends State<loginScreen> {
                           begin: Alignment.topCenter,
                           end: Alignment.bottomCenter,
                           colors: [
-                            Colors.blue.shade300,
-                            Colors.blue.shade900,
+                            Colors.purpleAccent.shade400,
+                            Colors.purple,
+                            //Colors.blue.shade300,
+                            //Colors.blue.shade900,
 
                             // Colors.blue.shade800,
                             // Colors.blue.shade800,
@@ -304,7 +306,7 @@ class _loginScreenState extends State<loginScreen> {
                   child: SingleChildScrollView(
                     physics: AlwaysScrollableScrollPhysics(),
                     padding: EdgeInsets.symmetric(
-                        horizontal: 25,
+                        horizontal: 35,
                         vertical: 40
                     ),
                     child: Column(
@@ -312,18 +314,18 @@ class _loginScreenState extends State<loginScreen> {
                       children: <Widget>[
                         Column(
                           children: [
-                            SizedBox(height: 40,),
+                            SizedBox(height: 30,),
                             Image.asset("assets/education.png", width: 58.0,),
                             SizedBox(height: 10.0),
                             Text("නැණ පියස", style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
-                                fontSize: 16.0
+                                fontSize: 25.0
                             ),textAlign: TextAlign.center,),
                             Text("The whole school at a one place", style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
-                                fontSize: 10.0
+                                fontSize: 16.0
                             ),textAlign: TextAlign.center,),
                           ],
                         ),
@@ -335,7 +337,7 @@ class _loginScreenState extends State<loginScreen> {
                             fontWeight: FontWeight.bold
                         ),
                         ),
-                        SizedBox(height: 90,),
+                        SizedBox(height: 60,),
                         buildEmail(),
                         SizedBox(height: 20,),
                         buildPassword(),

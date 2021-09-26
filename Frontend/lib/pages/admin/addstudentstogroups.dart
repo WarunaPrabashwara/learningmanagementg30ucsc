@@ -304,8 +304,8 @@ class _loginScreenState extends State<addstudentstoGroups> {
         child: Text(
           'Add children to classes',
           style: TextStyle(
-            color: Colors.blue.shade900,
-            fontSize: 16.0,
+            color: Colors.purple.shade900,
+            fontSize: 20.0,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -353,8 +353,8 @@ class _loginScreenState extends State<addstudentstoGroups> {
                           begin: Alignment.topCenter,
                           end: Alignment.bottomCenter,
                           colors: [
-                        Colors.blue.shade300,
-                        Colors.blue.shade900,
+                            Colors.purple.shade300,
+                            Colors.purple.shade300,
 
                         // Colors.blue.shade800,
                         // Colors.blue.shade800,
@@ -376,7 +376,7 @@ class _loginScreenState extends State<addstudentstoGroups> {
                               "Select the class",
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 20.0,
+                                fontSize: 30.0,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -453,14 +453,14 @@ class _loginScreenState extends State<addstudentstoGroups> {
                               "Select students",
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 20.0,
+                                fontSize: 30.0,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
                           ),
                         ),
                         Container(
-                          height: 280,
+                          height: 200,
                           child: ListView.builder(
                               shrinkWrap: true,
                               //  padding: const EdgeInsets.all(8),
@@ -475,7 +475,7 @@ class _loginScreenState extends State<addstudentstoGroups> {
                                       children: [
                                         Padding(
                                           padding: const EdgeInsets.fromLTRB(
-                                              10.0, 15.0, 5.0, 15.0),
+                                              10.0, 15.0, 5.0, 10.0),
                                           child: Center(
                                             child: Text(
                                               '${setofAnnouncements[index].email}',
@@ -519,6 +519,7 @@ class _loginScreenState extends State<addstudentstoGroups> {
                                 );
                               }),
                         ),
+                        //SizedBox(height: 2,),
                         buildLoginBtn(),
                         Text(
                           _status,

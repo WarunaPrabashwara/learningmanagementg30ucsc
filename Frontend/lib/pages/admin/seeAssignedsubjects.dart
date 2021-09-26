@@ -6,7 +6,7 @@ import 'package:frontend/pages/admin/adduser.dart';
 import 'package:http/http.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class creategroups extends StatefulWidget {
+class seeAssignedsubjeccs extends StatefulWidget {
 
 
   @override
@@ -14,29 +14,40 @@ class creategroups extends StatefulWidget {
 }
 
 class respAnnouncement {
-  String className ;
-  String studentEmail ;
 
-  respAnnouncement(this.className, this.studentEmail );
+  String teacher_name;
+  String class_name;
+  String subject_name;
+  int isHomeworkAvailFlag;
+  String zoom_link;
+
+  respAnnouncement(this.teacher_name, this.class_name ,this.subject_name, this.isHomeworkAvailFlag, this.zoom_link );
 
   respAnnouncement.fromJson(Map<String, dynamic> json) {
-    className = json['className'];
-    studentEmail = json['studentEmail'];
+    teacher_name = json['teacher_name'];
+    class_name = json['class_name'];
+    subject_name = json['subject_name'];
+    isHomeworkAvailFlag = json['isHomeworkAvailFlag'];
+    zoom_link = json['zoom_link'];
 
     
   }
 
   Map<String, dynamic> toJson() {
     return {
-      'className': className,
-      'studentEmail': studentEmail
+      'teacher_name': teacher_name,
+      'class_name': class_name,
+      'subject_name': subject_name ,
+      'isHomeworkAvailFlag': isHomeworkAvailFlag,
+      'zoom_link': zoom_link,
+
 
     };
   }
 }
 
 
-class _UserMgtState extends State<creategroups> {
+class _UserMgtState extends State<seeAssignedsubjeccs> {
   int i =0;
   static const urlPrefix = 'http://10.0.2.2:2222';
   List<respAnnouncement> setofAnnouncements = [];
@@ -47,7 +58,7 @@ class _UserMgtState extends State<creategroups> {
   }
   
   Future<List<respAnnouncement>> AnouncementviewRequest(  ) async {
-    final url = Uri.parse('$urlPrefix/classmanagement/viewClassesandStudents');
+    final url = Uri.parse('$urlPrefix/subjectmanagement/view_student_teacher_class');
     List<respAnnouncement> snapshot = await getTokenFromSF().then(( token) async {
       print('anment: ${token}');
       print('userse: ${token}');
@@ -121,21 +132,21 @@ class _UserMgtState extends State<creategroups> {
 }
     return Scaffold(
       //backgroundColor: decor,
-      appBar: AppBar(
-        backgroundColor: Colors.blue.shade800,
-        title:
-        Padding(
-          padding: const EdgeInsets.all(18.0),
-          child: Text(
-            "User Management".toUpperCase(),
-            style: TextStyle(
-                color: Colors.white,
-                fontSize: 18.0,
-                fontWeight: FontWeight.bold
-            ),
-          ),
-        ),
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: Colors.blue.shade800,
+      //   title:
+      //   Padding(
+      //     padding: const EdgeInsets.all(18.0),
+      //     child: Text(
+      //       "User Management".toUpperCase(),
+      //       style: TextStyle(
+      //           color: Colors.white,
+      //           fontSize: 18.0,
+      //           fontWeight: FontWeight.bold
+      //       ),
+      //     ),
+      //   ),
+      // ),
       body:   ListView.builder(
           //  padding: const EdgeInsets.all(8),
             itemCount: setofAnnouncements.length,
@@ -152,7 +163,7 @@ class _UserMgtState extends State<creategroups> {
                           padding: const EdgeInsets.fromLTRB(10.0, 15.0, 5.0, 15.0),
                           child: Center(
                             child: Text(
-                              '${setofAnnouncements[index].className}' + "  " '${setofAnnouncements[index].studentEmail}' ,
+                            '${setofAnnouncements[index].subject_name }' + " " + '${setofAnnouncements[index].class_name }'+ " "+  '${setofAnnouncements[index].teacher_name }' ,
                               style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 17.0,
@@ -234,5 +245,3 @@ class _UserMgtState extends State<creategroups> {
     );
   }
 }
-
-

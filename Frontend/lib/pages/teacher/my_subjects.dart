@@ -11,6 +11,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class my_subjects_ofTeacher extends StatefulWidget {
   my_subjects_ofTeacher({Key key, this.title}) : super(key: key);
   final String title;
+  
   State<StatefulWidget> createState() => new _my_subjects_ofTeacherState();
 }
 
@@ -205,6 +206,8 @@ class _my_subjects_ofTeacherState extends State<my_subjects_ofTeacher> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) {
+                    print("gggf");
+                    print(data.teacher_name);
                     return subject_Matirials_ofTeacher(data.teacher_name + "*" +data.subject_name + "*" + data.class_name);
                   }),
                 );
