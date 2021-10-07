@@ -152,21 +152,21 @@ class _MyProfileState extends State<MyProfile> {
                           begin: Alignment.topCenter,
                           end: Alignment.bottomCenter,
                           colors: [
-<<<<<<< HEAD
+
                             Colors.blue.shade100,
                             Colors.blue.shade100,
                             Colors.blue.shade200,
                             Colors.blue.shade300,
                             Colors.blue.shade900,
 
-=======
+
                             Color.fromARGB(255, 246, 246, 246),
                             Color.fromARGB(255, 246, 246, 246),
                             Colors.white,
                             Colors.purple.shade50,
                             Colors.purple.shade100,
                            // Colors.blue.shade400,
->>>>>>> 54b8fd590cd38c892857987bf546fe3b65e7e4aa
+
                           ]
                       )
                   ),
@@ -189,7 +189,7 @@ class _MyProfileState extends State<MyProfile> {
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: <Widget>[
 
-<<<<<<< HEAD
+
                               Container(child: Text('User E-mail', style: TextStyle(color: Colors.black, letterSpacing: 2.0,  fontSize:16.0,fontWeight: FontWeight.bold, ),)),
 
                               SizedBox(height: 1.0,),
@@ -224,7 +224,7 @@ class _MyProfileState extends State<MyProfile> {
 
                               SizedBox(height: 1.0,),
                               Text('${this._dob}', style: TextStyle(color: Colors.black87, letterSpacing: 1.0, fontSize:16.0, ),),
-=======
+
                               Row(
                                   children: [
                                     SizedBox(width: 1, height: 10.0,),
@@ -373,7 +373,7 @@ class _MyProfileState extends State<MyProfile> {
                                   ]
 
                               ),
->>>>>>> 54b8fd590cd38c892857987bf546fe3b65e7e4aa
+
 
 
                               Container(

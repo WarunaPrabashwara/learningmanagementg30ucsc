@@ -266,18 +266,18 @@ class _UserMgtState extends State<UserMgt> {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-<<<<<<< HEAD
+
                     Colors.blue.shade300,
                     Colors.blue.shade300,
                     Colors.blue.shade300,
                     Colors.blue.shade700,
-=======
+
                   Color.fromARGB(255, 246, 246, 246),
               Color.fromARGB(255, 246, 246, 246),
               Colors.white,
               Colors.purple.shade50,
               Colors.purple.shade100,
->>>>>>> 54b8fd590cd38c892857987bf546fe3b65e7e4aa
+
                   ]
               )
           ),
